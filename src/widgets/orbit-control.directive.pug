@@ -1,0 +1,14 @@
+doctype html
+
+.text-center(*ngIf="shouldShowPageControl()")
+  .orbit-page-control
+    span.orbit-page-control-bullet.fa.fa-circle(*ngFor="let item of items; let i=index; trackBy: i", [ngClass]=" { 'is-active' : isIndexActive(i) } ", (click)="onControlItemTap(i)")
+
+.row(*ngIf="shouldShowThumbnails()")
+  .col-xs-12
+    .orbit-thumbnail
+      ng-template(ngFor, let-item, [ngForOf]="items", [ngForTrackBy]="i", let-i="index")
+        .orbit-thumbnail-item([ngClass]=" { 'is-active' : isIndexActive(i) } ")
+          img.expanded(src="{{ item }}", (click)="onThumbnailClick(i)")
+          .orbit-thumbnail-progress
+            .orbit-thumbnail-progress-fill([ngStyle]="setPreviewStyle(i)")

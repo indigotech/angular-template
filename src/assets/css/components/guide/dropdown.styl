@@ -1,0 +1,50 @@
+.dropdown
+  position: relative
+  display: inline-block
+
+.dropdown-icon
+  margin-left: $spacement-xsmall
+  transition(transform $animation-duration ease-in-out)
+
+.dropdown-list-container
+  position: absolute
+  left: 0
+  z-index: 2
+  min-width: 200px
+  max-height: 0
+  margin-right: - $half-gutter
+  margin-left: - $half-gutter
+  vertical-align: bottom // fix white space bellow due to descenders
+  background-color: $color-white
+  box-shadow(0 5px 10px 0 rgba(0, 0, 0, 0.05))
+  overflow: hidden
+  transition(max-height $animation-duration ease-in-out)
+
+  &.is-right
+    right: 0
+    left: auto
+
+.dropdown-overlay
+  position: fixed
+  top: 0
+  right: 0
+  bottom: -1000px
+  left: 0
+  z-index: 1
+  visibility: hidden
+
+  &.is-shown
+    visibility: visible
+
+.dropdown-list-is-open
+  .dropdown-icon
+    transform(rotate(-180deg))
+
+// Enable hover open dropdown
+
+.dropdown--autoexpand:hover
+  .dropdown-icon
+    transform(rotate(-180deg))
+
+  .dropdown-list-container
+    max-height: 500px

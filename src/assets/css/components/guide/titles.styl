@@ -1,0 +1,47 @@
+//
+// Titles
+// --------------------------------------------------
+
+h1
+  make-components-margin(top, $space-large)
+  make-components-margin(bottom, $space-small)
+  font-family: $font-family-primary
+  font-size: $font-size-xlarge
+  font-weight: $font-weight-bold
+  line-height: 1.5
+  color: $color-black
+
+  @media (min-width $screen-md-min)
+    font-size: 5rem
+    line-height: 1.2
+
+h2
+  make-components-margin(top, $space-xlarge)
+  make-components-margin(bottom, $space-small)
+  font-family: $font-family-primary
+  font-size: $font-size-small
+  font-weight: $font-weight-regular
+  text-transform: uppercase
+  letter-spacing: $letter-spacing-large
+  color: $color-black
+
+h3
+  make-components-margin(top, $space-small)
+  make-components-margin(bottom, $space-xsmall)
+  font-family: $font-family-primary
+  font-size: $font-size-medium
+  font-weight: $font-weight-bold
+  color: $color-black
+
+h4
+  make-components-margin(top, $space-medium)
+  make-components-margin(bottom, $space-small)
+  font-family: $font-family-primary
+  font-size: $font-size-medium
+  font-weight: $font-weight-lighter
+  color: $color-black
+
+  ~ h4.sub
+    font-size: $font-size-xsmall
+    font-weight: $font-weight-regular
+    color: $color-gray-dark

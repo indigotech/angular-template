@@ -1,0 +1,54 @@
+main.container
+  header
+    h1.text-center Notifications
+
+  .row
+    .col-xs-12
+      h2 Notification
+      p In order to use a notification component, you must add a class that indicates the message type to be shown, e.g&nbsp;
+        code.code [type]="'success'"
+        | . For more information, check the file&nbsp;
+        code.code notification.pug
+        | &nbsp;inside of guide module.
+
+    .col-xs-12.col-sm-6
+      tq-flash([type]="'success'", [description]="'This is an example of success flash message'")
+    .col-xs-12.col-sm-6
+      tq-flash([type]="'info'", [description]="'This is an example of info flash message'")
+    .col-xs-12.col-sm-6
+      tq-flash([type]="'warning'", [description]="'This is an example of warning flash message'")
+    .col-xs-12.col-sm-6
+      tq-flash([type]="'error'", [description]="'This is an example of error flash message'")
+
+    .col-xs-12
+      h4 Non dismissible notifications
+      p Use input named&nbsp;
+        code.code [isDimissible]="false"
+        | .
+
+    .col-xs-12.col-sm-6
+      tq-flash([isDimissible]="false", [type]="'success'", [description]="'This is an example of success flash message'")
+    .col-xs-12.col-sm-6
+      tq-flash([isDimissible]="false", [type]="'info'", [description]="'This is an example of info flash message'")
+    .col-xs-12.col-sm-6
+      tq-flash([isDimissible]="false", [type]="'warning'", [description]="'This is an example of warning flash message'")
+    .col-xs-12.col-sm-6
+      tq-flash([isDimissible]="false", [type]="'error'", [description]="'This is an example of error flash message'")
+
+  .row
+    .col-xs-12
+      h2 Callout
+      p In order to use any callout component, you must add a class that indicates the message type to be shown, e.g&nbsp;
+        code.code [type]="'success'"
+        | . For more information, check the file&nbsp;
+        code.code notification.pug
+        | &nbsp;inside of guide module.
+
+    .col-xs-12.col-sm-6
+      tq-callout([type]="'success'", [title]="'Success callout'", [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat in tortor eu tempor.'")
+    .col-xs-12.col-sm-6
+      tq-callout([type]="'info'", [title]="'Info callout'", [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat in tortor eu tempor.'")
+    .col-xs-12.col-sm-6
+      tq-callout([type]="'warning'", [title]="'Warning callout'", [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat in tortor eu tempor.'")
+    .col-xs-12.col-sm-6
+      tq-callout([type]="'alert'", [title]="'Alert callout'", [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat in tortor eu tempor.'")

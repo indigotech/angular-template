@@ -1,0 +1,72 @@
+doctype html
+
+form([formGroup]="form", (ngSubmit)="onSubmit(form)", novalidate)
+  .well
+    .row
+      .col-xs-12
+        tq-notification([name]="notificationName")
+
+        h3 Dados pessoais
+
+        .form-control([class.has-error]="(submitted || nameField.touched) && !nameField.valid")
+          tq-input-base(formControlName="nameField", [inputId]="'nameInput'", [label]="'Nome *'", [type]="'text'", [focusInput]="focusFirstInput")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || nameField.touched) && nameField.errors")
+            span(*ngIf="nameField.hasError('required')") Digite seu nome.
+            span(*ngIf="nameField.hasError('maxlength')") O nome deve ter no máximo 128 caracteres.
+
+        .form-control([class.has-error]="(submitted || dateField.touched) && !dateField.valid")
+          tq-input-base(formControlName="dateField", [inputId]="'dateInput'", [label]="'Data de nascimento *'", [placeholder]="'dd/mm/yyyy'", [type]="'tel'", [mask]="'99/99/9999'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || dateField.touched) && dateField.errors")
+            span(*ngIf="dateField.hasError('required')") Digite sua data de nascimento.
+            span(*ngIf="!dateField.hasError('required') && (dateField.hasError('datePattern') || dateField.hasError('dateTimeValue'))") A data deve estar no formato dd/mm/aaaa.
+
+        .form-control([class.has-error]="(submitted || phoneField.touched) && !phoneField.valid")
+          tq-input-base(formControlName="phoneField", [inputId]="'phoneInput'", [label]="'Telefone *'", [placeholder]="'(xx) xxxx-xxxx'", [type]="'tel'", [mask]="'(99) 9999-99999'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || phoneField.touched) && phoneField.errors")
+            span(*ngIf="phoneField.hasError('required')") Digite seu telefone.
+            span(*ngIf="phoneField.hasError('minlength')") O telefone deve estar no formato (xx) xxxx-xxxx.
+            span(*ngIf="phoneField.hasError('maxlength')") O telefone deve estar no formato (xx) xxxx-xxxxx.
+
+        .form-control([class.has-error]="(submitted || rgField.touched) && !rgField.valid")
+          tq-input-base(formControlName="rgField", [inputId]="'rgInput'", [label]="'RG *'", [type]="'text'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || rgField.touched) && rgField.errors")
+            span(*ngIf="rgField.hasError('required')") Digite seu RG.
+
+        .form-control([class.has-error]="(submitted || cpfField.touched) && !cpfField.valid")
+          tq-input-base(formControlName="cpfField", [inputId]="'cpfInput'", [label]="'CPF *'", [placeholder]="'xxx.xxx.xxx-xx'", [type]="'tel'", [mask]="'999.999.999-99'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || cpfField.touched) && cpfField.errors")
+            span(*ngIf="cpfField.hasError('required')") Digite seu CPF.
+            span(*ngIf="cpfField.hasError('pattern')") O CPF deve estar no formato xxx.xxx.xxx-xx.
+
+        h3 Dados de acesso
+
+        .form-control([class.has-error]="(submitted || emailField.touched) && !emailField.valid")
+          tq-input-base(formControlName="emailField", [inputId]="'emailInput'", [label]="'E-mail *'", [type]="'email'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || emailField.touched) && emailField.errors")
+            span(*ngIf="emailField.hasError('required')") Digite seu e-mail.
+            span(*ngIf="emailField.hasError('emailPattern')") O e-mail deve estar no formato xxx@xxx.xxx.
+            span(*ngIf="emailField.hasError('maxlength')") O e-mail deve ter no máximo {{ lengthMaxEmail }} caracteres.
+
+        .form-group(formGroupName="matchingPasswordGroup", [class.has-error]="(submitted || passwordField.touched) && !passwordField.valid")
+          label.input-label(for="passwordInput") Senha *
+          .input-container
+            input(type="password", inputId="passwordInput", formControlName="passwordField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || passwordField.touched) && passwordField.errors")
+            span(*ngIf="passwordField.hasError('required')") Digite sua senha.
+            span(*ngIf="passwordField.hasError('minlength')") A senha deve ter no mínimo {{ lengthMinPassword }} caracteres.
+            span(*ngIf="passwordField.hasError('maxlength')") A senha deve ter no máximo {{ lengthMaxPassword }} caracteres.
+
+        .form-group(formGroupName="matchingPasswordGroup", [class.has-error]="(submitted || confirmPasswordField.touched) && !matchingPasswordGroup.valid")
+          label.input-label(for="confirmPasswordInput") Confirmação de senha *
+          .input-container
+            input(type="password", inputId="confirmPasswordInput", formControlName="confirmPasswordField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || confirmPasswordField.touched) && !matchingPasswordGroup.valid")
+            span(*ngIf="confirmPasswordField.hasError('required')") Digite sua confirmação de senha.
+            span(*ngIf="!matchingPasswordGroup.valid && !confirmPasswordField.hasError('required')") As senhas devem ser iguais.
+
+    .row
+      .col-xs-12
+        .text-right
+          a.btn.btn--neutral.btn--outline.container-margin-right([routerLink]="['/user']") Cancelar
+          tq-button-loading([classes]="'btn--primary'", [isLoading]="isBtnLoading")
+            span {{ submitBtnText }}

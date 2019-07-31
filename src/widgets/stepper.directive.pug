@@ -1,0 +1,8 @@
+.stepper
+  a.stepper-action((click)="onStepMinus()", [ngClass]="{ 'is-disabled': count === this.min }")
+    | -
+  .stepper-display
+    span.stepper-display-number {{count}}
+    | &nbsp;{{label}}
+  a.stepper-action((click)="onStepPlus()", [ngClass]="{ 'is-disabled': count === this.max }")
+    | +

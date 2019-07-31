@@ -1,0 +1,10 @@
+doctype html
+
+.orbit-container(orbit-gestures, (panStartGesture)="doPanStartGesture($event)", (panGesture)="doPanGesture($event)", (panEndGesture)="doPanEndGesture($event)", (tapGesture)="doTapGesture($event)")
+  .orbit(#orbit, [ngStyle]="setTranslationStyles()")
+    ng-content
+  .orbit-gestures.left.hidden-xs(*ngIf="shouldShowArrows()", (click)="onArrowClick(orbitDirectionEnum.Right)")
+    span.orbit-arrow.mi.mi-keyboard-arrow-left
+  .orbit-gestures.right.hidden-xs(*ngIf="shouldShowArrows()", (click)="onArrowClick(orbitDirectionEnum.Left)")
+    span.orbit-arrow.mi.mi-keyboard-arrow-right
+ng-content(select="tq-orbit-control")

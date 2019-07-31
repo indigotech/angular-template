@@ -1,0 +1,387 @@
+include guide-mixins
+
+main.container
+  header
+    h1.text-center Forms
+
+  .row
+    .col-xs-12
+      h2 Basics
+      ul.u-lst
+        li.u-lst-item
+          p Please read these articles on
+            a(href="https://scotch.io/tutorials/using-angular-2s-model-driven-forms-with-formgroup-and-formcontrol", target="_blank")  model-driven
+            |  and
+            a(href="https://scotch.io/tutorials/using-angular-2s-template-driven-forms", target="_blank")  template-driven
+            |  forms.
+        li.u-lst-item The documentation is also important:
+          a(href="https://angular.io/docs/ts/latest/api/forms/index/FormGroup-class.html", target="_blank")  FormGroup
+          | ,&nbsp;
+          a(href="https://angular.io/docs/ts/latest/api/forms/index/FormControl-class.html", target="_blank")  FormControl
+          | ,&nbsp;
+          a(href="https://angular.io/docs/ts/latest/api/forms/index/FormArray-class.html", target="_blank")  FormArray
+          |  and their base class:
+          a(href="https://angular.io/docs/ts/latest/api/forms/index/AbstractControl-class.html", target="_blank")  AbstractControl
+          | .
+        li.u-lst-item
+          p Individual form controls automatically receive some styling. All textual&nbsp;
+            code.code input
+            | ,&nbsp;
+            code.code textarea
+            |  and&nbsp;
+            code.code select
+            |  elements are set to width: 100%; by default.
+        li.u-lst-item
+          p Wrap groups and controls in&nbsp;
+            code.code .form-group | .form-control
+            |  for optimum spacing and validations.
+
+      h2 Directives
+      p Check their inputs, outputs and public methods at their&nbsp;
+        code.code *.ts
+        |  files.
+      ul.u-lst
+        li.u-lst-item
+          code.code tq-input-mask
+          | : adds mask to inputs.
+        li.u-lst-item
+          code.code tq-input-erasable
+          | : adds a button to erase the input content.
+        li.u-lst-item
+          code.code tq-input-base
+          | : encapsulates an input.
+        li.u-lst-item
+          code.code tq-input-float-labeled
+          | : implements a float labeled input.
+        li.u-lst-item
+          code.code tq-input-file
+          | : implements a input for uploading files.
+        li.u-lst-item
+          code.code tq-input-image
+          | : implements a input for uploading images with preview.
+
+      tq-callout([type]="'warning'", [title]="'Input types & mask'")
+        p The&nbsp;
+          span.bold mask
+          |  has a problem with&nbsp;
+          code.code selectionStart
+          | , which only works with&nbsp;
+          code.code text
+          | ,&nbsp;
+          code.code search
+          | ,&nbsp;
+          code.code tel
+          | ,&nbsp;
+          code.code url
+          |  and&nbsp;
+          code.code password
+          |  as you can check
+          a(href="https://html.spec.whatwg.org/multipage/forms.html#do-not-apply", target="_blank")  here.
+          |  So use type &nbsp;
+          code.code tel
+          |  instead of type number in case you are using masks.
+
+    .col-xs-12
+      h3 Model-driven form
+      ul.u-lst
+        li.u-lst-item This is the recommended form type for more complex forms;
+        li.u-lst-item Forms are created with the&nbsp;
+          code.code FormBuilder
+          | &nbsp; (for a simpler syntax);
+        li.u-lst-item For model-driven forms, encapsulate the form in a separated file (e.g. address-form.directive) and extend the&nbsp;
+          code.code BaseFormDirective
+          |  - you should check this class.
+        li.u-lst-item You can create a&nbsp;
+          code.code FormGroup
+          |  inside the form to subgroup fields and perform custom validations (e.g. matchingPassword: password and confirmPassword fields).
+
+      h4 Disabling
+      ul.u-lst
+        li.u-lst-item
+          span.bold At initialization:
+          |  use&nbsp;
+          code.code {{'{'}} value: 'Value filled', disabled: true {{'}'}}
+        li.u-lst-item
+          span.bold Another moment:
+          |  by calling&nbsp;
+          code.code FIELD_NAME.disable();
+
+      h4 Validations
+      ul.u-lst
+        li.u-lst-item They are added when the form is initialized.
+        li.u-lst-item Every&nbsp;
+          code.code FormGroup | FormControl | FormArray
+          |  has them:&nbsp;
+          code.code dirty | valid | touched | hasError() | ...
+        li.u-lst-item Use them to add error captions or to check for a valid group/field.
+        li.u-lst-item You can access them by&nbsp;
+          code.code FORM_NAME.controls.FIELD_NAME (pug) | FORM_NAME.controls['FIELD_NAME'] (ts)
+          |  or&nbsp;
+          code.code FIELD_NAME
+          |  if you have properties for these fields.
+
+      h2 Examples
+
+      h3 Form examples
+      p Check them at
+        a([routerLink]="[ '/sample/form' ]")  /sample/form
+        | .
+
+      h3 Input types
+
+  .g-example
+    form.row([formGroup]="myForm", (ngSubmit)="onSubmit(myForm)", novalidate)
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.textField.touched && !myForm.controls.textField.valid")
+          tq-input-base([inputId]="'textInput'", [type]="'text'", [label]="'Text *'", [placeholder]="'e.g. John Doe'", formControlName="textField")
+          p.caption.input-caption(*ngIf="myForm.controls.textField.touched && myForm.controls.textField.hasError('required')") Text is required.
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.numberField.touched && !myForm.controls.numberField.valid")
+          label.input-label(for="numberInput") Number *
+          .input-container
+            input(type="number", id="numberInput", placeholder="e.g. 0123456789", formControlName="numberField")
+          p.caption.input-caption(*ngIf="myForm.controls.numberField.touched && myForm.controls.numberField.hasError('required')") Number is required.
+
+      .clearfix.hidden-lg
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.emailField.touched && !myForm.controls.emailField.valid")
+          tq-input-base([inputId]="'emailInput'", [type]="'email'", [label]="'E-mail *'", [placeholder]="'user@domain.com'", formControlName="emailField")
+          p.caption.input-caption(*ngIf="myForm.controls.emailField.touched && myForm.controls.emailField.hasError('required')") E-mail is required.
+          p.caption.input-caption(*ngIf="myForm.controls.emailField.touched && myForm.controls.emailField.hasError('emailPattern')") E-mail is invalid.
+
+      .clearfix.hidden-sm.hidden-md
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.accessoryField.touched && !myForm.controls.accessoryField.valid")
+          tq-input-base([inputId]="'accessoryInput'", [type]="'text'", [label]="'Accessory *'", [placeholder]="'Input with accessory'", formControlName="accessoryField", [iconDecorationClasses]="'mi mi-star'")
+          p.caption.input-caption(*ngIf="myForm.controls.accessoryField.touched && myForm.controls.accessoryField.hasError('required')") This field is required.
+
+      .clearfix.hidden-lg
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.dateField.touched && !myForm.controls.dateField.valid")
+          label.input-label(for="dateInput") Date
+          .input-container
+            input(type="date", id="dateInput", formControlName="dateField")
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.dateMaskField.touched && !myForm.controls.dateMaskField.valid")
+          label.input-label(for="dateMaskInput") Regular input with date mask *
+          .input-container
+            input(type="tel", id="dateMaskInput", placeholder="e.g. dd/mm/aaaa", [tq-input-mask]="'99/99/9999'", formControlName="dateMaskField")
+          p.caption.input-caption(*ngIf="myForm.controls.dateMaskField.touched && myForm.controls.dateMaskField.hasError('required')") The date is required.
+          p.caption.input-caption(*ngIf="myForm.controls.dateMaskField.touched && !myForm.controls.dateMaskField.hasError('required') && myForm.controls.dateMaskField.hasError('datePattern')") The date must be in the format dd/mm/aaaa.
+          p.caption.input-caption(*ngIf="myForm.controls.dateMaskField.touched && !myForm.controls.dateMaskField.hasError('required') && !myForm.controls.dateMaskField.hasError('datePattern') && myForm.controls.dateMaskField.hasError('dateTimeValue')") The date is invalid.
+
+      .clearfix
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.erasableTextField.touched && !myForm.controls.erasableTextField.valid")
+          tq-input-erasable([type]="'text'", [inputId]="'erasableTextInput'", [label]="'Erasable input text'", [placeholder]="'e.g. John Doe'", formControlName="erasableTextField")
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control([class.has-error]="myForm.controls.maskedTextField.touched && !myForm.controls.maskedTextField.valid")
+          tq-input-erasable([mask]="'(99) 9999-99999'", [type]="'text'", [inputId]="'maskedTextInput'", [label]="'Erasable and masked input text'", [placeholder]="'(11) 1234-5678'", formControlName="maskedTextField")
+
+      .clearfix.hidden-lg
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control
+          label.input-label Select
+          .input-container
+            select
+              option(*ngFor="let s of selectMockData", [value]="s") {{s}}
+            .input-container-ic
+              .input-ic.mi.mi-keyboard-arrow-down
+
+      .clearfix.hidden-sm.hidden-md
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control
+          label.input-label(for="commentsInput") Comments
+          .input-container
+            textarea(id="commentsInput", placeholder="Leave your comments here.", formControlName="commentsField")
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control
+          tq-input-base([inputId]="'baseInput'", [label]="'Base input'", [placeholder]="'e.g. placeholder'", formControlName="baseField")
+
+      .col-xs-12.col-sm-6.col-lg-4
+        .form-control
+          tq-input-float-labeled([inputId]="'floatLabelInput'", [label]="'Float label'", formControlName="floatLabelField")
+
+      .clearfix
+
+      .col-xs-12.col-sm-6.col-lg-4
+        tq-autocomplete-simple(formControlName="autocompleteField", [label]="'Autocomplete'", [placeholder]="'Busque por exemplos'", [filteredArray]="mockFilteredArray", [hasError]="!myForm.controls.autocompleteField.valid", [caption]="'Autocomplete is required.'")
+
+      .col-xs-12.col-sm-6.col-lg-4
+        tq-input-file([placeholder]="'Escolha um arquivo'", [inputId]="'videoField'", [label]="'Arquivo de vídeo'")
+
+      .col-xs-12
+        tq-input-image([placeholder]="'Escolha um arquivo de imagem do card'", [comments]="'Tamanho sugerido: 141x180'", [inputId]="'imageField'", [label]="'Imagem *'", [required]="true")
+
+      .col-xs-12
+        .form-control
+          button.btn.btn--primary.btn--block(type="submit") Submit
+          p.caption.input-caption(*ngIf="myForm.touched && !myForm.valid") Form is invalid.
+
+  .row
+    .col-xs-12
+      h3 States
+
+  .g-example
+    form.row([formGroup]="statesForm", (ngSubmit)="onSubmit(statesForm)")
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control
+          label.input-label Regular
+          .input-container
+            select(formControlName="selectField")
+              option(*ngFor="let s of selectMockData", [value]="s") {{s}}
+            .input-container-ic
+              .input-ic.mi.mi-keyboard-arrow-down
+
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control
+          label.input-label Disabled
+          .input-container
+            select(disabled)
+              option(*ngFor="let s of selectMockData", [value]="s") {{s}}
+            .input-container-ic
+              .input-ic.mi.mi-keyboard-arrow-down
+
+      .clearfix.hidden-lg
+
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control.is-valid
+          label.input-label Success
+          .input-container
+            select
+              option(*ngFor="let s of selectMockData", [value]="s") {{s}}
+            .input-container-ic
+              .input-ic.mi.mi-keyboard-arrow-down
+
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control.has-error
+          label.input-label Error
+          .input-container
+            select
+              option(*ngFor="let s of selectMockData", [value]="s") {{s}}
+            .input-container-ic
+              .input-ic.mi.mi-keyboard-arrow-down
+          p.caption.input-caption This input has an error.
+
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control
+          tq-input-base([inputId]="'baseInput'", [label]="'Disabled base input'", [placeholder]="'e.g. placeholder'", formControlName="baseField")
+
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control
+          tq-input-erasable([type]="'text'", [inputId]="'erasableTextInput'", [label]="'Disabled erasable input'", [placeholder]="'e.g. John Doe'", formControlName="erasableTextField")
+
+      .col-xs-12.col-sm-6.col-lg-3
+        .form-control
+          tq-input-float-labeled([inputId]="'floatLabelInput'", [label]="'Disabled float label input'", formControlName="floatLabelField")
+
+  .row
+    .col-xs-12
+      h3 Radio Button
+
+  .g-example
+    form.row([formGroup]="radioForm", (ngSubmit)="onSubmit(radioForm)")
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="radio", id="radio-one", value="radio1", formControlName="radioField")
+          label.input-value(for="radio-one") Radio button. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus.
+
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="radio", id="radio-two", value="radio2", formControlName="radioField")
+          label.input-value(for="radio-two") Radio button
+
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="radio", id="radio-disabled1", value="radio3", formControlName="radioField2")
+          label.input-value(for="radio-disabled1") Radio button disabled
+
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="radio", id="radio-disabled2", value="radio4", formControlName="radioField2")
+          label.input-value(for="radio-disabled2") Radio button disabled
+
+  .row
+    .col-xs-12
+      h3 Checkbox
+
+  .g-example
+    form.row([formGroup]="checkboxForm", (ngSubmit)="onSubmit(checkboxForm)")
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="checkbox", id="box-checked", formControlName="checkboxField1")
+          label.input-value(for="box-checked") Checkbox. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus.
+
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="checkbox", id="box-normal", formControlName="checkboxField2")
+          label.input-value(for="box-normal") Checkbox
+
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="checkbox", id="box-disabled1", formControlName="checkboxField3")
+          label.input-value(for="box-disabled1") Checkbox disabled
+
+      .col-xs-12.col-md-4
+        .form-control
+          input(type="checkbox", id="box-disabled2", formControlName="checkboxField4")
+          label.input-value(for="box-disabled2") Checkbox disabled
+  .row
+    .col-xs-12
+      h3 Datepicker
+      p Add
+        code.code tq-datepicker
+        |  attribute to the
+        code.code input
+        |  element.
+      h4 Parameters:
+      ul.u-lst
+        li.u-lst-item
+          p
+            code.code [rangeStart]
+            | : Restricts the calendar start range. Attribute value must be a
+            code.code Date
+            |  type.
+        li.u-lst-item
+          p
+            code.code [rangeEnd]
+            | : Restricts the calendar end range. Attribute value must be a
+            code.code Date
+            |  type.
+        li.u-lst-item
+          p
+            code.code [dateFormat]
+            | : Changes the date format. The default value is
+            code.code DD/MM/YYYY
+            | .
+
+  .g-example
+    form.row([formGroup]="datePickerForm", (ngSubmit)="onSubmit(datePickerForm)")
+      .col-xs-12.col-md-4
+        .form-control
+          label.input-label Date picker label
+          input(type="text", tq-datepicker, formControlName="datePickerField1", [rangeStart]="rangeStart", [rangeEnd]="rangeEnd", [dateFormat]="'YYYY/MM/DD'", readonly)
+
+  .row
+    .col-xs-12
+      h3 Form inline
+
+  .g-example
+    .form-control
+      label.input-label.label__footer(for="newsletterInput") Receba nossas novidades
+      .form-inline
+        .form-inline-input
+          input(type="text", id="newsletterInput", placeholder="Digite seu e-mail")
+        .form-inline-button
+          button.btn.btn--primary.btn--small Assinar

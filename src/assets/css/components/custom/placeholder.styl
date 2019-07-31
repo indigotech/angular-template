@@ -1,0 +1,21 @@
+$placeholder-tile-size = 70px
+
+.placeholder
+  width: 100%
+  padding: $half-gutter
+  background-color: $color-gray-light
+
+  &.placeholder-tile
+    height: 100px
+    text-align: center
+
+    &.placeholder-tile-large
+      height: 200px
+      .placeholder-tile-icon
+        max-width: ($placeholder-tile-size * 2.5)
+        font-size: ($placeholder-tile-size * 2.5)
+
+    .placeholder-tile-icon
+      max-width: $placeholder-tile-size
+      font-size: $placeholder-tile-size
+      color: $color-gray

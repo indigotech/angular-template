@@ -1,0 +1,19 @@
+.hero
+  position: relative
+  min-height: 300px
+
+.hero-content
+  position: absolute
+  top: 50%
+  width: 756px
+  padding-left: 72px
+  transform(translateY(-50%))
+
+@media (max-width $screen-md-max)
+  .hero-content
+    position: relative
+    width: 100%
+    make-components-margin(top, $space-small)
+    padding: 0 $half-gutter
+    text-align: center
+    transform(none)

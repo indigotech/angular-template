@@ -1,0 +1,53 @@
+main.container
+  header
+    h1.text-center Filters
+
+  .row
+    .col-xs-12
+      p This is an example of how to implement a filter (using an accordion).
+
+    .col-xs-12
+      .g-example
+        .divisor
+        tq-accordion
+          tq-accordion-item
+            .accordion-item-heading(accordion-item-heading)
+              ul.lst.lst--bordered.lst-no-top-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell
+                      span.fa.fa-picture-o
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold {{ filterName }}
+                    .lst-item-cell(*ngIf="((filter | filterChecked).length) > 0")
+                      span.badge.badge--round.badge--primary {{ (filter | filterChecked).length }}
+                    .lst-item-cell
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body(accordion-item-body)
+              ul.lst.lst--bordered.lst-no-top-border
+                li.lst-item(*ngFor="let item of filter; let i=index; trackBy: i;")
+                  .lst-item-table
+                    input(type="checkbox", [attr.id]="filterName+i", [attr.value]="filterName+i", [attr.checked]="item.checked ? '' : null ", (change)="onFilterChange(filter, item)")
+                    label.input-value([attr.for]="filterName+i") {{ item.text }}
+
+          tq-accordion-item
+            .accordion-item-heading(accordion-item-heading)
+              ul.lst.lst--bordered.lst-no-top-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell
+                      span.fa.fa-picture-o
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold {{ filter2Name }}
+                    .lst-item-cell(*ngIf="((filter2 | filterChecked).length) > 0")
+                      span.badge.badge--round.badge--primary {{ (filter2 | filterChecked).length }}
+                    .lst-item-cell
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body(accordion-item-body)
+              ul.lst.lst--bordered.lst-no-top-border
+                li.lst-item(*ngFor="let item of filter2; let i=index; trackBy: i;")
+                  .lst-item-table
+                    input(type="checkbox", [attr.id]="filter2Name+i", [attr.value]="filter2Name+i", [attr.checked]="item.checked ? '' : null ", (change)="onFilter2Change(filter2, item)")
+                    label.input-value([attr.for]="filter2Name+i") {{ item.text }}

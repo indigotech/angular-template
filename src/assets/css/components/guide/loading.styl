@@ -1,0 +1,16 @@
+.loading-container
+  position: absolute
+  top: 50%
+  right: 0
+  left: 0
+  z-index: 1000
+  transform(translateY(-50%))
+  visibility: hidden
+
+.loading.is-loading
+  .overlay
+    opacity: $overlay-opacity
+    visibility: visible
+
+  .loading-container
+    visibility: visible

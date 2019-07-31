@@ -1,0 +1,7 @@
+doctype html
+
+label.input-label(*ngIf="label", [attr.for]="id") {{ label }}
+.input-container([ngClass]="{ 'input-container-decoration' : iconDecorationClasses }")
+  input(#input, [tq-input-focus]="focusInput", [tq-input-mask]="mask", type="{{ type }}", [id]="id", [placeholder]="placeholder", [(ngModel)]="inputValue", (blur)="onBlur($event)", (focus)="onFocus($event)", (keyup)="onKeyUp($event)")
+  .input-container-ic.input-container-ic--decoration(*ngIf="iconDecorationClasses")
+    span.input-ic([ngClass]="iconDecorationClasses")

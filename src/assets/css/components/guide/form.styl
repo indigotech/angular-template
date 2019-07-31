@@ -1,0 +1,354 @@
+// Variables
+//
+$forms-input-height = 44px
+$forms-content-margin = $half-gutter
+$forms-input-accessory-width = $forms-content-margin * 2 + $icon-size-medium // icon-width
+$forms-input-textarea-min-height = $baseline * 10
+
+$input-radio-width = ($baseline * 3)
+$input-radio-margin = $half-gutter
+$input-radio-padding = $input-radio-width + $input-radio-margin
+
+$input-checkbox-width = ($baseline * 3)
+$input-checkbox-margin = $half-gutter
+$input-checkbox-padding = $input-checkbox-width + $input-checkbox-margin
+
+$input-radio-color = $color-warning
+$input-color-disabled = $color-gray-dark
+
+// Typography
+.input-label
+  display: inline-block
+  margin-top: $spacement-xsmall
+  margin-bottom: $spacement-xsmall
+  font-family: $font-family-primary
+  font-size: $font-size-medium
+  font-weight: $font-weight-regular
+  color: $color-gray-xdark
+
+.input-value
+  display: inline-block
+  width: 100%
+
+.input-value, input, textarea, select
+  font-family: $font-family-primary
+  font-size: $font-size-small
+  color: $color-black
+
+.input-caption
+  margin-top: $spacement-xsmall
+
+input, textarea, select
+  +placeholder()
+    font-family: $font-family-primary
+    color: $color-gray-dark
+
+// Form validation
+.form-control,
+.form-group
+  margin-bottom: $spacement-medium
+
+  &.has-error
+    input, textarea
+      border-color: $color-alert
+      color: $color-alert
+    select
+      border-color: $color-alert
+      color: $color-alert
+
+    .input-caption, .input-container-ic
+      color: $color-alert
+
+  &.is-valid
+    input, textarea, select
+      border-color: $color-success
+
+    .input-container-ic
+      color: $color-success
+
+// Shared code
+input, textarea, select, .input-file
+  width: 100%
+  background-color: $color-white
+  border: $default-border
+  border-radius: $default-border-radius
+  appearance(none)
+
+input:focus, textarea:focus, select:focus, .input-file:focus
+  border-color: $color-primary
+  color: $color-primary
+  outline: 0
+
+// ----------------------
+// input[type="date"]
+// ----------------------
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-clear-button,
+input[type='date']::-webkit-calendar-picker-indicator
+  display: none
+
+// ----------------------
+// input[type="text"]
+// input[type="url"]
+// input[type="number"]
+// input[type="date"]
+// input[type="email"]
+// input[type="password"]
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="password"]
+input[type="tel"]
+  height: $forms-input-height
+  padding-right: $forms-content-margin
+  padding-left: $forms-content-margin
+  appearance(none)
+
+  &:disabled
+    background-color: $color-gray-xlight
+    color: $input-color-disabled
+
+input.input-accessory
+  padding-right: $forms-input-accessory-width
+
+.input-container-decoration
+  input
+    padding-left: $forms-input-accessory-width
+
+.input-container
+  position: relative
+
+.input-container-ic
+  position: absolute
+  top: 50%
+  right: 0
+  display: inline-block
+  height: $forms-input-height
+  color: $color-gray-xdark
+  pointer-events: none
+  transform(translateY(-50%))
+
+  ~ input
+    padding-right: $forms-input-accessory-width
+
+.input-container-ic--decoration
+  right: auto
+  left: 0
+
+.input-ic
+  float: right
+  margin-right: $forms-content-margin
+  margin-left: $forms-content-margin
+  line-height: $forms-input-height
+
+.input-ic--action
+  display: none
+  cursor: pointer
+  pointer-events: auto
+
+  &.is-visible
+    display: inline
+
+// ----------------------
+// input[type="number"]
+// ----------------------
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  margin: 0
+
+// ----------------------
+// textarea
+// ----------------------
+textarea
+  min-height: $forms-input-textarea-min-height
+  padding: $forms-content-margin
+
+  &:disabled
+    background-color: $color-gray-xlight
+    color: $input-color-disabled
+
+// ----------------------
+// select
+// ----------------------
+select
+  height: $forms-input-height
+  padding-right: $forms-input-accessory-width
+  padding-left: $forms-content-margin
+
+  &:disabled
+    background-color: $color-gray-xlight
+    color: $input-color-disabled
+
+    + .input-container-ic
+      color: $input-color-disabled
+
+// Windows phone support
+select::-ms-expand
+  display: none
+
+  option:first-child
+    display:none
+
+  &:disabled
+    background-color: $color-gray-xlight
+    color: $input-color-disabled
+
+// ----------------------
+// checkbox & radio
+// ----------------------
+
+// Shared
+input[type='radio'],
+input[type='checkbox']
+  display: none
+
+input[type="checkbox"] + .input-value,
+input[type='radio'] + .input-value
+  position: relative
+  line-height: $spacement-medium
+
+  &:before
+    position: absolute
+    top: 50%
+    background-color: $color-white
+    border: $default-border
+    content: ""
+    transform(translate(-50%, -50%))
+
+  &:after
+    position: absolute
+    top: 50%
+    color: $input-radio-color
+    transition(all $animation-duration ease-in-out)
+    transform(translate(-50%, -50%) scale(0))
+
+input[type="checkbox"]:checked + .input-value:after,
+input[type="radio"]:checked + .input-value:after
+  transform(translate(-50%, -50%) scale(1))
+
+// Radio
+// Style
+input[type="radio"] + .input-value
+  padding-left: $input-radio-padding
+
+  &:before,
+  &:after
+    left: ($input-radio-width / 2)
+
+  &:before
+    width: $input-radio-width
+    height: $input-radio-width
+    border-radius: 50%
+
+  &:after
+    font-family: $icon-fontawesome
+    font-size: 14px
+    content: $fa-circle
+    transform-origin(50% 50%)
+
+input[type="radio"]:checked + .input-value  // @stylint ignore
+  &:before
+    border-color: $input-radio-color
+
+// Checkbox
+// Style
+input[type="checkbox"] + .input-value  // @stylint ignore
+  padding-left: $input-checkbox-padding
+
+  &:before,
+  &:after
+    left: ($input-checkbox-width / 2)
+
+  &:before
+    width: $input-checkbox-width
+    height: $input-checkbox-width
+    border-radius: $default-border-radius
+
+  &:after
+    width: $input-checkbox-width
+    height: $input-checkbox-width
+    font-family: $icon-material
+    font-size: $font-size-large
+    content: 'check'
+    line-height: $input-checkbox-width
+    text-align: center
+    border-radius: $default-border-radius
+    transform-origin(50% 50%)
+
+input[type="checkbox"]:checked + .input-value  // @stylint ignore
+  &:after
+    background-color: $input-radio-color
+    color: $color-white
+
+// Checkbox & Radio state: Disabled
+
+input[type="radio"]:disabled + .input-value // @stylint ignore
+  background-color: transparent
+  color: $input-color-disabled
+
+  &:after
+    color: disabledColor($input-radio-color)
+
+  &:before
+    background-color: $color-gray-xlight
+
+input[type="checkbox"]:disabled + .input-value // @stylint ignore
+  background-color: transparent
+  color: $input-color-disabled
+
+  &:after
+    background-color: disabledColor($input-radio-color)
+
+  &:before
+    background-color: $color-gray-xlight
+
+input[type="radio"]:disabled:checked + .input-value // @stylint ignore
+  &:before
+    border-color: disabledColor($input-radio-color)
+
+// ----------------------
+// input[type="file"]
+// ----------------------
+
+input[type="file"] // @stylint ignore
+  position: absolute
+  z-index: -1
+  width: 0.1px
+  height: 0.1px
+  border: 0
+  opacity: 0
+  overflow: hidden
+
+.input-file
+  display: inline-block
+  height: $forms-input-height
+  padding-right: $forms-content-margin
+  padding-left: $forms-content-margin
+  line-height: $forms-input-height
+  color: $color-gray-dark
+
+  &.is-filled
+    padding-right: 100px // remove button
+    word-break: break-all
+    color: $color-gray-dark
+    overflow: hidden
+
+  &.is-download
+    color: $color-primary
+    cursor: pointer
+
+  &:active
+    border-color: $color-primary
+    color: $color-primary
+    outline: 0
+
+  .ic, .fa, .glyphicon
+    + span
+      make-components-margin(left, $space-small)
+
+.input-file-erase
+  position: absolute
+  right: $half-gutter * 3
+  line-height: $forms-input-height

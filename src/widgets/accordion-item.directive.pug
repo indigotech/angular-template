@@ -1,0 +1,11 @@
+doctype html
+
+.accordion-item(#accordionItem)
+  div((click)="toggleOpen()")
+    ng-content(select=".accordion-item-heading")
+  .accordion-item-body-container(#accordionItemBodyContainer, (window:resize)="onResize($event)")
+    div(#accordionItemBody)
+      ng-content(select=".accordion-item-body")
+
+  .accordion-item-footer-container(#accordionItemFooterContainer, (click)="onFooterTap()")
+    ng-content(select=".accordion-item-footer")

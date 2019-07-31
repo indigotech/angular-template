@@ -1,0 +1,68 @@
+// _______________________
+// input[type="file"]
+// _______________________
+
+input[type="file"]
+  position: absolute
+  z-index: -1
+  width: 0.1px
+  height: 0.1px
+  border: 0
+  opacity: 0
+  overflow: hidden
+
+.input-image
+  display: inline-block
+  width: 100%
+  height: $forms-input-height
+  padding-right: $forms-content-margin
+  padding-left: $forms-content-margin
+
+  font-family: $font-family-primary
+  font-size: $font-size-small
+  font-weight: $font-weight-regular
+  line-height: $forms-input-height
+  vertical-align: middle
+
+  background-color: $color-white
+  border: $default-border
+  border-radius: $default-border-radius
+  color: $color-gray-dark
+
+  cursor: pointer
+  appearance(none)
+
+  &.is-filled
+    padding-right: $forms-input-height // remove button
+    white-space: nowrap
+    color: $color-black
+    overflow: hidden
+
+  &.is-download
+    padding-right: $forms-input-height // remove button
+    white-space: nowrap
+    color: $color-primary
+    cursor: not-allowed
+    overflow: hidden
+
+  &:active
+    border-color: $color-primary
+    color: $color-primary
+    outline: 0
+
+  .ic, .fa, .glyphicon
+    + span
+      make-components-margin(left, $space-xsmall)
+
+.input-image-erase
+  position: absolute
+  top: 1px
+  right: 17px
+  width: $forms-input-height
+  line-height: ($forms-input-height - 2px)
+  text-align: center
+  background-color: $color-white
+  color: $color-alert
+
+.thumbnail__input-image
+  border: $default-border

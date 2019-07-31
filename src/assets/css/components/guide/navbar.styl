@@ -1,0 +1,159 @@
+$navbar-minheight = 44px
+$navbar-height-xs = 64px
+$navbar-height-sm = 80px
+
+$navbar-logo-height = $baseline * 4
+$navbar-logo-height-small = $baseline * 5
+
+$navbar-bg-color    = $color-white
+$navbar-text-color  = $color-black
+
+//
+// NAV
+// - Navbar: contains a header, icon to toggle menu, another button on the opposite side of the menu toggle
+// - Menu (menu.styl)
+// - Content overlay
+// - Class to push content (when the menu animation is push)
+// Mobile first
+// -------------------------------------------
+
+.navbar-container
+  background-color: $navbar-bg-color
+  border-bottom: $default-border
+
+.navbar
+  position: relative
+  color: $navbar-text-color
+  overflow: hidden
+  transition(all $animation-duration ease-out)
+
+  > a:active
+    opacity: $opacity-hover
+
+.navbar--xs
+  max-height: $navbar-height-xs
+  padding: (($navbar-height-xs - $navbar-minheight) / 2) 0
+  text-align: center
+  opacity: 1
+  visibility: visible
+
+.navbar--md
+  max-height: 0
+  opacity: 0
+  visibility: hidden
+
+.h1__navbar
+  margin: 0
+  padding: 0 $half-gutter
+  line-height: $navbar-minheight
+  color: $navbar-text-color
+
+.navbar-logo
+  width: auto
+  height: $navbar-logo-height-small
+  margin: (($navbar-minheight - $navbar-logo-height-small) / 2) 0 // margins + LOGO_HEIGHT = navbar-minheight
+
+.navbar-icon
+  height: $navbar-minheight
+  padding: 0 $half-gutter
+  line-height: $navbar-minheight
+  color: $navbar-text-color
+  cursor: pointer
+
+  span
+    margin-top: 0
+    font-size: $icon-size-large
+    vertical-align: middle
+
+.navbar-icon--left
+  position: absolute
+  top: (($navbar-height-xs - $navbar-minheight) / 2)
+  left: 0
+
+.navbar-icon--right
+  position: absolute
+  top: (($navbar-height-xs - $navbar-minheight) / 2)
+  right: 0
+
+
+.navbar-list
+  display: inline-block
+  padding-left: $spacement-medium
+  list-style: none
+
+.navbar-item
+  display: inline-block
+  margin: (($navbar-minheight - $spacement-medium) / 2) 0
+  margin-left: $spacement-large
+
+.navbar-item-action
+  position: relative
+  display: block
+  font-size: $font-size-small
+  letter-spacing: $letter-spacing-xlarge
+  text-transform: uppercase
+  color: $navbar-text-color
+
+  &:after
+    content: ""
+    position: absolute
+    bottom: - $spacement-small
+    left: 0
+    width: 100%
+    border-bottom: 2px solid $color-accessory
+    opacity: 0
+    transform(translateY(-0.30em))
+    transition(all $animation-duration ease-out)
+
+  &:hover
+    color: $color-accessory
+
+  &:hover:after
+    opacity: 1
+    transform(translateY(-0.10em))
+
+
+// Responsive menu
+// Tablet/desktop
+@media(min-width $screen-md-min)
+  .navbar--xs
+    max-height: 0
+    padding: 0
+    opacity: 0
+    overflow: hidden
+    visibility: hidden
+
+  .navbar--md
+    max-height: $navbar-height-sm
+    padding: (($navbar-height-sm - $navbar-minheight) / 2) $half-gutter
+    opacity: 1
+    overflow: visible
+    visibility: visible
+
+  .navbar
+    > a:hover
+      opacity: 0.3
+
+  .navbar-logo
+    height: $navbar-logo-height
+    margin: (($navbar-minheight - $navbar-logo-height) / 2) 0 // margins + LOGO_HEIGHT = navbar-minheight
+
+@media(min-width $screen-lg-min)
+  .navbar--md
+    padding-right: $baseline * 12
+    padding-left: $baseline * 12
+
+//
+// iOS fix: in order for the overflow: hidden in the body to work
+// -------------------------------------------
+body.no-scroll
+  position: fixed
+  width: 100%
+  height: 100%
+
+  .menu
+    box-shadow(5px 0 15px 0 rgba(0, 0, 0, 0.3))
+
+body
+  overflow-x: hidden
+  overflow-y: visible

@@ -1,0 +1,14 @@
+query UserList($limit: Int, $offset: Int, $orderBy: [UsersOrderingInputObjectType]) {
+  Users(limit: $limit, offset: $offset, orderBy: $orderBy) {
+    count
+    nodes {
+      id
+      name
+      email
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}

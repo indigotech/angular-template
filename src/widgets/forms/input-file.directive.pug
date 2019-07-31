@@ -1,0 +1,14 @@
+doctype html
+
+input(#field, [id]="id", type="file", (change)="onChangeListener($event)")
+label.input-label([attr.for]="id") {{ label }}
+br
+label.input-file(*ngIf="!canDownload", [attr.for]="id", [class.is-filled]="inputValue == fileName")
+  span.fa.fa-upload
+  span {{ inputValue }}
+.input-file.is-download(*ngIf="canDownload", (click)="onDownloadTap($event)")
+  span.fa.fa-download
+  span {{ inputValue }}
+a.btn-link.input-file-erase(*ngIf="inputValue != placeholder", (click)="onEraseTap($event)")
+  span.fa.fa-close
+  span Remover

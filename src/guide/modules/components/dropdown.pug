@@ -1,0 +1,91 @@
+main.container
+  header
+    h1.text-center Dropdown
+
+  .row
+    .col-xs-12
+      h2 Autoexpand
+      p Use 
+        code.code [autoExpand]="'true'"
+        | &nbsp;if you want the dropwdown open/collapse automatically.
+
+  .g-example
+    .row
+      .col-xs-6
+        tq-dropdown([autoExpand]="true")
+          .dropdown-heading
+            .navbar-item
+              a.navbar-item-action Autoexpand Dropdown
+                span.dropdown-icon.mi.mi-keyboard-arrow-down
+              
+          .dropdown-body
+            ul.lst
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 1
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 2
+
+      .col-xs-6
+        tq-dropdown([autoExpand]="false")
+          .dropdown-heading
+            .navbar-item
+              a.navbar-item-action Click Dropdown
+                span.dropdown-icon.mi.mi-keyboard-arrow-down
+              
+          .dropdown-body
+            ul.lst
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 1
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 2
+
+  .row
+    .col-xs-12
+      h2 With buttons
+      p Use 
+        code.code [autoExpand]="'true'"
+        | &nbsp;if you want the dropwdown open/collapse automatically.
+
+  .g-example
+    .row
+      .col-xs-6
+        tq-dropdown([autoExpand]="true")
+          .dropdown-heading
+            a.btn.btn--primary Autoexpand Button
+              span.dropdown-icon.mi.mi-keyboard-arrow-down
+
+          .dropdown-body
+            ul.lst
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 1
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 2
+
+      .col-xs-6
+        tq-dropdown([autoExpand]="false")
+          .dropdown-heading
+            a.btn.btn--primary Button
+              span.dropdown-icon.mi.mi-keyboard-arrow-down
+
+          .dropdown-body
+            ul.lst
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 1
+              li.lst-item
+                a.lst-item-table.lst-item-table--action
+                  .lst-item-cell.lst-item-cell--expanded
+                    label Item 2

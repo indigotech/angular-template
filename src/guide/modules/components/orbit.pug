@@ -1,0 +1,79 @@
+include guide-mixins
+
+main.container
+  header
+    h1.text-center Carousel - Orbit
+
+  .row
+    .col-xs-12
+      p It uses three directives:&nbsp;
+        code.code tq-orbit
+        | , which is the container, and its children:&nbsp;
+        code.code tq-orbit-item
+        | &nbsp;and&nbsp;
+        code.code tq-orbit-control
+        | &nbsp;. The carousel translates the items left/right with swipe gestures or arrows. The control is optional (either a page control or thumbnails) and it is only shown when 1+ items.
+
+      h2 Item tap and arrows
+      ul
+        li
+          p In order to recognize carousel-item taps, set the tap event &nbsp;
+            code.code orbitItemTap
+            | . You can find the index at&nbsp;
+            code.code $event.index
+            | .
+        li
+          p Click events (e.g. buttons) inside a carousel-item are also recognized. It is important to notice that if there is an element with a click and the carousel-item tap is implemented, then both events will be triggered.
+        li
+          p It is possible to show/hide arrows (translate to left/right), which are always hidden in mobile.
+
+      tq-orbit([arrows]="true")
+        tq-orbit-item(*ngFor="let item of [7,8,9,10]; let i=index; trackBy: i")
+          +placeholder-tile(true)
+          p
+          p.text-center
+            button.btn.btn--secondary((click)="onButtonTapped($event)") Click the button {{ i }}!
+        tq-orbit-control
+
+      h2 Autoplay
+      p The default autoplay interval time is 3s, but you can set it with&nbsp;
+        code.code interval
+        | . Swipes and taps stop the autoplay.
+
+      tq-orbit((orbitItemTap)="onOrbitItemTap($event)", [autoplay]="true")
+        tq-orbit-item(*ngFor="let item of [1,2,3,4]; let i=index; trackBy: i")
+          img.expanded(src="http://placehold.it/600x280/")
+        tq-orbit-control
+
+      h2 Infinite loop
+      p The infinite loop mode goes back to the fist item when the carousel reaches the last item.
+
+      tq-orbit((orbitItemTap)="onOrbitItemTap($event)", [infinite]="true", [autoplay]="true")
+        tq-orbit-item(*ngFor="let item of [1,2,3,4]; let i=index; trackBy: i")
+          +placeholder-tile(true)
+        tq-orbit-control
+
+      h2 Carousel with thumbnails
+      p Set &nbsp;
+        code.code thumbnail
+        | &nbsp;to true and&nbsp;
+        code.code thumbnailItems
+        | &nbsp;with the imgs array. A click on the thumbnails stops the autoplay.
+
+      tq-orbit((orbitItemTap)="onOrbitItemTap($event)", [infinite]="true", [autoplay]="true", [interval]="5000")
+        tq-orbit-item(*ngFor="let src of imgArray; let i=index; trackBy: i")
+          img.expanded(src="{{ src }}")
+        tq-orbit-control([pageControl]="false", [thumbnail]="true", [thumbnailItems]="imgArray")
+
+      h2 Only one carousel item
+      p A lonely item does not have swipe gestures, nor a page control.
+
+      tq-orbit((orbitItemTap)="onOrbitItemTap($event)")
+        tq-orbit-control
+        tq-orbit-item
+          +placeholder-tile(true)
+
+      tq-orbit((orbitItemTap)="onOrbitItemTap($event)", [infinite]="true")
+        tq-orbit-control
+        tq-orbit-item
+          +placeholder-tile(true)

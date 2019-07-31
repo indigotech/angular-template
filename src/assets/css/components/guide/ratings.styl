@@ -1,0 +1,107 @@
+$star-filled-color = #F9BD00
+$star-empty-color  = $color-gray-light
+$star-size = 15px
+$star-size-large = 20px
+$star-half-position-adjustment = (-1) * ($star-size / 2)
+$star-half-position-adjustment-large = (-1) * ($star-size-large / 2)
+
+.rating
+
+  &.rating-unavailable
+    .rating-count
+      margin-left: 0
+
+  &.rating-large
+    .rating-star
+      font-size: $star-size-large
+    .rating-star-half:after
+      left: $star-half-position-adjustment-large
+      margin-right: $star-half-position-adjustment-large
+    .rating-count
+      line-height: $star-size-large
+
+.rating-star
+  @extend .fa
+  display: inline
+  font-size: $star-size
+
+.rating-star-half:before
+.rating-star-5:before,
+.rating-star-4:before,
+.rating-star-3:before,
+.rating-star-2:before,
+.rating-star-1:before,
+.rating-star-0:before
+  color: $star-filled-color
+
+.rating-star-5:after,
+.rating-star-4:after,
+.rating-star-3:after,
+.rating-star-2:after,
+.rating-star-1:after,
+.rating-star-0:after
+  color: $star-empty-color
+
+.rating-star-half
+  position:relative
+
+  &:before
+    position: inherit
+    z-index: 1
+
+  &:after
+    position: relative
+    top: 0
+    left: $star-half-position-adjustment
+    z-index: 0
+    margin-right: $star-half-position-adjustment
+
+.rating-star-5:before
+  content: $fa-star+$fa-star+$fa-star+$fa-star+$fa-star
+
+.rating-star-4
+  &:before
+    content: $fa-star+$fa-star+$fa-star+$fa-star
+  &.rating-star-half:before
+    content: $fa-star+$fa-star+$fa-star+$fa-star+$fa-star-half
+  &:after
+    content: $fa-star
+
+.rating-star-3
+  &:before
+    content: $fa-star+$fa-star+$fa-star
+  &.rating-star-half:before
+    content: $fa-star+$fa-star+$fa-star+$fa-star-half
+  &:after
+    content: $fa-star+$fa-star
+
+.rating-star-2
+  &:before
+    content: $fa-star+$fa-star
+  &.rating-star-half:before
+    content: $fa-star+$fa-star+$fa-star-half
+  &:after
+    content: $fa-star+$fa-star+$fa-star
+
+.rating-star-1
+  &:before
+    content: $fa-star
+  &.rating-star-half:before
+    content: $fa-star+$fa-star-half
+  &:after
+    content: $fa-star+$fa-star+$fa-star+$fa-star
+
+.rating-star-0
+  &.rating-star-half:before
+    content: $fa-star-half
+  &:after
+    content: $fa-star+$fa-star+$fa-star+$fa-star+$fa-star
+
+.rating-count
+  display: inline-block
+  make-components-margin(left, $space-xsmall)
+  font-family: $font-family-primary
+  font-size: $font-size-small
+  font-weight: $font-weight-regular
+  line-height: $star-size
+  color: $color-black

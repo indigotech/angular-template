@@ -1,0 +1,43 @@
+.input-float-labeled-container
+  position: relative
+
+.input-float-labeled
+  height: $spacement-xlarge
+  margin-top: ($spacement-large + 4px)
+
+.input-float-label
+  position: absolute
+  top: ($spacement-large + 4px)
+  left: 0
+  margin: 0
+  padding-left: $forms-content-margin
+  font-size: $font-size-small
+  line-height: $forms-input-height
+
+  transition(all $animation-duration ease-in-out)
+
+  &.is-floated
+    top: $spacement-xsmall
+    padding-left: 0
+    font-size: $font-size-xsmall
+    line-height: $spacement-medium
+
+  &.is-disabled
+    color: $input-color-disabled
+
+// accessory
+
+.input-float-labeled-container.input-container-decoration
+  .input-float-label:not(.is-floated)
+    padding-left: $forms-input-accessory-width
+
+  .input-container-ic--decoration
+    margin-top: $spacement-medium
+
+
+// validations
+
+.form-group:not(.has-error)
+  input:focus
+    ~ .is-floated
+      color: $color-accessory

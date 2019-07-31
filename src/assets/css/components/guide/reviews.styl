@@ -1,0 +1,9 @@
+.review
+  make-components-margin(bottom, $space-small)
+
+  .review-description-limited
+    @media (max-width $screen-sm-max)
+      ellipsis($font-size-small, 1.3, 3)
+
+  .rating-star
+    make-components-margin(right, $space-xsmall)

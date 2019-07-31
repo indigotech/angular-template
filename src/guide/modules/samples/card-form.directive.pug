@@ -1,0 +1,46 @@
+doctype html
+
+form([formGroup]="form", (ngSubmit)="onSubmit(form)", novalidate)
+  .well
+    .row
+      .col-xs-12
+        //- TODO This flash should be a notification! But the notification system is in the app/shared folder...
+        //- tq-notification([name]="notificationName")
+        tq-flash([type]="msgType", [description]="msg", (isClosedChange)="hideMsg()")
+
+        .form-control([class.has-error]="(submitted || creditCardField.touched) && !creditCardField.valid")
+          tq-input-base(formControlName="creditCardField", [inputId]="'creditCardInput'", [label]="'Credit card number *'", [type]="'tel'", [placeholder]="'1234 5678 9012 3456'", [mask]="'9999 9999 9999 9999 999'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || creditCardField.touched) && creditCardField.errors")
+            span(*ngIf="creditCardField.hasError('required')") Credit card number is required.
+            span(*ngIf="creditCardField.hasError('pattern')") Credit card number must contain only numbers.
+            span(*ngIf="creditCardField.hasError('minlength')") Credit card number must contain at least 14 digits.
+            span(*ngIf="creditCardField.hasError('maxlength')") Credit card number must contain no more than 19 digits.
+            span(*ngIf="!creditCardField.hasError('pattern') && !creditCardField.hasError('minlength') && !creditCardField.hasError('maxlength') && creditCardField.hasError('creditCardNumber')") Credit card number invalid.
+
+        .form-control([class.has-error]="(submitted || cardholderNameField.touched) && !cardholderNameField.valid")
+          tq-input-base(formControlName="cardholderNameField", [inputId]="'cardholderNameInput'", [label]="'Cardholder name *'", [type]="'text'", [placeholder]="'John Doe'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || cardholderNameField.touched) && cardholderNameField.errors")
+            span(*ngIf="cardholderNameField.hasError('required')") Cardholder name is required.
+
+        .form-control([class.has-error]="(submitted || cvvField.touched) && !cvvField.valid")
+          tq-input-base(formControlName="cvvField", [inputId]="'cvvInput'", [label]="'CVV *'", [type]="'tel'", [placeholder]="'123'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || cvvField.touched) && cvvField.errors")
+            span(*ngIf="cvvField.hasError('required')") CVV is required.
+            span(*ngIf="cvvField.hasError('pattern')") CVV must contain only numbers.
+            span(*ngIf="cvvField.hasError('minlength')") CVV must contain at least 3 digits.
+            span(*ngIf="cvvField.hasError('maxlength')") CVV must contain no more than 4 digits.
+
+        .form-control([class.has-error]="(submitted || expirationDateField.touched) && !expirationDateField.valid")
+          tq-input-base(formControlName="expirationDateField", [inputId]="'expirationDateInput'", [label]="'Expiration date *'", [type]="'tel'", [placeholder]="'mm/yyyy'", [mask]="'99/9999'")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || expirationDateField.touched) && expirationDateField.errors")
+            span(*ngIf="expirationDateField.hasError('required')") Expiration date is required.
+            span(*ngIf="!expirationDateField.hasError('required') && expirationDateField.hasError('datePattern')") Expiration date must be in the format mm/aaaa.
+            span(*ngIf="!expirationDateField.hasError('required') && !expirationDateField.hasError('datePattern') && expirationDateField.hasError('creditCardDate')") Type a valid date.
+
+    .row
+      .col-xs-12
+        .text-right
+          a.btn.btn--neutral.btn--outline.container-margin-right Cancelar
+          tq-button-loading([classes]="'btn--primary'", [isLoading]="isBtnLoading")
+            span {{ submitBtnText }}
+          p.caption {{ form.value | json }}

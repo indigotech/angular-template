@@ -1,0 +1,15 @@
+ellipsis(font-size, line-height, n-lines)
+  display: block /* Fallback for non-webkit */
+  display: -webkit-box
+  // max-height: (n-lines * font-size) + (n-lines - 0.3)*(font-size/(( 1.3 - 1 )*10))
+  max-height: (n-lines * line-height * font-size)
+  overflow: hidden
+  -webkit-box-orient: vertical
+  -webkit-line-clamp: n-lines
+  white-space: normal
+  text-overflow: ellipsis
+  font-size: font-size
+  line-height: line-height
+
+/*Fixed line-height in number for better alignment in all devices*/
+// line-height is not fixed anymore. In fact, the max-height fix is calculated based on it.

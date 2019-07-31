@@ -1,0 +1,150 @@
+$transition-duration = 0.3s
+
+$menu-bg-color      = $color-black
+$menu-text-color    = $color-white
+
+$menu-width = 260px
+
+
+.content-overlay
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 49
+  background-color: $color-black
+  opacity: 0
+  transition(opacity $animation-duration ease-out)
+  transform(translate(-100%, 0))
+
+
+.menu
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 50
+  width: $menu-width
+  height: 100%
+  padding-bottom: $spacement-small
+  background-color: $menu-bg-color
+  color: $menu-text-color
+  overflow-x: hidden
+  overflow-y: scroll
+
+  backface-visibility(hidden)
+  transform(translate((0 - $menu-width), 0))
+  transition(all $transition-duration ease-out)
+  -webkit-overflow-scrolling: touch
+
+.menu-type--right
+  .menu
+    right: 0
+    left: auto
+    transform(translate(($menu-width), 0))
+
+
+.menu-type--pushable
+  &.menu-type--is-open
+    .menu
+      transform(translate(0, 0))
+
+    .menu-pushable
+      transform(translate($menu-width, 0))
+
+    .content-overlay
+      opacity: 0.3
+      transform(translate(0, 0))
+  
+    &.menu-type--right
+      .menu-pushable
+        transform(translate((0 - $menu-width), 0))
+
+.menu-type--overflow
+  &.menu-type--is-open
+    .menu
+      transform(translate(0, 0))
+  
+    .content-overlay
+      opacity: 0.3
+      transform(translate(0, 0))
+
+
+.menu-type--fixed
+  &.menu-type--is-open
+    .menu
+      transform(translate(0, 0))
+  
+    .content-overlay
+      opacity: 0.3
+      transform(translate(0, 0))
+
+// Responsive menu
+// Tablet/desktop
+@media(min-width $screen-md-min)
+  .menu-type--fixed
+    .menu-container
+      display: table
+      width: 100%
+      height: 100vh
+
+    .menu
+      position: relative
+      display: table-cell
+      width: $menu-width
+      transform(translate(0, 0))
+
+    .content
+      display: table-cell
+
+
+
+.menu-pushable
+  transition(all $animation-duration ease-out)
+
+
+.menu-list
+  width: 100%
+  padding: $half-gutter
+  text-align: left
+  list-style: none
+
+  .menu-item + .menu-item
+    margin-top: $spacement-xsmall
+
+  .menu-item-action
+    display: block
+    padding: 11px $spacement-medium
+    font-family: $font-family-primary
+    font-size: $font-size-xsmall
+    font-weight: $font-weight-regular
+    letter-spacing: $letter-spacing-large
+    text-transform: uppercase
+    border-radius: $default-border-radius
+    color: $menu-text-color
+
+    .fa-chevron-down
+      transition(all $transition-duration ease-out)
+
+    &:hover,
+    &:active
+      opacity: 0.3
+
+      .fa-chevron-down
+        transform(rotate(-180deg))
+
+  .menu-item-icon
+    width: 20px
+    text-align: center
+
+.h__menu
+  margin-bottom: 0
+  padding: 0 $half-gutter
+  color: $menu-text-color
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+flsh-style($color, $text-color)
+  background-color: highlightColorXLight($color)
+  border: 1px solid $color
+  color: $color
+
+  .flsh-description, .flsh-close
+    color: highlightColorDark($text-color)
+
+.flsh-container
+  overflow: hidden
+
+.flsh
+  display: table
+  width: 100%
+  margin-top: $spacement-medium
+  margin-bottom: $spacement-medium
+  border-radius: $default-border-radius
+
+.flsh-cell
+  display: table-cell
+  padding-top: $spacement-small
+  padding-bottom: $spacement-small
+  padding-left: $spacement-small
+  vertical-align: middle
+
+  &:last-of-type
+    padding-right: $spacement-small
+
+.flsh-cell--expanded
+  width: 100%
+
+.flsh--success
+  flsh-style($color-success, highlightColorDark($color-success))
+
+.flsh--info
+  flsh-style($color-info, highlightColorDark($color-info))
+
+.flsh--warning
+  flsh-style($color-warning, highlightColorDark($color-warning))
+
+.flsh--error
+  flsh-style($color-alert, highlightColorDark($color-alert))

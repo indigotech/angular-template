@@ -1,0 +1,6 @@
+svg#svg-icon(viewBox="0 0 70 70", preserveAspectRatio="xMidYMid meet", (click)="runAnimation()")
+  defs
+    pattern#square-pattern(x="10", y="10", width="20", height="20", patternUnits="userSpaceOnUse")
+      rect(x="0", y="0", width="10", height="10", fill="#f3f3f3")
+      rect(x="10", y="10", width="10", height="10", fill="#f3f3f3")
+  rect(x="0", y="0", width="70", height="70", fill="url(#square-pattern)")

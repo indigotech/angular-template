@@ -1,0 +1,194 @@
+main.container
+  header
+    h1.text-center Buttons
+
+  .row
+    .col-xs-12
+      h2 Default
+      p For each button, add the class&nbsp;
+        code.code .btn
+        | &nbsp;and the type of button&nbsp;
+        code.code .btn--primary
+        |,&nbsp;
+        code.code .btn--secondary
+        |,&nbsp;
+        code.code .btn--accessory
+        |,&nbsp;
+        code.code .btn--success
+        |,&nbsp;
+        code.code .btn--warning
+        |,&nbsp;
+        code.code .btn--alert
+        |,&nbsp;
+        code.code .btn--call-to-action
+        | &nbsp;or
+        code.code .btn--neutral
+        | .
+
+  .g-example
+    .row
+      .col-xs-12
+        button.btn.btn--primary.g-action-spacement Primary
+        button.btn.btn--secondary.g-action-spacement Secondary
+        button.btn.btn--accessory.g-action-spacement Accessory
+        button.btn.btn--success.g-action-spacement Success
+        button.btn.btn--warning.g-action-spacement Warning
+        button.btn.btn--alert.g-action-spacement Alert
+        button.btn.btn--call-to-action.g-action-spacement Call to action
+        button.btn.btn--neutral.g-action-spacement Neutral
+
+  .row
+    .col-xs-12
+      h2 Outlined
+      p Add class&nbsp;
+        code.code .btn--outline
+        | &nbsp;for this type of buttons.
+
+  .g-example
+    .row
+      .col-xs-12
+        button.btn.btn--primary.btn--outline.g-action-spacement Primary
+        button.btn.btn--secondary.btn--outline.g-action-spacement Secondary
+        button.btn.btn--accessory.btn--outline.g-action-spacement Accessory
+        button.btn.btn--success.btn--outline.g-action-spacement Success
+        button.btn.btn--warning.btn--outline.g-action-spacement Warning
+        button.btn.btn--alert.btn--outline.g-action-spacement Alert
+        button.btn.btn--call-to-action.btn--outline.g-action-spacement Call to action
+        button.btn.btn--neutral.btn--outline.g-action-spacement Neutral
+
+  .row
+    .col-xs-12
+      h2 Disabled
+      p Add the attr&nbsp;
+        code.code disabled
+        | .
+
+  .g-example
+    .row
+      .col-xs-12
+        button.btn.btn--primary.g-action-spacement(disabled) Primary
+        button.btn.btn--secondary.g-action-spacement(disabled) Secondary
+        button.btn.btn--accessory.g-action-spacement(disabled) Accessory
+        button.btn.btn--success.g-action-spacement(disabled) Success
+        button.btn.btn--warning.g-action-spacement.disabled Warning
+        button.btn.btn--alert.g-action-spacement.disabled Alert
+        button.btn.btn--call-to-action.g-action-spacement.disabled Call to action
+        button.btn.btn--neutral.g-action-spacement.disabled Neutral
+
+      .col-xs-12
+        button.btn.btn--primary.btn--outline.g-action-spacement.disabled Primary
+        button.btn.btn--secondary.btn--outline.g-action-spacement.disabled Secondary
+        button.btn.btn--accessory.btn--outline.g-action-spacement.disabled Accessory
+        button.btn.btn--success.btn--outline.g-action-spacement.disabled Success
+        button.btn.btn--warning.btn--outline.g-action-spacement(disabled) Warning
+        button.btn.btn--alert.btn--outline.g-action-spacement(disabled) Alert
+        button.btn.btn--call-to-action.btn--outline.g-action-spacement(disabled) Call to action
+        button.btn.btn--neutral.btn--outline.g-action-spacement(disabled) Neutral
+
+  .row
+    .col-xs-12
+      h2 Block
+      p Add class&nbsp;
+        code.code .btn--block
+        | &nbsp;to create block level buttons — those that span the full width of a parent.
+
+  .g-example
+    .row
+      .col-xs-12.col-sm-6
+        button.btn.btn--primary.btn--block.g-action-spacement Primary
+        button.btn.btn--secondary.btn--block.g-action-spacement Secondary
+        button.btn.btn--accessory.btn--block.g-action-spacement Accessory
+        button.btn.btn--success.btn--block.g-action-spacement Success
+      .col-xs-12.col-sm-6
+        button.btn.btn--warning.btn--block.g-action-spacement Warning
+        button.btn.btn--alert.btn--block.g-action-spacement Alert
+        button.btn.btn--call-to-action.btn--block.g-action-spacement Call to action
+        button.btn.btn--neutral.btn--block.g-action-spacement Neutral
+
+  .row
+    .col-xs-12
+      h2 Sizes
+      p Add class&nbsp;
+        code.code .btn--large
+        | &nbsp;or
+        code.code .btn--small
+        | &nbsp;for additional sizes.
+
+  .g-example
+    .row
+      .col-xs-12
+
+        button.btn.btn--primary.btn--large.g-action-spacement Large
+        button.btn.btn--accessory.g-action-spacement Default
+        button.btn.btn--call-to-action.btn--small.g-action-spacement Small
+
+  .row
+    .col-xs-12
+      h2 Buttons with icon
+      p Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested
+        code.code span
+        | &nbsp;and apply the icon classes to the
+        code.code span
+        | . Check the examples below.
+
+  .g-example
+    .row
+      .col-xs-12
+        button.btn.btn--primary.btn--large.g-action-spacement
+          span.ic.ic-cart
+          span Primary
+        button.btn.btn--secondary.btn--large.g-action-spacement
+          span.fa.fa-refresh
+          span Secondary
+        button.btn.btn--accessory.g-action-spacement
+          span.fa.fa-info
+          span Accessory
+        button.btn.btn--success.g-action-spacement
+          span.ic.ic-check
+          span Success
+        button.btn.btn--warning.btn--small.g-action-spacement
+          span.fa.fa-exclamation
+          span Warning
+        button.btn.btn--alert.btn--small.g-action-spacement
+          span.ic.ic-trash
+          span Alert
+
+  .row
+    .col-xs-12
+      h2 Buttons with loading
+      p Use the directive
+        code.code tq-button-loading
+        |  and style it with the property
+        code.code [classes]
+        |  e.g. "btn--primary btn--block btn--outline". The classes must be separated by spaces.
+
+  .g-example
+    tq-button-loading([classes]="'btn--primary btn--small g-action-spacement'", (click)="onButtonTap()", [isLoading]="isButtonLoading")
+      span Primary small
+
+    tq-button-loading([classes]="'btn--call-to-action btn--large g-action-spacement'", (click)="onButtonTap()", [isLoading]="isButtonLoading")
+      span Call-to-action large
+
+    tq-button-loading([classes]="'btn--neutral btn--block g-action-spacement'", (click)="onButtonTap()", [isLoading]="isButtonLoading")
+      span Neutral block
+
+  .row
+    .col-xs-12
+      h2 Buttons group
+      p To create a button group, add the class
+        code.code .btn-group
+        | nbsp;and inside that element, add the amount of required elements. Check the below examples.
+  .g-example
+    .row
+      .col-xs-12
+        .btn-group.g-action-spacement
+          button.btn.btn--success Left
+          button.btn.btn--warning Center
+          button.btn.btn--alert Right
+    .row
+      .col-xs-12
+        .btn-group.btn-group-justified.g-action-spacement
+          button.btn.btn-group-item-4.btn--outline.btn--primary Left
+          button.btn.btn-group-item-4.btn--outline.btn--primary Middle
+          button.btn.btn-group-item-4.btn--outline.btn--primary Middle
+          button.btn.btn-group-item-4.btn--outline.btn--primary Right

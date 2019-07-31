@@ -1,0 +1,3111 @@
+/*!
+ *  Font Awesome 4.7 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+.fa
+  display: inline-block
+  font: normal normal normal 20px/1 $icon-fontawesome
+  line-height: 1
+  text-rendering: auto
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  transition(font-size 0.2s ease-in-out)
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg
+  font-size: 1.33333333em
+  line-height: 0.75em
+  vertical-align: -15%
+
+.fa-2x
+  font-size: 2em
+
+.fa-3x
+  font-size: 3em
+
+.fa-4x
+  font-size: 4em
+
+.fa-5x
+  font-size: 5em
+
+.fa-fw
+  width: 1.28571429em
+  text-align: center
+
+.fa-ul
+  padding-left: 0
+  margin-left: 2.14285714em
+  list-style-type: none
+
+.fa-ul > li
+  position: relative
+
+.fa-li
+  position: absolute
+  left: -2.14285714em
+  width: 2.14285714em
+  top: 0.14285714em
+  text-align: center
+
+.fa-li.fa-lg
+  left: -1.85714286em
+
+.fa-border
+  padding: .2em .25em .15em
+  border: solid 0.08em #eeeeee
+  border-radius: .1em
+
+.fa-pull-left
+  float: left
+
+.fa-pull-right
+  float: right
+
+.fa.fa-pull-left
+  margin-right: .3em
+
+.fa.fa-pull-right
+  margin-left: .3em
+
+.fa.pull-left
+  margin-right: .3em
+
+.fa.pull-right
+  margin-left: .3em
+
+.fa-spin
+  -webkit-animation: fa-spin 2s infinite linear
+  animation: fa-spin 2s infinite linear
+
+.fa-pulse
+  -webkit-animation: fa-spin 1s infinite steps(8)
+  animation: fa-spin 1s infinite steps(8)
+
+@-webkit-keyframes fa-spin
+  0%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+
+  100%
+    -webkit-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+@keyframes fa-spin
+  0%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+
+  100%
+    -webkit-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+
+.fa-rotate-90
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)"
+  -webkit-transform: rotate(90deg)
+  -ms-transform: rotate(90deg)
+  transform: rotate(90deg)
+
+.fa-rotate-180
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"
+  -webkit-transform: rotate(180deg)
+  -ms-transform: rotate(180deg)
+  transform: rotate(180deg)
+
+.fa-rotate-270
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)"
+  -webkit-transform: rotate(270deg)
+  -ms-transform: rotate(270deg)
+  transform: rotate(270deg)
+
+.fa-flip-horizontal
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)"
+  -webkit-transform: scale(-1, 1)
+  -ms-transform: scale(-1, 1)
+  transform: scale(-1, 1)
+
+.fa-flip-vertical
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)"
+  -webkit-transform: scale(1, -1)
+  -ms-transform: scale(1, -1)
+  transform: scale(1, -1)
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical
+  filter: none
+
+.fa-stack
+  position: relative
+  display: inline-block
+  width: 2em
+  height: 2em
+  line-height: 2em
+  vertical-align: middle
+
+.fa-stack-1x,
+.fa-stack-2x
+  position: absolute
+  left: 0
+  width: 100%
+  text-align: center
+
+.fa-stack-1x
+  line-height: inherit
+
+.fa-stack-2x
+  font-size: 2em
+
+.fa-inverse
+  color: #ffffff
+//
+// Variables
+// --------------------------------------------------
+$fa-500px = "\f26e"
+$fa-address-book = "\f2b9"
+$fa-address-book-o = "\f2ba"
+$fa-address-card = "\f2bb"
+$fa-address-card-o = "\f2bc"
+$fa-adjust = "\f042"
+$fa-adn = "\f170"
+$fa-align-center = "\f037"
+$fa-align-justify = "\f039"
+$fa-align-left = "\f036"
+$fa-align-right = "\f038"
+$fa-amazon = "\f270"
+$fa-ambulance = "\f0f9"
+$fa-american-sign-language-interpreting = "\f2a3"
+$fa-anchor = "\f13d"
+$fa-android = "\f17b"
+$fa-angellist = "\f209"
+$fa-angle-double-down = "\f103"
+$fa-angle-double-left = "\f100"
+$fa-angle-double-right = "\f101"
+$fa-angle-double-up = "\f102"
+$fa-angle-down = "\f107"
+$fa-angle-left = "\f104"
+$fa-angle-right = "\f105"
+$fa-angle-up = "\f106"
+$fa-apple = "\f179"
+$fa-archive = "\f187"
+$fa-area-chart = "\f1fe"
+$fa-arrow-circle-down = "\f0ab"
+$fa-arrow-circle-left = "\f0a8"
+$fa-arrow-circle-o-down = "\f01a"
+$fa-arrow-circle-o-left = "\f190"
+$fa-arrow-circle-o-right = "\f18e"
+$fa-arrow-circle-o-up = "\f01b"
+$fa-arrow-circle-right = "\f0a9"
+$fa-arrow-circle-up = "\f0aa"
+$fa-arrow-down = "\f063"
+$fa-arrow-left = "\f060"
+$fa-arrow-right = "\f061"
+$fa-arrow-up = "\f062"
+$fa-arrows = "\f047"
+$fa-arrows-alt = "\f0b2"
+$fa-arrows-h = "\f07e"
+$fa-arrows-v = "\f07d"
+$fa-asl-interpreting = "\f2a3"
+$fa-assistive-listening-systems = "\f2a2"
+$fa-asterisk = "\f069"
+$fa-at = "\f1fa"
+$fa-audio-description = "\f29e"
+$fa-automobile = "\f1b9"
+$fa-backward = "\f04a"
+$fa-balance-scale = "\f24e"
+$fa-ban = "\f05e"
+$fa-bandcamp = "\f2d5"
+$fa-bank = "\f19c"
+$fa-bar-chart = "\f080"
+$fa-bar-chart-o = "\f080"
+$fa-barcode = "\f02a"
+$fa-bars = "\f0c9"
+$fa-bath = "\f2cd"
+$fa-bathtub = "\f2cd"
+$fa-battery = "\f240"
+$fa-battery-0 = "\f244"
+$fa-battery-1 = "\f243"
+$fa-battery-2 = "\f242"
+$fa-battery-3 = "\f241"
+$fa-battery-4 = "\f240"
+$fa-battery-empty = "\f244"
+$fa-battery-full = "\f240"
+$fa-battery-half = "\f242"
+$fa-battery-quarter = "\f243"
+$fa-battery-three-quarters = "\f241"
+$fa-bed = "\f236"
+$fa-beer = "\f0fc"
+$fa-behance = "\f1b4"
+$fa-behance-square = "\f1b5"
+$fa-bell = "\f0f3"
+$fa-bell-o = "\f0a2"
+$fa-bell-slash = "\f1f6"
+$fa-bell-slash-o = "\f1f7"
+$fa-bicycle = "\f206"
+$fa-binoculars = "\f1e5"
+$fa-birthday-cake = "\f1fd"
+$fa-bitbucket = "\f171"
+$fa-bitbucket-square = "\f172"
+$fa-bitcoin = "\f15a"
+$fa-black-tie = "\f27e"
+$fa-blind = "\f29d"
+$fa-bluetooth = "\f293"
+$fa-bluetooth-b = "\f294"
+$fa-bold = "\f032"
+$fa-bolt = "\f0e7"
+$fa-bomb = "\f1e2"
+$fa-book = "\f02d"
+$fa-bookmark = "\f02e"
+$fa-bookmark-o = "\f097"
+$fa-braille = "\f2a1"
+$fa-briefcase = "\f0b1"
+$fa-btc = "\f15a"
+$fa-bug = "\f188"
+$fa-building = "\f1ad"
+$fa-building-o = "\f0f7"
+$fa-bullhorn = "\f0a1"
+$fa-bullseye = "\f140"
+$fa-bus = "\f207"
+$fa-buysellads = "\f20d"
+$fa-cab = "\f1ba"
+$fa-calculator = "\f1ec"
+$fa-calendar = "\f073"
+$fa-calendar-check-o = "\f274"
+$fa-calendar-minus-o = "\f272"
+$fa-calendar-o = "\f133"
+$fa-calendar-plus-o = "\f271"
+$fa-calendar-times-o = "\f273"
+$fa-camera = "\f030"
+$fa-camera-retro = "\f083"
+$fa-car = "\f1b9"
+$fa-caret-down = "\f0d7"
+$fa-caret-left = "\f0d9"
+$fa-caret-right = "\f0da"
+$fa-caret-square-o-down = "\f150"
+$fa-caret-square-o-left = "\f191"
+$fa-caret-square-o-right = "\f152"
+$fa-caret-square-o-up = "\f151"
+$fa-caret-up = "\f0d8"
+$fa-cart-arrow-down = "\f218"
+$fa-cart-plus = "\f217"
+$fa-cc = "\f20a"
+$fa-cc-amex = "\f1f3"
+$fa-cc-diners-club = "\f24c"
+$fa-cc-discover = "\f1f2"
+$fa-cc-jcb = "\f24b"
+$fa-cc-mastercard = "\f1f1"
+$fa-cc-paypal = "\f1f4"
+$fa-cc-stripe = "\f1f5"
+$fa-cc-visa = "\f1f0"
+$fa-certificate = "\f0a3"
+$fa-chain = "\f0c1"
+$fa-chain-broken = "\f127"
+$fa-check = "\f00c"
+$fa-check-circle = "\f058"
+$fa-check-circle-o = "\f05d"
+$fa-check-square = "\f14a"
+$fa-check-square-o = "\f046"
+$fa-chevron-circle-down = "\f13a"
+$fa-chevron-circle-left = "\f137"
+$fa-chevron-circle-right = "\f138"
+$fa-chevron-circle-up = "\f139"
+$fa-chevron-down = "\f078"
+$fa-chevron-left = "\f053"
+$fa-chevron-right = "\f054"
+$fa-chevron-up = "\f077"
+$fa-child = "\f1ae"
+$fa-chrome = "\f268"
+$fa-circle = "\f111"
+$fa-circle-o = "\f10c"
+$fa-circle-o-notch = "\f1ce"
+$fa-circle-thin = "\f1db"
+$fa-clipboard = "\f0ea"
+$fa-clock-o = "\f017"
+$fa-clone = "\f24d"
+$fa-close = "\f00d"
+$fa-cloud = "\f0c2"
+$fa-cloud-download = "\f0ed"
+$fa-cloud-upload = "\f0ee"
+$fa-cny = "\f157"
+$fa-code = "\f121"
+$fa-code-fork = "\f126"
+$fa-codepen = "\f1cb"
+$fa-codiepie = "\f284"
+$fa-coffee = "\f0f4"
+$fa-cog = "\f013"
+$fa-cogs = "\f085"
+$fa-columns = "\f0db"
+$fa-comment = "\f075"
+$fa-comment-o = "\f0e5"
+$fa-commenting = "\f27a"
+$fa-commenting-o = "\f27b"
+$fa-comments = "\f086"
+$fa-comments-o = "\f0e6"
+$fa-compass = "\f14e"
+$fa-compress = "\f066"
+$fa-connectdevelop = "\f20e"
+$fa-contao = "\f26d"
+$fa-copy = "\f0c5"
+$fa-copyright = "\f1f9"
+$fa-creative-commons = "\f25e"
+$fa-credit-card = "\f09d"
+$fa-credit-card-alt = "\f283"
+$fa-crop = "\f125"
+$fa-crosshairs = "\f05b"
+$fa-css3 = "\f13c"
+$fa-cube = "\f1b2"
+$fa-cubes = "\f1b3"
+$fa-cut = "\f0c4"
+$fa-cutlery = "\f0f5"
+$fa-dashboard = "\f0e4"
+$fa-dashcube = "\f210"
+$fa-database = "\f1c0"
+$fa-deaf = "\f2a4"
+$fa-deafness = "\f2a4"
+$fa-dedent = "\f03b"
+$fa-delicious = "\f1a5"
+$fa-desktop = "\f108"
+$fa-deviantart = "\f1bd"
+$fa-diamond = "\f219"
+$fa-digg = "\f1a6"
+$fa-dollar = "\f155"
+$fa-dot-circle-o = "\f192"
+$fa-download = "\f019"
+$fa-dribbble = "\f17d"
+$fa-drivers-license = "\f2c2"
+$fa-drivers-license-o = "\f2c3"
+$fa-dropbox = "\f16b"
+$fa-drupal = "\f1a9"
+$fa-edge = "\f282"
+$fa-edit = "\f044"
+$fa-eercast = "\f2da"
+$fa-eject = "\f052"
+$fa-ellipsis-h = "\f141"
+$fa-ellipsis-v = "\f142"
+$fa-empire = "\f1d1"
+$fa-envelope = "\f0e0"
+$fa-envelope-o = "\f003"
+$fa-envelope-open = "\f2b6"
+$fa-envelope-open-o = "\f2b7"
+$fa-envelope-square = "\f199"
+$fa-envira = "\f299"
+$fa-eraser = "\f12d"
+$fa-etsy = "\f2d7"
+$fa-eur = "\f153"
+$fa-euro = "\f153"
+$fa-exchange = "\f0ec"
+$fa-exclamation = "\f12a"
+$fa-exclamation-circle = "\f06a"
+$fa-exclamation-triangle = "\f071"
+$fa-expand = "\f065"
+$fa-expeditedssl = "\f23e"
+$fa-external-link = "\f08e"
+$fa-external-link-square = "\f14c"
+$fa-eye = "\f06e"
+$fa-eye-slash = "\f070"
+$fa-eyedropper = "\f1fb"
+$fa-fa = "\f2b4"
+$fa-facebook = "\f09a"
+$fa-facebook-f = "\f09a"
+$fa-facebook-official = "\f230"
+$fa-facebook-square = "\f082"
+$fa-fast-backward = "\f049"
+$fa-fast-forward = "\f050"
+$fa-fax = "\f1ac"
+$fa-feed = "\f09e"
+$fa-female = "\f182"
+$fa-fighter-jet = "\f0fb"
+$fa-file = "\f15b"
+$fa-file-archive-o = "\f1c6"
+$fa-file-audio-o = "\f1c7"
+$fa-file-code-o = "\f1c9"
+$fa-file-excel-o = "\f1c3"
+$fa-file-image-o = "\f1c5"
+$fa-file-movie-o = "\f1c8"
+$fa-file-o = "\f016"
+$fa-file-pdf-o = "\f1c1"
+$fa-file-photo-o = "\f1c5"
+$fa-file-picture-o = "\f1c5"
+$fa-file-powerpoint-o = "\f1c4"
+$fa-file-sound-o = "\f1c7"
+$fa-file-text = "\f15c"
+$fa-file-text-o = "\f0f6"
+$fa-file-video-o = "\f1c8"
+$fa-file-word-o = "\f1c2"
+$fa-file-zip-o = "\f1c6"
+$fa-files-o = "\f0c5"
+$fa-film = "\f008"
+$fa-filter = "\f0b0"
+$fa-fire = "\f06d"
+$fa-fire-extinguisher = "\f134"
+$fa-firefox = "\f269"
+$fa-first-order = "\f2b0"
+$fa-flag = "\f024"
+$fa-flag-checkered = "\f11e"
+$fa-flag-o = "\f11d"
+$fa-flash = "\f0e7"
+$fa-flask = "\f0c3"
+$fa-flickr = "\f16e"
+$fa-floppy-o = "\f0c7"
+$fa-folder = "\f07b"
+$fa-folder-o = "\f114"
+$fa-folder-open = "\f07c"
+$fa-folder-open-o = "\f115"
+$fa-font = "\f031"
+$fa-font-awesome = "\f2b4"
+$fa-fonticons = "\f280"
+$fa-fort-awesome = "\f286"
+$fa-forumbee = "\f211"
+$fa-forward = "\f04e"
+$fa-foursquare = "\f180"
+$fa-free-code-camp = "\f2c5"
+$fa-frown-o = "\f119"
+$fa-futbol-o = "\f1e3"
+$fa-gamepad = "\f11b"
+$fa-gavel = "\f0e3"
+$fa-gbp = "\f154"
+$fa-ge = "\f1d1"
+$fa-gear = "\f013"
+$fa-gears = "\f085"
+$fa-genderless = "\f22d"
+$fa-get-pocket = "\f265"
+$fa-gg = "\f260"
+$fa-gg-circle = "\f261"
+$fa-gift = "\f06b"
+$fa-git = "\f1d3"
+$fa-git-square = "\f1d2"
+$fa-github = "\f09b"
+$fa-github-alt = "\f113"
+$fa-github-square = "\f092"
+$fa-gitlab = "\f296"
+$fa-gittip = "\f184"
+$fa-glass = "\f000"
+$fa-glide = "\f2a5"
+$fa-glide-g = "\f2a6"
+$fa-globe = "\f0ac"
+$fa-google = "\f1a0"
+$fa-google-plus = "\f0d5"
+$fa-google-plus-circle = "\f2b3"
+$fa-google-plus-official = "\f2b3"
+$fa-google-plus-square = "\f0d4"
+$fa-google-wallet = "\f1ee"
+$fa-graduation-cap = "\f19d"
+$fa-gratipay = "\f184"
+$fa-grav = "\f2d6"
+$fa-group = "\f0c0"
+$fa-h-square = "\f0fd"
+$fa-hacker-news = "\f1d4"
+$fa-hand-grab-o = "\f255"
+$fa-hand-lizard-o = "\f258"
+$fa-hand-o-down = "\f0a7"
+$fa-hand-o-left = "\f0a5"
+$fa-hand-o-right = "\f0a4"
+$fa-hand-o-up = "\f0a6"
+$fa-hand-paper-o = "\f256"
+$fa-hand-peace-o = "\f25b"
+$fa-hand-pointer-o = "\f25a"
+$fa-hand-rock-o = "\f255"
+$fa-hand-scissors-o = "\f257"
+$fa-hand-spock-o = "\f259"
+$fa-hand-stop-o = "\f256"
+$fa-handshake-o = "\f2b5"
+$fa-hard-of-hearing = "\f2a4"
+$fa-hashtag = "\f292"
+$fa-hdd-o = "\f0a0"
+$fa-header = "\f1dc"
+$fa-headphones = "\f025"
+$fa-heart = "\f004"
+$fa-heart-o = "\f08a"
+$fa-heartbeat = "\f21e"
+$fa-history = "\f1da"
+$fa-home = "\f015"
+$fa-hospital-o = "\f0f8"
+$fa-hotel = "\f236"
+$fa-hourglass = "\f254"
+$fa-hourglass-1 = "\f251"
+$fa-hourglass-2 = "\f252"
+$fa-hourglass-3 = "\f253"
+$fa-hourglass-end = "\f253"
+$fa-hourglass-half = "\f252"
+$fa-hourglass-o = "\f250"
+$fa-hourglass-start = "\f251"
+$fa-houzz = "\f27c"
+$fa-html5 = "\f13b"
+$fa-i-cursor = "\f246"
+$fa-id-badge = "\f2c1"
+$fa-id-card = "\f2c2"
+$fa-id-card-o = "\f2c3"
+$fa-ils = "\f20b"
+$fa-image = "\f03e"
+$fa-imdb = "\f2d8"
+$fa-inbox = "\f01c"
+$fa-indent = "\f03c"
+$fa-industry = "\f275"
+$fa-info = "\f129"
+$fa-info-circle = "\f05a"
+$fa-inr = "\f156"
+$fa-instagram = "\f16d"
+$fa-institution = "\f19c"
+$fa-internet-explorer = "\f26b"
+$fa-intersex = "\f224"
+$fa-ioxhost = "\f208"
+$fa-italic = "\f033"
+$fa-joomla = "\f1aa"
+$fa-jpy = "\f157"
+$fa-jsfiddle = "\f1cc"
+$fa-key = "\f084"
+$fa-keyboard-o = "\f11c"
+$fa-krw = "\f159"
+$fa-language = "\f1ab"
+$fa-laptop = "\f109"
+$fa-lastfm = "\f202"
+$fa-lastfm-square = "\f203"
+$fa-leaf = "\f06c"
+$fa-leanpub = "\f212"
+$fa-legal = "\f0e3"
+$fa-lemon-o = "\f094"
+$fa-level-down = "\f149"
+$fa-level-up = "\f148"
+$fa-life-bouy = "\f1cd"
+$fa-life-buoy = "\f1cd"
+$fa-life-ring = "\f1cd"
+$fa-life-saver = "\f1cd"
+$fa-lightbulb-o = "\f0eb"
+$fa-line-chart = "\f201"
+$fa-link = "\f0c1"
+$fa-linkedin = "\f0e1"
+$fa-linkedin-square = "\f08c"
+$fa-linode = "\f2b8"
+$fa-linux = "\f17c"
+$fa-list = "\f03a"
+$fa-list-alt = "\f022"
+$fa-list-ol = "\f0cb"
+$fa-list-ul = "\f0ca"
+$fa-location-arrow = "\f124"
+$fa-lock = "\f023"
+$fa-long-arrow-down = "\f175"
+$fa-long-arrow-left = "\f177"
+$fa-long-arrow-right = "\f178"
+$fa-long-arrow-up = "\f176"
+$fa-low-vision = "\f2a8"
+$fa-magic = "\f0d0"
+$fa-magnet = "\f076"
+$fa-mail-forward = "\f064"
+$fa-mail-reply = "\f112"
+$fa-mail-reply-all = "\f122"
+$fa-male = "\f183"
+$fa-map = "\f279"
+$fa-map-marker = "\f041"
+$fa-map-o = "\f278"
+$fa-map-pin = "\f276"
+$fa-map-signs = "\f277"
+$fa-mars = "\f222"
+$fa-mars-double = "\f227"
+$fa-mars-stroke = "\f229"
+$fa-mars-stroke-h = "\f22b"
+$fa-mars-stroke-v = "\f22a"
+$fa-maxcdn = "\f136"
+$fa-meanpath = "\f20c"
+$fa-medium = "\f23a"
+$fa-medkit = "\f0fa"
+$fa-meetup = "\f2e0"
+$fa-meh-o = "\f11a"
+$fa-mercury = "\f223"
+$fa-microchip = "\f2db"
+$fa-microphone = "\f130"
+$fa-microphone-slash = "\f131"
+$fa-minus = "\f068"
+$fa-minus-circle = "\f056"
+$fa-minus-square = "\f146"
+$fa-minus-square-o = "\f147"
+$fa-mixcloud = "\f289"
+$fa-mobile = "\f10b"
+$fa-mobile-phone = "\f10b"
+$fa-modx = "\f285"
+$fa-money = "\f0d6"
+$fa-moon-o = "\f186"
+$fa-mortar-board = "\f19d"
+$fa-motorcycle = "\f21c"
+$fa-mouse-pointer = "\f245"
+$fa-music = "\f001"
+$fa-navicon = "\f0c9"
+$fa-neuter = "\f22c"
+$fa-newspaper-o = "\f1ea"
+$fa-object-group = "\f247"
+$fa-object-ungroup = "\f248"
+$fa-odnoklassniki = "\f263"
+$fa-odnoklassniki-square = "\f264"
+$fa-opencart = "\f23d"
+$fa-openid = "\f19b"
+$fa-opera = "\f26a"
+$fa-optin-monster = "\f23c"
+$fa-outdent = "\f03b"
+$fa-pagelines = "\f18c"
+$fa-paint-brush = "\f1fc"
+$fa-paper-plane = "\f1d8"
+$fa-paper-plane-o = "\f1d9"
+$fa-paperclip = "\f0c6"
+$fa-paragraph = "\f1dd"
+$fa-paste = "\f0ea"
+$fa-pause = "\f04c"
+$fa-pause-circle = "\f28b"
+$fa-pause-circle-o = "\f28c"
+$fa-paw = "\f1b0"
+$fa-paypal = "\f1ed"
+$fa-pencil = "\f040"
+$fa-pencil-square = "\f14b"
+$fa-pencil-square-o = "\f044"
+$fa-percent = "\f295"
+$fa-phone = "\f095"
+$fa-phone-square = "\f098"
+$fa-photo = "\f03e"
+$fa-picture-o = "\f03e"
+$fa-pie-chart = "\f200"
+$fa-pied-piper = "\f2ae"
+$fa-pied-piper-alt = "\f1a8"
+$fa-pied-piper-pp = "\f1a7"
+$fa-pinterest = "\f0d2"
+$fa-pinterest-p = "\f231"
+$fa-pinterest-square = "\f0d3"
+$fa-plane = "\f072"
+$fa-play = "\f04b"
+$fa-play-circle = "\f144"
+$fa-play-circle-o = "\f01d"
+$fa-plug = "\f1e6"
+$fa-plus = "\f067"
+$fa-plus-circle = "\f055"
+$fa-plus-square = "\f0fe"
+$fa-plus-square-o = "\f196"
+$fa-podcast = "\f2ce"
+$fa-power-off = "\f011"
+$fa-print = "\f02f"
+$fa-product-hunt = "\f288"
+$fa-puzzle-piece = "\f12e"
+$fa-qq = "\f1d6"
+$fa-qrcode = "\f029"
+$fa-question = "\f128"
+$fa-question-circle = "\f059"
+$fa-question-circle-o = "\f29c"
+$fa-quora = "\f2c4"
+$fa-quote-left = "\f10d"
+$fa-quote-right = "\f10e"
+$fa-ra = "\f1d0"
+$fa-random = "\f074"
+$fa-ravelry = "\f2d9"
+$fa-rebel = "\f1d0"
+$fa-recycle = "\f1b8"
+$fa-reddit = "\f1a1"
+$fa-reddit-alien = "\f281"
+$fa-reddit-square = "\f1a2"
+$fa-refresh = "\f021"
+$fa-registered = "\f25d"
+$fa-remove = "\f00d"
+$fa-renren = "\f18b"
+$fa-reorder = "\f0c9"
+$fa-repeat = "\f01e"
+$fa-reply = "\f112"
+$fa-reply-all = "\f122"
+$fa-resistance = "\f1d0"
+$fa-retweet = "\f079"
+$fa-rmb = "\f157"
+$fa-road = "\f018"
+$fa-rocket = "\f135"
+$fa-rotate-left = "\f0e2"
+$fa-rotate-right = "\f01e"
+$fa-rouble = "\f158"
+$fa-rss = "\f09e"
+$fa-rss-square = "\f143"
+$fa-rub = "\f158"
+$fa-ruble = "\f158"
+$fa-rupee = "\f156"
+$fa-s15 = "\f2cd"
+$fa-safari = "\f267"
+$fa-save = "\f0c7"
+$fa-scissors = "\f0c4"
+$fa-scribd = "\f28a"
+$fa-search = "\f002"
+$fa-search-minus = "\f010"
+$fa-search-plus = "\f00e"
+$fa-sellsy = "\f213"
+$fa-send = "\f1d8"
+$fa-send-o = "\f1d9"
+$fa-server = "\f233"
+$fa-share = "\f064"
+$fa-share-alt = "\f1e0"
+$fa-share-alt-square = "\f1e1"
+$fa-share-square = "\f14d"
+$fa-share-square-o = "\f045"
+$fa-shekel = "\f20b"
+$fa-sheqel = "\f20b"
+$fa-shield = "\f132"
+$fa-ship = "\f21a"
+$fa-shirtsinbulk = "\f214"
+$fa-shopping-bag = "\f290"
+$fa-shopping-basket = "\f291"
+$fa-shopping-cart = "\f07a"
+$fa-shower = "\f2cc"
+$fa-sign-in = "\f090"
+$fa-sign-language = "\f2a7"
+$fa-sign-out = "\f08b"
+$fa-signal = "\f012"
+$fa-signing = "\f2a7"
+$fa-simplybuilt = "\f215"
+$fa-sitemap = "\f0e8"
+$fa-skyatlas = "\f216"
+$fa-skype = "\f17e"
+$fa-slack = "\f198"
+$fa-sliders = "\f1de"
+$fa-slideshare = "\f1e7"
+$fa-smile-o = "\f118"
+$fa-snapchat = "\f2ab"
+$fa-snapchat-ghost = "\f2ac"
+$fa-snapchat-square = "\f2ad"
+$fa-snowflake-o = "\f2dc"
+$fa-soccer-ball-o = "\f1e3"
+$fa-sort = "\f0dc"
+$fa-sort-alpha-asc = "\f15d"
+$fa-sort-alpha-desc = "\f15e"
+$fa-sort-amount-asc = "\f160"
+$fa-sort-amount-desc = "\f161"
+$fa-sort-asc = "\f0de"
+$fa-sort-desc = "\f0dd"
+$fa-sort-down = "\f0dd"
+$fa-sort-numeric-asc = "\f162"
+$fa-sort-numeric-desc = "\f163"
+$fa-sort-up = "\f0de"
+$fa-soundcloud = "\f1be"
+$fa-space-shuttle = "\f197"
+$fa-spinner = "\f110"
+$fa-spoon = "\f1b1"
+$fa-spotify = "\f1bc"
+$fa-square = "\f0c8"
+$fa-square-o = "\f096"
+$fa-stack-exchange = "\f18d"
+$fa-stack-overflow = "\f16c"
+$fa-star = "\f005"
+$fa-star-half = "\f089"
+$fa-star-half-empty = "\f123"
+$fa-star-half-full = "\f123"
+$fa-star-half-o = "\f123"
+$fa-star-o = "\f006"
+$fa-steam = "\f1b6"
+$fa-steam-square = "\f1b7"
+$fa-step-backward = "\f048"
+$fa-step-forward = "\f051"
+$fa-stethoscope = "\f0f1"
+$fa-sticky-note = "\f249"
+$fa-sticky-note-o = "\f24a"
+$fa-stop = "\f04d"
+$fa-stop-circle = "\f28d"
+$fa-stop-circle-o = "\f28e"
+$fa-street-view = "\f21d"
+$fa-strikethrough = "\f0cc"
+$fa-stumbleupon = "\f1a4"
+$fa-stumbleupon-circle = "\f1a3"
+$fa-subscript = "\f12c"
+$fa-subway = "\f239"
+$fa-suitcase = "\f0f2"
+$fa-sun-o = "\f185"
+$fa-superpowers = "\f2dd"
+$fa-superscript = "\f12b"
+$fa-support = "\f1cd"
+$fa-table = "\f0ce"
+$fa-tablet = "\f10a"
+$fa-tachometer = "\f0e4"
+$fa-tag = "\f02b"
+$fa-tags = "\f02c"
+$fa-tasks = "\f0ae"
+$fa-taxi = "\f1ba"
+$fa-telegram = "\f2c6"
+$fa-television = "\f26c"
+$fa-tencent-weibo = "\f1d5"
+$fa-terminal = "\f120"
+$fa-text-height = "\f034"
+$fa-text-width = "\f035"
+$fa-th = "\f00a"
+$fa-th-large = "\f009"
+$fa-th-list = "\f00b"
+$fa-themeisle = "\f2b2"
+$fa-thermometer = "\f2c7"
+$fa-thermometer-0 = "\f2cb"
+$fa-thermometer-1 = "\f2ca"
+$fa-thermometer-2 = "\f2c9"
+$fa-thermometer-3 = "\f2c8"
+$fa-thermometer-4 = "\f2c7"
+$fa-thermometer-empty = "\f2cb"
+$fa-thermometer-full = "\f2c7"
+$fa-thermometer-half = "\f2c9"
+$fa-thermometer-quarter = "\f2ca"
+$fa-thermometer-three-quarters = "\f2c8"
+$fa-thumb-tack = "\f08d"
+$fa-thumbs-down = "\f165"
+$fa-thumbs-o-down = "\f088"
+$fa-thumbs-o-up = "\f087"
+$fa-thumbs-up = "\f164"
+$fa-ticket = "\f145"
+$fa-times = "\f00d"
+$fa-times-circle = "\f057"
+$fa-times-circle-o = "\f05c"
+$fa-times-rectangle = "\f2d3"
+$fa-times-rectangle-o = "\f2d4"
+$fa-tint = "\f043"
+$fa-toggle-down = "\f150"
+$fa-toggle-left = "\f191"
+$fa-toggle-off = "\f204"
+$fa-toggle-on = "\f205"
+$fa-toggle-right = "\f152"
+$fa-toggle-up = "\f151"
+$fa-trademark = "\f25c"
+$fa-train = "\f238"
+$fa-transgender = "\f224"
+$fa-transgender-alt = "\f225"
+$fa-trash = "\f1f8"
+$fa-trash-o = "\f014"
+$fa-tree = "\f1bb"
+$fa-trello = "\f181"
+$fa-tripadvisor = "\f262"
+$fa-trophy = "\f091"
+$fa-truck = "\f0d1"
+$fa-try = "\f195"
+$fa-tty = "\f1e4"
+$fa-tumblr = "\f173"
+$fa-tumblr-square = "\f174"
+$fa-turkish-lira = "\f195"
+$fa-tv = "\f26c"
+$fa-twitch = "\f1e8"
+$fa-twitter = "\f099"
+$fa-twitter-square = "\f081"
+$fa-umbrella = "\f0e9"
+$fa-underline = "\f0cd"
+$fa-undo = "\f0e2"
+$fa-universal-access = "\f29a"
+$fa-university = "\f19c"
+$fa-unlink = "\f127"
+$fa-unlock = "\f09c"
+$fa-unlock-alt = "\f13e"
+$fa-unsorted = "\f0dc"
+$fa-upload = "\f093"
+$fa-usb = "\f287"
+$fa-usd = "\f155"
+$fa-user = "\f007"
+$fa-user-circle = "\f2bd"
+$fa-user-circle-o = "\f2be"
+$fa-user-md = "\f0f0"
+$fa-user-o = "\f2c0"
+$fa-user-plus = "\f234"
+$fa-user-secret = "\f21b"
+$fa-user-times = "\f235"
+$fa-users = "\f0c0"
+$fa-vcard = "\f2bb"
+$fa-vcard-o = "\f2bc"
+$fa-venus = "\f221"
+$fa-venus-double = "\f226"
+$fa-venus-mars = "\f228"
+$fa-viacoin = "\f237"
+$fa-viadeo = "\f2a9"
+$fa-viadeo-square = "\f2aa"
+$fa-video-camera = "\f03d"
+$fa-vimeo = "\f27d"
+$fa-vimeo-square = "\f194"
+$fa-vine = "\f1ca"
+$fa-vk = "\f189"
+$fa-volume-control-phone = "\f2a0"
+$fa-volume-down = "\f027"
+$fa-volume-off = "\f026"
+$fa-volume-up = "\f028"
+$fa-warning = "\f071"
+$fa-wechat = "\f1d7"
+$fa-weibo = "\f18a"
+$fa-weixin = "\f1d7"
+$fa-whatsapp = "\f232"
+$fa-wheelchair = "\f193"
+$fa-wheelchair-alt = "\f29b"
+$fa-wifi = "\f1eb"
+$fa-wikipedia-w = "\f266"
+$fa-window-close = "\f2d3"
+$fa-window-close-o = "\f2d4"
+$fa-window-maximize = "\f2d0"
+$fa-window-minimize = "\f2d1"
+$fa-window-restore = "\f2d2"
+$fa-windows = "\f17a"
+$fa-won = "\f159"
+$fa-wordpress = "\f19a"
+$fa-wpbeginner = "\f297"
+$fa-wpexplorer = "\f2de"
+$fa-wpforms = "\f298"
+$fa-wrench = "\f0ad"
+$fa-xing = "\f168"
+$fa-xing-square = "\f169"
+$fa-y-combinator = "\f23b"
+$fa-y-combinator-square = "\f1d4"
+$fa-yahoo = "\f19e"
+$fa-yc = "\f23b"
+$fa-yc-square = "\f1d4"
+$fa-yelp = "\f1e9"
+$fa-yen = "\f157"
+$fa-yoast = "\f2b1"
+$fa-youtube = "\f167"
+$fa-youtube-play = "\f16a"
+$fa-youtube-square = "\f166"
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-glass:before
+  content: $fa-glass
+
+.fa-music:before
+  content: $fa-music
+
+.fa-search:before
+  content: $fa-search
+
+.fa-envelope-o:before
+  content: $fa-envelope-o
+
+.fa-heart:before
+  content: $fa-heart
+
+.fa-star:before
+  content: $fa-star
+
+.fa-star-o:before
+  content: $fa-star-o
+
+.fa-user:before
+  content: $fa-user
+
+.fa-film:before
+  content: $fa-film
+
+.fa-th-large:before
+  content: $fa-th-large
+
+.fa-th:before
+  content: $fa-th
+
+.fa-th-list:before
+  content: $fa-th-list
+
+.fa-check:before
+  content: $fa-check
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before
+  content: $fa-times
+
+.fa-search-plus:before
+  content: $fa-search-plus
+
+.fa-search-minus:before
+  content: $fa-search-minus
+
+.fa-power-off:before
+  content: $fa-power-off
+
+.fa-signal:before
+  content: $fa-signal
+
+.fa-gear:before,
+.fa-cog:before
+  content: $fa-cog
+
+.fa-trash-o:before
+  content: $fa-trash-o
+
+.fa-home:before
+  content: $fa-home
+
+.fa-file-o:before
+  content: $fa-file-o
+
+.fa-clock-o:before
+  content: $fa-clock-o
+
+.fa-road:before
+  content: $fa-road
+
+.fa-download:before
+  content: $fa-download
+
+.fa-arrow-circle-o-down:before
+  content: $fa-arrow-circle-o-down
+
+.fa-arrow-circle-o-up:before
+  content: $fa-arrow-circle-o-up
+
+.fa-inbox:before
+  content: $fa-inbox
+
+.fa-play-circle-o:before
+  content: $fa-play-circle-o
+
+.fa-rotate-right:before,
+.fa-repeat:before
+  content: $fa-repeat
+
+.fa-refresh:before
+  content: $fa-refresh
+
+.fa-list-alt:before
+  content: $fa-list-alt
+
+.fa-lock:before
+  content: $fa-lock
+
+.fa-flag:before
+  content: $fa-flag
+
+.fa-headphones:before
+  content: $fa-headphones
+
+.fa-volume-off:before
+  content: $fa-volume-off
+
+.fa-volume-down:before
+  content: $fa-volume-down
+
+.fa-volume-up:before
+  content: $fa-volume-up
+
+.fa-qrcode:before
+  content: $fa-qrcode
+
+.fa-barcode:before
+  content: $fa-barcode
+
+.fa-tag:before
+  content: $fa-tag
+
+.fa-tags:before
+  content: $fa-tags
+
+.fa-book:before
+  content: $fa-book
+
+.fa-bookmark:before
+  content: $fa-bookmark
+
+.fa-print:before
+  content: $fa-print
+
+.fa-camera:before
+  content: $fa-camera
+
+.fa-font:before
+  content: $fa-font
+
+.fa-bold:before
+  content: $fa-bold
+
+.fa-italic:before
+  content: $fa-italic
+
+.fa-text-height:before
+  content: $fa-text-height
+
+.fa-text-width:before
+  content: $fa-text-width
+
+.fa-align-left:before
+  content: $fa-align-left
+
+.fa-align-center:before
+  content: $fa-align-center
+
+.fa-align-right:before
+  content: $fa-align-right
+
+.fa-align-justify:before
+  content: $fa-align-justify
+
+.fa-list:before
+  content: $fa-list
+
+.fa-dedent:before,
+.fa-outdent:before
+  content: $fa-outdent
+
+.fa-indent:before
+  content: $fa-indent
+
+.fa-video-camera:before
+  content: $fa-video-camera
+
+.fa-photo:before,
+.fa-image:before,
+.fa-picture-o:before
+  content: $fa-picture-o
+
+.fa-pencil:before
+  content: $fa-pencil
+
+.fa-map-marker:before
+  content: $fa-map-marker
+
+.fa-adjust:before
+  content: $fa-adjust
+
+.fa-tint:before
+  content: $fa-tint
+
+.fa-edit:before,
+.fa-pencil-square-o:before
+  content: $fa-pencil-square-o
+
+.fa-share-square-o:before
+  content: $fa-share-square-o
+
+.fa-check-square-o:before
+  content: $fa-check-square-o
+
+.fa-arrows:before
+  content: $fa-arrows
+
+.fa-step-backward:before
+  content: $fa-step-backward
+
+.fa-fast-backward:before
+  content: $fa-fast-backward
+
+.fa-backward:before
+  content: $fa-backward
+
+.fa-play:before
+  content: $fa-play
+
+.fa-pause:before
+  content: $fa-pause
+
+.fa-stop:before
+  content: $fa-stop
+
+.fa-forward:before
+  content: $fa-forward
+
+.fa-fast-forward:before
+  content: $fa-fast-forward
+
+.fa-step-forward:before
+  content: $fa-step-forward
+
+.fa-eject:before
+  content: $fa-eject
+
+.fa-chevron-left:before
+  content: $fa-chevron-left
+
+.fa-chevron-right:before
+  content: $fa-chevron-right
+
+.fa-plus-circle:before
+  content: $fa-plus-circle
+
+.fa-minus-circle:before
+  content: $fa-minus-circle
+
+.fa-times-circle:before
+  content: $fa-times-circle
+
+.fa-check-circle:before
+  content: $fa-check-circle
+
+.fa-question-circle:before
+  content: $fa-question-circle
+
+.fa-info-circle:before
+  content: $fa-info-circle
+
+.fa-crosshairs:before
+  content: $fa-crosshairs
+
+.fa-times-circle-o:before
+  content: $fa-times-circle-o
+
+.fa-check-circle-o:before
+  content: $fa-check-circle-o
+
+.fa-ban:before
+  content: $fa-ban
+
+.fa-arrow-left:before
+  content: $fa-arrow-left
+
+.fa-arrow-right:before
+  content: $fa-arrow-right
+
+.fa-arrow-up:before
+  content: $fa-arrow-up
+
+.fa-arrow-down:before
+  content: $fa-arrow-down
+
+.fa-mail-forward:before,
+.fa-share:before
+  content: $fa-share
+
+.fa-expand:before
+  content: $fa-expand
+
+.fa-compress:before
+  content: $fa-compress
+
+.fa-plus:before
+  content: $fa-plus
+
+.fa-minus:before
+  content: $fa-minus
+
+.fa-asterisk:before
+  content: $fa-asterisk
+
+.fa-exclamation-circle:before
+  content: $fa-exclamation-circle
+
+.fa-gift:before
+  content: $fa-gift
+
+.fa-leaf:before
+  content: $fa-leaf
+
+.fa-fire:before
+  content: $fa-fire
+
+.fa-eye:before
+  content: $fa-eye
+
+.fa-eye-slash:before
+  content: $fa-eye-slash
+
+.fa-warning:before,
+.fa-exclamation-triangle:before
+  content: $fa-exclamation-triangle
+
+.fa-plane:before
+  content: $fa-plane
+
+.fa-calendar:before
+  content: $fa-calendar
+
+.fa-random:before
+  content: $fa-random
+
+.fa-comment:before
+  content: $fa-comment
+
+.fa-magnet:before
+  content: $fa-magnet
+
+.fa-chevron-up:before
+  content: $fa-chevron-up
+
+.fa-chevron-down:before
+  content: $fa-chevron-down
+
+.fa-retweet:before
+  content: $fa-retweet
+
+.fa-shopping-cart:before
+  content: $fa-shopping-cart
+
+.fa-folder:before
+  content: $fa-folder
+
+.fa-folder-open:before
+  content: $fa-folder-open
+
+.fa-arrows-v:before
+  content: $fa-arrows-v
+
+.fa-arrows-h:before
+  content: $fa-arrows-h
+
+.fa-bar-chart-o:before,
+.fa-bar-chart:before
+  content: $fa-bar-chart
+
+.fa-twitter-square:before
+  content: $fa-twitter-square
+
+.fa-facebook-square:before
+  content: $fa-facebook-square
+
+.fa-camera-retro:before
+  content: $fa-camera-retro
+
+.fa-key:before
+  content: $fa-key
+
+.fa-gears:before,
+.fa-cogs:before
+  content: $fa-cogs
+
+.fa-comments:before
+  content: $fa-comments
+
+.fa-thumbs-o-up:before
+  content: $fa-thumbs-o-up
+
+.fa-thumbs-o-down:before
+  content: $fa-thumbs-o-down
+
+.fa-star-half:before
+  content: $fa-star-half
+
+.fa-heart-o:before
+  content: $fa-heart-o
+
+.fa-sign-out:before
+  content: $fa-sign-out
+
+.fa-linkedin-square:before
+  content: $fa-linkedin-square
+
+.fa-thumb-tack:before
+  content: $fa-thumb-tack
+
+.fa-external-link:before
+  content: $fa-external-link
+
+.fa-sign-in:before
+  content: $fa-sign-in
+
+.fa-trophy:before
+  content: $fa-trophy
+
+.fa-github-square:before
+  content: $fa-github-square
+
+.fa-upload:before
+  content: $fa-upload
+
+.fa-lemon-o:before
+  content: $fa-lemon-o
+
+.fa-phone:before
+  content: $fa-phone
+
+.fa-square-o:before
+  content: $fa-square-o
+
+.fa-bookmark-o:before
+  content: $fa-bookmark-o
+
+.fa-phone-square:before
+  content: $fa-phone-square
+
+.fa-twitter:before
+  content: $fa-twitter
+
+.fa-facebook-f:before,
+.fa-facebook:before
+  content: $fa-facebook
+
+.fa-github:before
+  content: $fa-github
+
+.fa-unlock:before
+  content: $fa-unlock
+
+.fa-credit-card:before
+  content: $fa-credit-card
+
+.fa-feed:before,
+.fa-rss:before
+  content: $fa-rss
+
+.fa-hdd-o:before
+  content: $fa-hdd-o
+
+.fa-bullhorn:before
+  content: $fa-bullhorn
+
+.fa-bell:before
+  content: $fa-bell
+
+.fa-certificate:before
+  content: $fa-certificate
+
+.fa-hand-o-right:before
+  content: $fa-hand-o-right
+
+.fa-hand-o-left:before
+  content: $fa-hand-o-left
+
+.fa-hand-o-up:before
+  content: $fa-hand-o-up
+
+.fa-hand-o-down:before
+  content: $fa-hand-o-down
+
+.fa-arrow-circle-left:before
+  content: $fa-arrow-circle-left
+
+.fa-arrow-circle-right:before
+  content: $fa-arrow-circle-right
+
+.fa-arrow-circle-up:before
+  content: $fa-arrow-circle-up
+
+.fa-arrow-circle-down:before
+  content: $fa-arrow-circle-down
+
+.fa-globe:before
+  content: $fa-globe
+
+.fa-wrench:before
+  content: $fa-wrench
+
+.fa-tasks:before
+  content: $fa-tasks
+
+.fa-filter:before
+  content: $fa-filter
+
+.fa-briefcase:before
+  content: $fa-briefcase
+
+.fa-arrows-alt:before
+  content: $fa-arrows-alt
+
+.fa-group:before,
+.fa-users:before
+  content: $fa-users
+
+.fa-chain:before,
+.fa-link:before
+  content: $fa-link
+
+.fa-cloud:before
+  content: $fa-cloud
+
+.fa-flask:before
+  content: $fa-flask
+
+.fa-cut:before,
+.fa-scissors:before
+  content: $fa-scissors
+
+.fa-copy:before,
+.fa-files-o:before
+  content: $fa-files-o
+
+.fa-paperclip:before
+  content: $fa-paperclip
+
+.fa-save:before,
+.fa-floppy-o:before
+  content: $fa-floppy-o
+
+.fa-square:before
+  content: $fa-square
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before
+  content: $fa-bars
+
+.fa-list-ul:before
+  content: $fa-list-ul
+
+.fa-list-ol:before
+  content: $fa-list-ol
+
+.fa-strikethrough:before
+  content: $fa-strikethrough
+
+.fa-underline:before
+  content: $fa-underline
+
+.fa-table:before
+  content: $fa-table
+
+.fa-magic:before
+  content: $fa-magic
+
+.fa-truck:before
+  content: $fa-truck
+
+.fa-pinterest:before
+  content: $fa-pinterest
+
+.fa-pinterest-square:before
+  content: $fa-pinterest-square
+
+.fa-google-plus-square:before
+  content: $fa-google-plus-square
+
+.fa-google-plus:before
+  content: $fa-google-plus
+
+.fa-money:before
+  content: $fa-money
+
+.fa-caret-down:before
+  content: $fa-caret-down
+
+.fa-caret-up:before
+  content: $fa-caret-up
+
+.fa-caret-left:before
+  content: $fa-caret-left
+
+.fa-caret-right:before
+  content: $fa-caret-right
+
+.fa-columns:before
+  content: $fa-columns
+
+.fa-unsorted:before,
+.fa-sort:before
+  content: $fa-sort
+
+.fa-sort-down:before,
+.fa-sort-desc:before
+  content: $fa-sort-desc
+
+.fa-sort-up:before,
+.fa-sort-asc:before
+  content: $fa-sort-asc
+
+.fa-envelope:before
+  content: $fa-envelope
+
+.fa-linkedin:before
+  content: $fa-linkedin
+
+.fa-rotate-left:before,
+.fa-undo:before
+  content: $fa-undo
+
+.fa-legal:before,
+.fa-gavel:before
+  content: $fa-gavel
+
+.fa-dashboard:before,
+.fa-tachometer:before
+  content: $fa-tachometer
+
+.fa-comment-o:before
+  content: $fa-comment-o
+
+.fa-comments-o:before
+  content: $fa-comments-o
+
+.fa-flash:before,
+.fa-bolt:before
+  content: $fa-bolt
+
+.fa-sitemap:before
+  content: $fa-sitemap
+
+.fa-umbrella:before
+  content: $fa-umbrella
+
+.fa-paste:before,
+.fa-clipboard:before
+  content: $fa-clipboard
+
+.fa-lightbulb-o:before
+  content: $fa-lightbulb-o
+
+.fa-exchange:before
+  content: $fa-exchange
+
+.fa-cloud-download:before
+  content: $fa-cloud-download
+
+.fa-cloud-upload:before
+  content: $fa-cloud-upload
+
+.fa-user-md:before
+  content: $fa-user-md
+
+.fa-stethoscope:before
+  content: $fa-stethoscope
+
+.fa-suitcase:before
+  content: $fa-suitcase
+
+.fa-bell-o:before
+  content: $fa-bell-o
+
+.fa-coffee:before
+  content: $fa-coffee
+
+.fa-cutlery:before
+  content: $fa-cutlery
+
+.fa-file-text-o:before
+  content: $fa-file-text-o
+
+.fa-building-o:before
+  content: $fa-building-o
+
+.fa-hospital-o:before
+  content: $fa-hospital-o
+
+.fa-ambulance:before
+  content: $fa-ambulance
+
+.fa-medkit:before
+  content: $fa-medkit
+
+.fa-fighter-jet:before
+  content: $fa-fighter-jet
+
+.fa-beer:before
+  content: $fa-beer
+
+.fa-h-square:before
+  content: $fa-h-square
+
+.fa-plus-square:before
+  content: $fa-plus-square
+
+.fa-angle-double-left:before
+  content: $fa-angle-double-left
+
+.fa-angle-double-right:before
+  content: $fa-angle-double-right
+
+.fa-angle-double-up:before
+  content: $fa-angle-double-up
+
+.fa-angle-double-down:before
+  content: $fa-angle-double-down
+
+.fa-angle-left:before
+  content: $fa-angle-left
+
+.fa-angle-right:before
+  content: $fa-angle-right
+
+.fa-angle-up:before
+  content: $fa-angle-up
+
+.fa-angle-down:before
+  content: $fa-angle-down
+
+.fa-desktop:before
+  content: $fa-desktop
+
+.fa-laptop:before
+  content: $fa-laptop
+
+.fa-tablet:before
+  content: $fa-tablet
+
+.fa-mobile-phone:before,
+.fa-mobile:before
+  content: $fa-mobile
+
+.fa-circle-o:before
+  content: $fa-circle-o
+
+.fa-quote-left:before
+  content: $fa-quote-left
+
+.fa-quote-right:before
+  content: $fa-quote-right
+
+.fa-spinner:before
+  content: $fa-spinner
+
+.fa-circle:before
+  content: $fa-circle
+
+.fa-mail-reply:before,
+.fa-reply:before
+  content: $fa-reply
+
+.fa-github-alt:before
+  content: $fa-github-alt
+
+.fa-folder-o:before
+  content: $fa-folder-o
+
+.fa-folder-open-o:before
+  content: $fa-folder-open-o
+
+.fa-smile-o:before
+  content: $fa-smile-o
+
+.fa-frown-o:before
+  content: $fa-frown-o
+
+.fa-meh-o:before
+  content: $fa-meh-o
+
+.fa-gamepad:before
+  content: $fa-gamepad
+
+.fa-keyboard-o:before
+  content: $fa-keyboard-o
+
+.fa-flag-o:before
+  content: $fa-flag-o
+
+.fa-flag-checkered:before
+  content: $fa-flag-checkered
+
+.fa-terminal:before
+  content: $fa-terminal
+
+.fa-code:before
+  content: $fa-code
+
+.fa-mail-reply-all:before,
+.fa-reply-all:before
+  content: $fa-reply-all
+
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before
+  content: $fa-star-half-o
+
+.fa-location-arrow:before
+  content: $fa-location-arrow
+
+.fa-crop:before
+  content: $fa-crop
+
+.fa-code-fork:before
+  content: $fa-code-fork
+
+.fa-unlink:before,
+.fa-chain-broken:before
+  content: $fa-chain-broken
+
+.fa-question:before
+  content: $fa-question
+
+.fa-info:before
+  content: $fa-info
+
+.fa-exclamation:before
+  content: $fa-exclamation
+
+.fa-superscript:before
+  content: $fa-superscript
+
+.fa-subscript:before
+  content: $fa-subscript
+
+.fa-eraser:before
+  content: $fa-eraser
+
+.fa-puzzle-piece:before
+  content: $fa-puzzle-piece
+
+.fa-microphone:before
+  content: $fa-microphone
+
+.fa-microphone-slash:before
+  content: $fa-microphone-slash
+
+.fa-shield:before
+  content: $fa-shield
+
+.fa-calendar-o:before
+  content: $fa-calendar-o
+
+.fa-fire-extinguisher:before
+  content: $fa-fire-extinguisher
+
+.fa-rocket:before
+  content: $fa-rocket
+
+.fa-maxcdn:before
+  content: $fa-maxcdn
+
+.fa-chevron-circle-left:before
+  content: $fa-chevron-circle-left
+
+.fa-chevron-circle-right:before
+  content: $fa-chevron-circle-right
+
+.fa-chevron-circle-up:before
+  content: $fa-chevron-circle-up
+
+.fa-chevron-circle-down:before
+  content: $fa-chevron-circle-down
+
+.fa-html5:before
+  content: $fa-html5
+
+.fa-css3:before
+  content: $fa-css3
+
+.fa-anchor:before
+  content: $fa-anchor
+
+.fa-unlock-alt:before
+  content: $fa-unlock-alt
+
+.fa-bullseye:before
+  content: $fa-bullseye
+
+.fa-ellipsis-h:before
+  content: $fa-ellipsis-h
+
+.fa-ellipsis-v:before
+  content: $fa-ellipsis-v
+
+.fa-rss-square:before
+  content: $fa-rss-square
+
+.fa-play-circle:before
+  content: $fa-play-circle
+
+.fa-ticket:before
+  content: $fa-ticket
+
+.fa-minus-square:before
+  content: $fa-minus-square
+
+.fa-minus-square-o:before
+  content: $fa-minus-square-o
+
+.fa-level-up:before
+  content: $fa-level-up
+
+.fa-level-down:before
+  content: $fa-level-down
+
+.fa-check-square:before
+  content: $fa-check-square
+
+.fa-pencil-square:before
+  content: $fa-pencil-square
+
+.fa-external-link-square:before
+  content: $fa-external-link-square
+
+.fa-share-square:before
+  content: $fa-share-square
+
+.fa-compass:before
+  content: $fa-compass
+
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before
+  content: $fa-caret-square-o-down
+
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before
+  content: $fa-caret-square-o-up
+
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before
+  content: $fa-caret-square-o-right
+
+.fa-euro:before,
+.fa-eur:before
+  content: $fa-eur
+
+.fa-gbp:before
+  content: $fa-gbp
+
+.fa-dollar:before,
+.fa-usd:before
+  content: $fa-usd
+
+.fa-rupee:before,
+.fa-inr:before
+  content: $fa-inr
+
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before
+  content: $fa-jpy
+
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before
+  content: $fa-rub
+
+.fa-won:before,
+.fa-krw:before
+  content: $fa-krw
+
+.fa-bitcoin:before,
+.fa-btc:before
+  content: $fa-btc
+
+.fa-file:before
+  content: $fa-file
+
+.fa-file-text:before
+  content: $fa-file-text
+
+.fa-sort-alpha-asc:before
+  content: $fa-sort-alpha-asc
+
+.fa-sort-alpha-desc:before
+  content: $fa-sort-alpha-desc
+
+.fa-sort-amount-asc:before
+  content: $fa-sort-amount-asc
+
+.fa-sort-amount-desc:before
+  content: $fa-sort-amount-desc
+
+.fa-sort-numeric-asc:before
+  content: $fa-sort-numeric-asc
+
+.fa-sort-numeric-desc:before
+  content: $fa-sort-numeric-desc
+
+.fa-thumbs-up:before
+  content: $fa-thumbs-up
+
+.fa-thumbs-down:before
+  content: $fa-thumbs-down
+
+.fa-youtube-square:before
+  content: $fa-youtube-square
+
+.fa-youtube:before
+  content: $fa-youtube
+
+.fa-xing:before
+  content: $fa-xing
+
+.fa-xing-square:before
+  content: $fa-xing-square
+
+.fa-youtube-play:before
+  content: $fa-youtube-play
+
+.fa-dropbox:before
+  content: $fa-dropbox
+
+.fa-stack-overflow:before
+  content: $fa-stack-overflow
+
+.fa-instagram:before
+  content: $fa-instagram
+
+.fa-flickr:before
+  content: $fa-flickr
+
+.fa-adn:before
+  content: $fa-adn
+
+.fa-bitbucket:before
+  content: $fa-bitbucket
+
+.fa-bitbucket-square:before
+  content: $fa-bitbucket-square
+
+.fa-tumblr:before
+  content: $fa-tumblr
+
+.fa-tumblr-square:before
+  content: $fa-tumblr-square
+
+.fa-long-arrow-down:before
+  content: $fa-long-arrow-down
+
+.fa-long-arrow-up:before
+  content: $fa-long-arrow-up
+
+.fa-long-arrow-left:before
+  content: $fa-long-arrow-left
+
+.fa-long-arrow-right:before
+  content: $fa-long-arrow-right
+
+.fa-apple:before
+  content: $fa-apple
+
+.fa-windows:before
+  content: $fa-windows
+
+.fa-android:before
+  content: $fa-android
+
+.fa-linux:before
+  content: $fa-linux
+
+.fa-dribbble:before
+  content: $fa-dribbble
+
+.fa-skype:before
+  content: $fa-skype
+
+.fa-foursquare:before
+  content: $fa-foursquare
+
+.fa-trello:before
+  content: $fa-trello
+
+.fa-female:before
+  content: $fa-female
+
+.fa-male:before
+  content: $fa-male
+
+.fa-gittip:before,
+.fa-gratipay:before
+  content: $fa-gratipay
+
+.fa-sun-o:before
+  content: $fa-sun-o
+
+.fa-moon-o:before
+  content: $fa-moon-o
+
+.fa-archive:before
+  content: $fa-archive
+
+.fa-bug:before
+  content: $fa-bug
+
+.fa-vk:before
+  content: $fa-vk
+
+.fa-weibo:before
+  content: $fa-weibo
+
+.fa-renren:before
+  content: $fa-renren
+
+.fa-pagelines:before
+  content: $fa-pagelines
+
+.fa-stack-exchange:before
+  content: $fa-stack-exchange
+
+.fa-arrow-circle-o-right:before
+  content: $fa-arrow-circle-o-right
+
+.fa-arrow-circle-o-left:before
+  content: $fa-arrow-circle-o-left
+
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before
+  content: $fa-caret-square-o-left
+
+.fa-dot-circle-o:before
+  content: $fa-dot-circle-o
+
+.fa-wheelchair:before
+  content: $fa-wheelchair
+
+.fa-vimeo-square:before
+  content: $fa-vimeo-square
+
+.fa-turkish-lira:before,
+.fa-try:before
+  content: $fa-try
+
+.fa-plus-square-o:before
+  content: $fa-plus-square-o
+
+.fa-space-shuttle:before
+  content: $fa-space-shuttle
+
+.fa-slack:before
+  content: $fa-slack
+
+.fa-envelope-square:before
+  content: $fa-envelope-square
+
+.fa-wordpress:before
+  content: $fa-wordpress
+
+.fa-openid:before
+  content: $fa-openid
+
+.fa-institution:before,
+.fa-bank:before,
+.fa-university:before
+  content: $fa-university
+
+.fa-mortar-board:before,
+.fa-graduation-cap:before
+  content: $fa-graduation-cap
+
+.fa-yahoo:before
+  content: $fa-yahoo
+
+.fa-google:before
+  content: $fa-google
+
+.fa-reddit:before
+  content: $fa-reddit
+
+.fa-reddit-square:before
+  content: $fa-reddit-square
+
+.fa-stumbleupon-circle:before
+  content: $fa-stumbleupon-circle
+
+.fa-stumbleupon:before
+  content: $fa-stumbleupon
+
+.fa-delicious:before
+  content: $fa-delicious
+
+.fa-digg:before
+  content: $fa-digg
+
+.fa-pied-piper-pp:before
+  content: $fa-pied-piper-pp
+
+.fa-pied-piper-alt:before
+  content: $fa-pied-piper-alt
+
+.fa-drupal:before
+  content: $fa-drupal
+
+.fa-joomla:before
+  content: $fa-joomla
+
+.fa-language:before
+  content: $fa-language
+
+.fa-fax:before
+  content: $fa-fax
+
+.fa-building:before
+  content: $fa-building
+
+.fa-child:before
+  content: $fa-child
+
+.fa-paw:before
+  content: $fa-paw
+
+.fa-spoon:before
+  content: $fa-spoon
+
+.fa-cube:before
+  content: $fa-cube
+
+.fa-cubes:before
+  content: $fa-cubes
+
+.fa-behance:before
+  content: $fa-behance
+
+.fa-behance-square:before
+  content: $fa-behance-square
+
+.fa-steam:before
+  content: $fa-steam
+
+.fa-steam-square:before
+  content: $fa-steam-square
+
+.fa-recycle:before
+  content: $fa-recycle
+
+.fa-automobile:before,
+.fa-car:before
+  content: $fa-car
+
+.fa-cab:before,
+.fa-taxi:before
+  content: $fa-taxi
+
+.fa-tree:before
+  content: $fa-tree
+
+.fa-spotify:before
+  content: $fa-spotify
+
+.fa-deviantart:before
+  content: $fa-deviantart
+
+.fa-soundcloud:before
+  content: $fa-soundcloud
+
+.fa-database:before
+  content: $fa-database
+
+.fa-file-pdf-o:before
+  content: $fa-file-pdf-o
+
+.fa-file-word-o:before
+  content: $fa-file-word-o
+
+.fa-file-excel-o:before
+  content: $fa-file-excel-o
+
+.fa-file-powerpoint-o:before
+  content: $fa-file-powerpoint-o
+
+.fa-file-photo-o:before,
+.fa-file-picture-o:before,
+.fa-file-image-o:before
+  content: $fa-file-image-o
+
+.fa-file-zip-o:before,
+.fa-file-archive-o:before
+  content: $fa-file-archive-o
+
+.fa-file-sound-o:before,
+.fa-file-audio-o:before
+  content: $fa-file-audio-o
+
+.fa-file-movie-o:before,
+.fa-file-video-o:before
+  content: $fa-file-video-o
+
+.fa-file-code-o:before
+  content: $fa-file-code-o
+
+.fa-vine:before
+  content: $fa-vine
+
+.fa-codepen:before
+  content: $fa-codepen
+
+.fa-jsfiddle:before
+  content: $fa-jsfiddle
+
+.fa-life-bouy:before,
+.fa-life-buoy:before,
+.fa-life-saver:before,
+.fa-support:before,
+.fa-life-ring:before
+  content: $fa-life-ring
+
+.fa-circle-o-notch:before
+  content: $fa-circle-o-notch
+
+.fa-ra:before,
+.fa-resistance:before,
+.fa-rebel:before
+  content: $fa-rebel
+
+.fa-ge:before,
+.fa-empire:before
+  content: $fa-empire
+
+.fa-git-square:before
+  content: $fa-git-square
+
+.fa-git:before
+  content: $fa-git
+
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
+.fa-hacker-news:before
+  content: $fa-hacker-news
+
+.fa-tencent-weibo:before
+  content: $fa-tencent-weibo
+
+.fa-qq:before
+  content: $fa-qq
+
+.fa-wechat:before,
+.fa-weixin:before
+  content: $fa-weixin
+
+.fa-send:before,
+.fa-paper-plane:before
+  content: $fa-paper-plane
+
+.fa-send-o:before,
+.fa-paper-plane-o:before
+  content: $fa-paper-plane-o
+
+.fa-history:before
+  content: $fa-history
+
+.fa-circle-thin:before
+  content: $fa-circle-thin
+
+.fa-header:before
+  content: $fa-header
+
+.fa-paragraph:before
+  content: $fa-paragraph
+
+.fa-sliders:before
+  content: $fa-sliders
+
+.fa-share-alt:before
+  content: $fa-share-alt
+
+.fa-share-alt-square:before
+  content: $fa-share-alt-square
+
+.fa-bomb:before
+  content: $fa-bomb
+
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before
+  content: $fa-futbol-o
+
+.fa-tty:before
+  content: $fa-tty
+
+.fa-binoculars:before
+  content: $fa-binoculars
+
+.fa-plug:before
+  content: $fa-plug
+
+.fa-slideshare:before
+  content: $fa-slideshare
+
+.fa-twitch:before
+  content: $fa-twitch
+
+.fa-yelp:before
+  content: $fa-yelp
+
+.fa-newspaper-o:before
+  content: $fa-newspaper-o
+
+.fa-wifi:before
+  content: $fa-wifi
+
+.fa-calculator:before
+  content: $fa-calculator
+
+.fa-paypal:before
+  content: $fa-paypal
+
+.fa-google-wallet:before
+  content: $fa-google-wallet
+
+.fa-cc-visa:before
+  content: $fa-cc-visa
+
+.fa-cc-mastercard:before
+  content: $fa-cc-mastercard
+
+.fa-cc-discover:before
+  content: $fa-cc-discover
+
+.fa-cc-amex:before
+  content: $fa-cc-amex
+
+.fa-cc-paypal:before
+  content: $fa-cc-paypal
+
+.fa-cc-stripe:before
+  content: $fa-cc-stripe
+
+.fa-bell-slash:before
+  content: $fa-bell-slash
+
+.fa-bell-slash-o:before
+  content: $fa-bell-slash-o
+
+.fa-trash:before
+  content: $fa-trash
+
+.fa-copyright:before
+  content: $fa-copyright
+
+.fa-at:before
+  content: $fa-at
+
+.fa-eyedropper:before
+  content: $fa-eyedropper
+
+.fa-paint-brush:before
+  content: $fa-paint-brush
+
+.fa-birthday-cake:before
+  content: $fa-birthday-cake
+
+.fa-area-chart:before
+  content: $fa-area-chart
+
+.fa-pie-chart:before
+  content: $fa-pie-chart
+
+.fa-line-chart:before
+  content: $fa-line-chart
+
+.fa-lastfm:before
+  content: $fa-lastfm
+
+.fa-lastfm-square:before
+  content: $fa-lastfm-square
+
+.fa-toggle-off:before
+  content: $fa-toggle-off
+
+.fa-toggle-on:before
+  content: $fa-toggle-on
+
+.fa-bicycle:before
+  content: $fa-bicycle
+
+.fa-bus:before
+  content: $fa-bus
+
+.fa-ioxhost:before
+  content: $fa-ioxhost
+
+.fa-angellist:before
+  content: $fa-angellist
+
+.fa-cc:before
+  content: $fa-cc
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before
+  content: $fa-ils
+
+.fa-meanpath:before
+  content: $fa-meanpath
+
+.fa-buysellads:before
+  content: $fa-buysellads
+
+.fa-connectdevelop:before
+  content: $fa-connectdevelop
+
+.fa-dashcube:before
+  content: $fa-dashcube
+
+.fa-forumbee:before
+  content: $fa-forumbee
+
+.fa-leanpub:before
+  content: $fa-leanpub
+
+.fa-sellsy:before
+  content: $fa-sellsy
+
+.fa-shirtsinbulk:before
+  content: $fa-shirtsinbulk
+
+.fa-simplybuilt:before
+  content: $fa-simplybuilt
+
+.fa-skyatlas:before
+  content: $fa-skyatlas
+
+.fa-cart-plus:before
+  content: $fa-cart-plus
+
+.fa-cart-arrow-down:before
+  content: $fa-cart-arrow-down
+
+.fa-diamond:before
+  content: $fa-diamond
+
+.fa-ship:before
+  content: $fa-ship
+
+.fa-user-secret:before
+  content: $fa-user-secret
+
+.fa-motorcycle:before
+  content: $fa-motorcycle
+
+.fa-street-view:before
+  content: $fa-street-view
+
+.fa-heartbeat:before
+  content: $fa-heartbeat
+
+.fa-venus:before
+  content: $fa-venus
+
+.fa-mars:before
+  content: $fa-mars
+
+.fa-mercury:before
+  content: $fa-mercury
+
+.fa-intersex:before,
+.fa-transgender:before
+  content: $fa-transgender
+
+.fa-transgender-alt:before
+  content: $fa-transgender-alt
+
+.fa-venus-double:before
+  content: $fa-venus-double
+
+.fa-mars-double:before
+  content: $fa-mars-double
+
+.fa-venus-mars:before
+  content: $fa-venus-mars
+
+.fa-mars-stroke:before
+  content: $fa-mars-stroke
+
+.fa-mars-stroke-v:before
+  content: $fa-mars-stroke-v
+
+.fa-mars-stroke-h:before
+  content: $fa-mars-stroke-h
+
+.fa-neuter:before
+  content: $fa-neuter
+
+.fa-genderless:before
+  content: $fa-genderless
+
+.fa-facebook-official:before
+  content: $fa-facebook-official
+
+.fa-pinterest-p:before
+  content: $fa-pinterest-p
+
+.fa-whatsapp:before
+  content: $fa-whatsapp
+
+.fa-server:before
+  content: $fa-server
+
+.fa-user-plus:before
+  content: $fa-user-plus
+
+.fa-user-times:before
+  content: $fa-user-times
+
+.fa-hotel:before,
+.fa-bed:before
+  content: $fa-bed
+
+.fa-viacoin:before
+  content: $fa-viacoin
+
+.fa-train:before
+  content: $fa-train
+
+.fa-subway:before
+  content: $fa-subway
+
+.fa-medium:before
+  content: $fa-medium
+
+.fa-yc:before,
+.fa-y-combinator:before
+  content: $fa-y-combinator
+
+.fa-optin-monster:before
+  content: $fa-optin-monster
+
+.fa-opencart:before
+  content: $fa-opencart
+
+.fa-expeditedssl:before
+  content: $fa-expeditedssl
+
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before
+  content: $fa-battery-full
+
+.fa-battery-3:before,
+.fa-battery-three-quarters:before
+  content: $fa-battery-three-quarters
+
+.fa-battery-2:before,
+.fa-battery-half:before
+  content: $fa-battery-half
+
+.fa-battery-1:before,
+.fa-battery-quarter:before
+  content: $fa-battery-quarter
+
+.fa-battery-0:before,
+.fa-battery-empty:before
+  content: $fa-battery-empty
+
+.fa-mouse-pointer:before
+  content: $fa-mouse-pointer
+
+.fa-i-cursor:before
+  content: $fa-i-cursor
+
+.fa-object-group:before
+  content: $fa-object-group
+
+.fa-object-ungroup:before
+  content: $fa-object-ungroup
+
+.fa-sticky-note:before
+  content: $fa-sticky-note
+
+.fa-sticky-note-o:before
+  content: $fa-sticky-note-o
+
+.fa-cc-jcb:before
+  content: $fa-cc-jcb
+
+.fa-cc-diners-club:before
+  content: $fa-cc-diners-club
+
+.fa-clone:before
+  content: $fa-clone
+
+.fa-balance-scale:before
+  content: $fa-balance-scale
+
+.fa-hourglass-o:before
+  content: $fa-hourglass-o
+
+.fa-hourglass-1:before,
+.fa-hourglass-start:before
+  content: $fa-hourglass-start
+
+.fa-hourglass-2:before,
+.fa-hourglass-half:before
+  content: $fa-hourglass-half
+
+.fa-hourglass-3:before,
+.fa-hourglass-end:before
+  content: $fa-hourglass-end
+
+.fa-hourglass:before
+  content: $fa-hourglass
+
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before
+  content: $fa-hand-rock-o
+
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before
+  content: $fa-hand-paper-o
+
+.fa-hand-scissors-o:before
+  content: $fa-hand-scissors-o
+
+.fa-hand-lizard-o:before
+  content: $fa-hand-lizard-o
+
+.fa-hand-spock-o:before
+  content: $fa-hand-spock-o
+
+.fa-hand-pointer-o:before
+  content: $fa-hand-pointer-o
+
+.fa-hand-peace-o:before
+  content: $fa-hand-peace-o
+
+.fa-trademark:before
+  content: $fa-trademark
+
+.fa-registered:before
+  content: $fa-registered
+
+.fa-creative-commons:before
+  content: $fa-creative-commons
+
+.fa-gg:before
+  content: $fa-gg
+
+.fa-gg-circle:before
+  content: $fa-gg-circle
+
+.fa-tripadvisor:before
+  content: $fa-tripadvisor
+
+.fa-odnoklassniki:before
+  content: $fa-odnoklassniki
+
+.fa-odnoklassniki-square:before
+  content: $fa-odnoklassniki-square
+
+.fa-get-pocket:before
+  content: $fa-get-pocket
+
+.fa-wikipedia-w:before
+  content: $fa-wikipedia-w
+
+.fa-safari:before
+  content: $fa-safari
+
+.fa-chrome:before
+  content: $fa-chrome
+
+.fa-firefox:before
+  content: $fa-firefox
+
+.fa-opera:before
+  content: $fa-opera
+
+.fa-internet-explorer:before
+  content: $fa-internet-explorer
+
+.fa-tv:before,
+.fa-television:before
+  content: $fa-television
+
+.fa-contao:before
+  content: $fa-contao
+
+.fa-500px:before
+  content: $fa-500px
+
+.fa-amazon:before
+  content: $fa-amazon
+
+.fa-calendar-plus-o:before
+  content: $fa-calendar-plus-o
+
+.fa-calendar-minus-o:before
+  content: $fa-calendar-minus-o
+
+.fa-calendar-times-o:before
+  content: $fa-calendar-times-o
+
+.fa-calendar-check-o:before
+  content: $fa-calendar-check-o
+
+.fa-industry:before
+  content: $fa-industry
+
+.fa-map-pin:before
+  content: $fa-map-pin
+
+.fa-map-signs:before
+  content: $fa-map-signs
+
+.fa-map-o:before
+  content: $fa-map-o
+
+.fa-map:before
+  content: $fa-map
+
+.fa-commenting:before
+  content: $fa-commenting
+
+.fa-commenting-o:before
+  content: $fa-commenting-o
+
+.fa-houzz:before
+  content: $fa-houzz
+
+.fa-vimeo:before
+  content: $fa-vimeo
+
+.fa-black-tie:before
+  content: $fa-black-tie
+
+.fa-fonticons:before
+  content: $fa-fonticons
+
+.fa-reddit-alien:before
+  content: $fa-reddit-alien
+
+.fa-edge:before
+  content: $fa-edge
+
+.fa-credit-card-alt:before
+  content: $fa-credit-card-alt
+
+.fa-codiepie:before
+  content: $fa-codiepie
+
+.fa-modx:before
+  content: $fa-modx
+
+.fa-fort-awesome:before
+  content: $fa-fort-awesome
+
+.fa-usb:before
+  content: $fa-usb
+
+.fa-product-hunt:before
+  content: $fa-product-hunt
+
+.fa-mixcloud:before
+  content: $fa-mixcloud
+
+.fa-scribd:before
+  content: $fa-scribd
+
+.fa-pause-circle:before
+  content: $fa-pause-circle
+
+.fa-pause-circle-o:before
+  content: $fa-pause-circle-o
+
+.fa-stop-circle:before
+  content: $fa-stop-circle
+
+.fa-stop-circle-o:before
+  content: $fa-stop-circle-o
+
+.fa-shopping-bag:before
+  content: $fa-shopping-bag
+
+.fa-shopping-basket:before
+  content: $fa-shopping-basket
+
+.fa-hashtag:before
+  content: $fa-hashtag
+
+.fa-bluetooth:before
+  content: $fa-bluetooth
+
+.fa-bluetooth-b:before
+  content: $fa-bluetooth-b
+
+.fa-percent:before
+  content: $fa-percent
+
+.fa-gitlab:before
+  content: $fa-gitlab
+
+.fa-wpbeginner:before
+  content: $fa-wpbeginner
+
+.fa-wpforms:before
+  content: $fa-wpforms
+
+.fa-envira:before
+  content: $fa-envira
+
+.fa-universal-access:before
+  content: $fa-universal-access
+
+.fa-wheelchair-alt:before
+  content: $fa-wheelchair-alt
+
+.fa-question-circle-o:before
+  content: $fa-question-circle-o
+
+.fa-blind:before
+  content: $fa-blind
+
+.fa-audio-description:before
+  content: $fa-audio-description
+
+.fa-volume-control-phone:before
+  content: $fa-volume-control-phone
+
+.fa-braille:before
+  content: $fa-braille
+
+.fa-assistive-listening-systems:before
+  content: $fa-assistive-listening-systems
+
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before
+  content: $fa-american-sign-language-interpreting
+
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before
+  content: $fa-deaf
+
+.fa-glide:before
+  content: $fa-glide
+
+.fa-glide-g:before
+  content: $fa-glide-g
+
+.fa-signing:before,
+.fa-sign-language:before
+  content: $fa-sign-language
+
+.fa-low-vision:before
+  content: $fa-low-vision
+
+.fa-viadeo:before
+  content: $fa-viadeo
+
+.fa-viadeo-square:before
+  content: $fa-viadeo-square
+
+.fa-snapchat:before
+  content: $fa-snapchat
+
+.fa-snapchat-ghost:before
+  content: $fa-snapchat-ghost
+
+.fa-snapchat-square:before
+  content: $fa-snapchat-square
+
+.fa-pied-piper:before
+  content: $fa-pied-piper
+
+.fa-first-order:before
+  content: $fa-first-order
+
+.fa-yoast:before
+  content: $fa-yoast
+
+.fa-themeisle:before
+  content: $fa-themeisle
+
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before
+  content: $fa-google-plus-official
+
+.fa-fa:before,
+.fa-font-awesome:before
+  content: $fa-font-awesome
+
+.fa-handshake-o:before
+  content: $fa-handshake-o
+
+.fa-envelope-open:before
+  content: $fa-envelope-open
+
+.fa-envelope-open-o:before
+  content: $fa-envelope-open-o
+
+.fa-linode:before
+  content: $fa-linode
+
+.fa-address-book:before
+  content: $fa-address-book
+
+.fa-address-book-o:before
+  content: $fa-address-book-o
+
+.fa-vcard:before,
+.fa-address-card:before
+  content: $fa-address-card
+
+.fa-vcard-o:before,
+.fa-address-card-o:before
+  content: $fa-address-card-o
+
+.fa-user-circle:before
+  content: $fa-user-circle
+
+.fa-user-circle-o:before
+  content: $fa-user-circle-o
+
+.fa-user-o:before
+  content: $fa-user-o
+
+.fa-id-badge:before
+  content: $fa-id-badge
+
+.fa-drivers-license:before,
+.fa-id-card:before
+  content: $fa-id-card
+
+.fa-drivers-license-o:before,
+.fa-id-card-o:before
+  content: $fa-id-card-o
+
+.fa-quora:before
+  content: $fa-quora
+
+.fa-free-code-camp:before
+  content: $fa-free-code-camp
+
+.fa-telegram:before
+  content: $fa-telegram
+
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before
+  content: $fa-thermometer-full
+
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before
+  content: $fa-thermometer-three-quarters
+
+.fa-thermometer-2:before,
+.fa-thermometer-half:before
+  content: $fa-thermometer-half
+
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before
+  content: $fa-thermometer-quarter
+
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before
+  content: $fa-thermometer-empty
+
+.fa-shower:before
+  content: $fa-shower
+
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before
+  content: $fa-bath
+
+.fa-podcast:before
+  content: $fa-podcast
+
+.fa-window-maximize:before
+  content: $fa-window-maximize
+
+.fa-window-minimize:before
+  content: $fa-window-minimize
+
+.fa-window-restore:before
+  content: $fa-window-restore
+
+.fa-times-rectangle:before,
+.fa-window-close:before
+  content: $fa-window-close
+
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before
+  content: $fa-window-close-o
+
+.fa-bandcamp:before
+  content: $fa-bandcamp
+
+.fa-grav:before
+  content: $fa-grav
+
+.fa-etsy:before
+  content: $fa-etsy
+
+.fa-imdb:before
+  content: $fa-imdb
+
+.fa-ravelry:before
+  content: $fa-ravelry
+
+.fa-eercast:before
+  content: $fa-eercast
+
+.fa-microchip:before
+  content: $fa-microchip
+
+.fa-snowflake-o:before
+  content: $fa-snowflake-o
+
+.fa-superpowers:before
+  content: $fa-superpowers
+
+.fa-wpexplorer:before
+  content: $fa-wpexplorer
+
+.fa-meetup:before
+  content: $fa-meetup
+
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus
+  position: static
+  width: auto
+  height: auto
+  margin: 0
+  overflow: visible
+  clip: auto

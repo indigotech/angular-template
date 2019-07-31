@@ -1,0 +1,78 @@
+//
+// Typograph
+// --------------------------------------------------
+
+// Font Mixin that reduce code to add diferent font styles
+font-family-builder(name, weights)
+  for weight in weights
+    font-builder(name, weight, weights[weight])
+
+font-builder(name, weight, weight-variable)
+  @font-face
+    font-family: name
+    src: url('/assets/fonts/' + name + '/' + name + '-' + weight + '.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/' + name + '/' + name + '-' + weight + '.otf') format('opentype'),
+        url('/assets/fonts/' + name + '/' + name + '-' + weight + '.woff') format('woff'),
+        url('/assets/fonts/' + name + '/' + name + '-' + weight + '.ttf') format('truetype'),
+        url('/assets/fonts/' + name + '/' + name + '-' + weight +'svg#' + name + weight) format('svg')
+    font-weight: weight-variable
+    font-style: normal
+// Example of usage:
+// font-family-builder('MyriadPro', {'Light': $font-weight-light,
+                                //  'Regular': $font-weight-regular,
+                                //  'Cond': $font-weight-cond,
+                                //  'Semibold': $font-weight-semibold,
+                                //  'Bold': $font-weight-bold,
+                                //  'BoldCond': $font-weight-bold})
+
+// Add you custom fonts here
+// @font-face
+//   font-family: 'ITCAvantGardeStd'
+//   src: url('/assets/fonts/ITCAvantGardeStd-XLt.eot?#iefix') format('embedded-opentype'),
+//        url('/assets/fonts/ITCAvantGardeStd-XLt.otf') format('opentype'),
+// 	     url('/assets/fonts/ITCAvantGardeStd-XLt.woff') format('woff'),
+//        url('/assets/fonts/ITCAvantGardeStd-XLt.ttf') format('truetype'),
+//        url('/assets/fonts/ITCAvantGardeStd-XLt.svg#ITCAvantGardeStd-XLt') format('svg')
+//   font-weight: $font-weight-lighter
+//   font-style: normal
+
+
+//
+// Default icon packages
+// --------------------------------------------------
+
+// FontAwesome
+@font-face
+  font-family: 'FontAwesome'
+  src: url('/assets/fonts/fontawesome-webfont.eot')
+  src: url('/assets/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/fontawesome-webfont.woff2') format('woff2'),
+       url('/assets/fonts/fontawesome-webfont.woff') format('woff'),
+       url('/assets/fonts/fontawesome-webfont.ttf') format('truetype'),
+       url('/assets/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg')
+  font-weight: $font-weight-regular
+  font-style: normal
+
+// Material icons
+@font-face
+  font-family: 'MaterialIcons'
+  font-style: normal
+  font-weight: 400
+  src: url('/assets/fonts/MaterialIcons-Regular.eot') // For IE6-8
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url('/assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+       url('/assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+       url('/assets/fonts/MaterialIcons-Regular.ttf') format('truetype')
+
+// Custom icon package
+@font-face {
+  font-family: 'AppIcons'
+  src: url('/assets/fonts/app-icons.eot')
+  src: url('/assets/fonts/app-icons.eot?#iefix') format('eot'),
+       url('/assets/fonts/app-icons.woff') format('woff'),
+       url('/assets/fonts/app-icons.ttf') format('truetype'),
+       url('/assets/fonts/app-icons.svg#app-icons') format('svg')
+  font-weight: normal
+  font-style: normal
+}

@@ -1,0 +1,24 @@
+.exception-title
+  make-components-margin(top, $space-large)
+  font-family: $font-family-primary
+  font-size: 36px
+  font-weight: $font-weight-medium
+  letter-spacing: $letter-spacing-large
+  text-transform: uppercase
+  line-height: 1
+  color: $color-black
+  transition(all $animation-duration ease-in-out)
+
+.exception-icon
+  make-components-margin(top, $space-small)
+  font-size: 180px
+  line-height: 1
+  transition(font-size $animation-duration ease-in-out)
+
+// Responsive
+@media (min-width $screen-sm-min)
+  .exception-title
+    font-size: 60px
+
+  .exception-icon
+    font-size: 240px

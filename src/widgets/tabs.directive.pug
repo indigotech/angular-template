@@ -1,0 +1,6 @@
+.tab(class="{{ classes }}")
+  ul.tab-nav
+    li.tab-nav-item(*ngFor="let tab of tabs", [ngClass]="{'is-active': tab.active}", (click)="selectTab(tab)", class="{{ tab.customClass }}")
+      span([tqTransclude]="tab.headingTemplateRef") {{ tab.title }}
+  .tab-content
+    ng-content

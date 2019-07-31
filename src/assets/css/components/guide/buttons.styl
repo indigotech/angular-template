@@ -1,0 +1,183 @@
+$btn-small-space    = 5px $spacement-small // 36px
+$btn-default-space  = 9px $spacement-medium // 44px
+$btn-large-space    = 15px $spacement-large // 56px
+
+btn-style(text-color, bkg-color)
+  background-color: bkg-color
+  border-color: bkg-color
+  color: text-color
+
+  &:hover
+    background-color: highlightColorHover(bkg-color)
+
+  &:active
+    background-color: highlightColorDark(bkg-color)
+
+  &:disabled,
+  &.disabled
+    background-color: disabledColor(bkg-color)
+    border-color: disabledColor(bkg-color)
+    color: disabledColor(text-color)
+    cursor: default
+
+btn-outline-style(text-color)
+  background-color: $color-white
+  border: $default-border
+  color: text-color
+
+  &:hover
+    background-color: $color-gray-xlight
+    color: highlightColorHover(text-color)
+
+  &:active
+    background-color: $color-gray-xlight
+    color: highlightColorDark(text-color)
+
+  &:disabled,
+  &.disabled
+    background-color: $color-white
+    color: disabledColor(text-color)
+    cursor: default
+
+.btn
+  display: inline-block
+  padding: $btn-default-space
+  font-family: $font-family-primary
+  font-size: $font-size-medium
+  font-weight: $font-weight-medium
+  line-height: $spacement-medium
+  text-align: center
+  background-color: transparent
+  border: $default-border
+  border-radius: $default-border-radius
+  user-select(none)
+
+  span
+    vertical-align: middle
+
+  &:focus
+    outline: 0
+
+  .ic, .fa, .mi
+    + span
+      margin-left: $spacement-xsmall
+
+.btn--primary
+  btn-style($color-white, $color-primary)
+  &.btn--outline
+    btn-outline-style($color-primary)
+
+.btn--secondary
+  btn-style($color-white, $color-secondary)
+  &.btn--outline
+    btn-outline-style($color-secondary)
+
+.btn--accessory
+  btn-style($color-white, $color-accessory)
+  &.btn--outline
+    btn-outline-style($color-accessory)
+
+.btn--success
+  btn-style($color-white, $color-success)
+  &.btn--outline
+    btn-outline-style($color-success)
+
+.btn--warning
+  btn-style($color-white, $color-warning)
+  &.btn--outline
+    btn-outline-style($color-warning)
+
+.btn--alert
+  btn-style($color-white, $color-alert)
+  &.btn--outline
+    btn-outline-style($color-alert)
+
+.btn--call-to-action
+  btn-style($color-white, $color-call-to-action)
+  &.btn--outline
+    btn-outline-style($color-call-to-action)
+
+.btn--neutral
+  btn-style($color-gray-dark, $color-gray-light)
+  &.btn--outline
+    btn-outline-style($color-gray-dark)
+
+.btn--block
+  display: block
+  width: 100%
+  max-width: 480px
+  margin: auto
+
+// Sizes
+.btn--large
+  padding: $btn-large-space
+
+.btn--small
+  padding: $btn-small-space
+  font-size: $font-size-small
+
+.btn-link
+  display: inline-block
+  font-family: $font-family-primary
+  font-size: $font-size-medium
+  font-weight: $font-weight-medium
+  line-height: $spacement-medium
+  color: $color-accessory
+
+  &:active
+    color: highlightColorDark($color-accessory)
+
+  .ic, .fa, .mi
+    ic-small()
+
+.btn-group
+  position: relative
+  display: inline-block
+  vertical-align: middle
+
+  &.btn-group-justified
+    display: table
+    width: 100%
+    border-collapse: separate
+    table-layout: fixed
+
+    .btn
+      display: table-cell
+      float: none
+      border: 0
+      border-top: 1px solid
+      border-bottom: 1px solid
+      border-left: 1px solid
+
+      &:last-of-type
+        border-right: 1px solid
+
+      &.btn-group-item-2
+        width: 50%
+      &.btn-group-item-3
+        width: 33.33%
+      &.btn-group-item-4
+        width: 25%
+      &.btn-group-item-5
+        width: 20%
+
+  .btn
+    position: relative
+    float: left
+    margin-right: 0
+
+    &:not(:last-child)
+      border-right: 0
+
+    &:not(:first-child):not(:last-child)
+      border-radius: 0
+
+    &:first-child
+      &:not(:last-child)
+        border-top-right-radius: 0
+        border-bottom-right-radius: 0
+
+    &:last-child
+      &:not(:first-child)
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0

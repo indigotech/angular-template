@@ -1,0 +1,58 @@
+//
+// Apply margin
+//
+
+make-custom-margin($display, $base-value)
+  sizes = {
+    xlarge: $space-xlarge
+    large: $space-large
+    medium: $space-medium
+    small: $space-small
+    xsmall: $space-xsmall
+  }
+
+  for key, value in sizes
+    .mt-{$display}-{key}
+      margin-top $base-value * value
+
+    .mb-{$display}-{key}
+      margin-bottom $base-value * value
+
+
+make-simple-margin($base-value)
+  sizes = {
+    xlarge: $space-xlarge
+    large: $space-large
+    medium: $space-medium
+    small: $space-small
+    xsmall: $space-xsmall
+  }
+
+  for key, value in sizes
+    .mt-{key}
+      margin-top $base-value * value
+
+    .mb-{key}
+      margin-bottom $base-value * value
+
+
+// Comment/uncomment unnecessary sizes
+// Obs: mobile first
+
+make-components-margin($position, $space)
+  margin-{$position} $space-base-xs * $space
+  // @media (min-width $screen-sm-min)
+  //   margin-{$position} $space-base-sm * $space
+  // @media (min-width $screen-md-min)
+  //   margin-{$position} $space-base-md * $space
+  // @media (min-width $screen-lg-min)
+  //   margin-{$position} $space-base-lg * $space
+
+make-components-padding($position, $space)
+  padding-{$position} $space-base-xs * $space
+  // @media (min-width $screen-sm-min)
+  //   padding-{$position} $space-base-sm * $space
+  // @media (min-width $screen-md-min)
+  //   padding-{$position} $space-base-md * $space
+  // @media (min-width $screen-lg-min)
+  //   padding-{$position} $space-base-lg * $space

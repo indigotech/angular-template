@@ -1,0 +1,22 @@
+$thumbnail-ratio = 65%
+
+.thumbnail
+  position: relative
+
+  display: inline-block
+  width: 100%
+  padding-top: $thumbnail-ratio // aspect ratio height
+
+  > .thumbnail-img
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    width: 100%
+    height: 100%
+
+    background-image: url('assets/img/img-placeholder.png')
+    background-position: center
+    background-size: cover

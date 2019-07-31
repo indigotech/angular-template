@@ -1,0 +1,92 @@
+$code-background-color =#F9F2F4
+$code-color = #C7254E
+
+// Elements
+a
+  color: $color-accessory
+
+  .ic, .fa, .mi
+    + span
+      margin-left: $spacement-small
+
+label
+  font-size: $font-size-medium
+  color: $color-gray-xdark
+
+p
+  font-family: $font-family-primary
+  font-size: $font-size-medium
+  line-height: $spacement-medium
+  word-break: break-word
+  word-wrap: break-word
+  color: $color-black
+
+  + p
+    margin-top: $spacement-medium
+
+// Classes
+.caption
+  font-family: $font-family-primary
+  font-size: $font-size-xsmall
+  font-weight: $font-weight-regular
+  color: $color-gray-dark
+
+// Decoration, Weight
+.underlined
+  text-decoration: underline
+
+.striked
+  text-decoration: line-through
+
+.bold
+  font-weight: bold
+
+// Colors
+.text-primary
+  color: $color-primary
+
+.text-secondary
+  color: $color-secondary
+
+.text-accessory
+  color: $color-accessory
+
+.text-success
+  color: $color-success
+
+.text-warning
+  color: $color-warning
+
+.text-alert
+  color: $color-alert
+
+.text-call-to-action
+  color: $color-call-to-action
+
+.text-neutral
+  color: $color-gray-dark
+
+.text-white
+  color: $color-white
+
+// Code
+.code
+  padding: 2px 4px
+  font-size: $font-size-small
+  vertical-align: middle
+  background-color: $code-background-color
+  border-radius: $default-border-radius
+  color: $code-color
+
+  a
+    color: $code-color
+
+    &:hover
+      text-decoration: underline
+
+//
+// Media queries
+//
+// @media (min-width $screen-phone)
+//   html
+//     font-size: $font-base-desktop

@@ -1,0 +1,65 @@
+/*
+ * Hamburger menu icon with animation (.is-open)
+ * Required: 4 div inside ic-hamburger
+ */
+
+$ic-hamburger-top     = 2px
+$ic-hamburger-middle  = 7px
+$ic-hamburger-bottom  = 12px
+$ic-hamburger-small   = 16px
+
+.ic-hamburger
+  position: relative
+  display: inline-block
+  width: $ic-hamburger-small
+  height: $ic-hamburger-small
+
+  &.color-primary > div
+    background-color: $color-primary
+
+  &.color-secondary > div
+    background-color: $color-secondary
+
+  &.color-accessory > div
+    background-color: $color-accessory
+
+  &.color-white > div
+    background-color: $color-white
+
+  div
+    position: absolute
+    left: 0
+    width: 100%
+    height: 2px
+
+    border-radius: $default-border-radius
+    opacity: 1
+    transform (rotate(0))
+    transition (all 0.4s ease-in-out)
+
+    &:nth-child(1)
+      top: $ic-hamburger-top
+
+    &:nth-child(2),
+    &:nth-child(3)
+      top: $ic-hamburger-middle
+
+    &:nth-child(4)
+      top: $ic-hamburger-bottom
+
+  /*
+   * Animates ic-hamburger
+   * Hamburger menu is turned into a cross
+   */
+  &.is-open
+    div:nth-child(1),
+    div:nth-child(4)
+      top: $ic-hamburger-middle
+      left: 50%
+      width: 0
+
+    div:nth-child(2)
+      transform(rotate(45deg))
+
+    div:nth-child(3)
+      transform(rotate(-45deg))

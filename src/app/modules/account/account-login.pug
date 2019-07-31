@@ -1,0 +1,54 @@
+doctype html
+
+tq-modal(#modal)
+  .container-fluid
+    forgot-password(#forgotPassword, (onForgotPasswordSubmit)="onForgotPasswordSubmit($event)")
+
+navigation-control([isShown]="false")
+main.container
+  .row
+    .col-xs-12
+      tq-notification([name]="notificationName")
+
+  .row
+    .col-xs-12.col-sm-offset-3.col-sm-6
+
+      .well
+        .container-margin.text-center
+          img(src="/assets/img/img-logo.png")
+
+        form.row([formGroup]="form", (ngSubmit)="onLoginSubmit(form)", novalidate)
+          .col-xs-12
+            .form-control([class.has-error]="(submitted || emailField.touched) && !emailField.valid")
+              tq-input-base(formControlName="emailField", [inputId]="'emailInput'", [placeholder]="'E-mail'", [type]="'email'", [focusInput]="focusFirstInput", [iconDecorationClasses]="'fa fa-envelope'")
+              p.caption.input-caption(@scaleUp, *ngIf="(submitted || emailField.touched) && emailField.errors")
+                span(*ngIf="emailField.hasError('required')") O e-mail é obrigatório.
+                span(*ngIf="emailField.hasError('emailPattern')") O e-mail deve estar no formato xxx@xxx.xxx.
+                span(*ngIf="emailField.hasError('maxlength')") O e-mail deve ter no máximo {{ lengthMaxEmail }} caracteres.
+
+            .form-control([class.has-error]="(submitted || passwordField.touched) && !passwordField.valid")
+              tq-input-base(formControlName="passwordField", [inputId]="'passwordInput'", [placeholder]="'Senha'", [type]="'password'", [iconDecorationClasses]="'fa fa-lock'")
+              p.caption.input-caption(@scaleUp, *ngIf="(submitted || passwordField.touched) && passwordField.errors")
+                span(*ngIf="passwordField.hasError('required')") A senha é obrigatória.
+                span(*ngIf="passwordField.hasError('minlength')") A senha deve ter no mínimo {{ lengthMinPassword }} caracteres.
+                span(*ngIf="passwordField.hasError('maxlength')") A senha deve ter no máximo {{ lengthMaxPassword }} caracteres.
+
+          .col-xs-12
+            .row
+              .col-xs-6.no-gutter-right
+                .form-control
+                  input(type="checkbox", id="rememberPassword", formControlName="rememberPasswordField")
+                  label.input-value(for="rememberPassword") Lembrar a senha
+              .col-xs-6.no-gutter-left
+                .container-margin-bottom
+                  p.text-right
+                    a.btn-link((click)="modal.open()") Esqueci minha senha
+
+          .col-xs-12
+            .form-control
+              tq-button-loading([classes]="'btn--primary btn--block'", [isLoading]="isBtnLoading")
+                span Entrar
+
+          .col-xs-12
+            p.text-center Não tem uma conta?&nbsp;
+              a.btn-link([routerLink]="['/user/new']") Criar conta

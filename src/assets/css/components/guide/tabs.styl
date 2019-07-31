@@ -1,0 +1,39 @@
+.tab
+  .tab-nav
+    list-style: none
+    padding: 0
+    clearfix()
+
+    .tab-nav-item
+      float: left
+      margin-bottom: -1px
+      padding: $half-gutter
+
+      font-size: $font-size-medium
+      font-weight: $font-weight-regular
+
+      border-color: $color-transparent
+      border-top: $default-border
+      border-right: $default-border
+      border-left: $default-border
+      border-top-left-radius: $default-border-radius
+      border-top-right-radius: $default-border-radius
+
+      cursor: pointer
+
+      &.is-active
+        font-weight: $font-weight-medium
+
+        background-color: $color-gray-xlight
+        border-top: $default-border
+        border-right: $default-border
+        border-left: $default-border
+
+  .tab-content
+    .tab-content-item
+      display: none
+      background-color: $color-gray-xlight
+      border: $default-border
+
+      &.is-active
+        display: block

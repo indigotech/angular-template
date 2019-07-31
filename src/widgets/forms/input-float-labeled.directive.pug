@@ -1,0 +1,7 @@
+doctype html
+
+.input-float-labeled-container([ngClass]="{ 'input-container-decoration' : iconDecorationClasses }")
+  input.input-float-labeled(#input, [tq-input-focus]="focusInput", [tq-input-mask]="mask", type="{{ type }}", [id]="id", [(ngModel)]="inputValue", (blur)="onBlur($event)", (focus)="onFocus($event)", (keyup)="onKeyUp($event)")
+  label.input-label.input-float-label([attr.for]="id", [ngClass]="{ 'is-floated': (shouldFloat || isFocused), 'is-disabled': isDisabled }") {{ label }}
+  .input-container-ic.input-container-ic--decoration(*ngIf="iconDecorationClasses")
+    span.input-ic([ngClass]="iconDecorationClasses")

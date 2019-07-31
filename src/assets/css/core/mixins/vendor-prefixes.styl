@@ -1,0 +1,114 @@
+// Copied from https://gist.github.com/mattmcmanus/895668
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+animation()
+  vendor('animation', arguments)
+
+appearance()
+  -moz-appearance: arguments
+  -webkit-appearance: arguments
+  appearance: arguments
+
+backface-visibility()
+  -moz-backface-visibility: arguments
+  -webkit-backface-visibility: arguments
+  backface-visibility: arguments
+
+background-clip()
+  vendor('background-clip', arguments)
+
+box-shadow()
+  -webkit-box-shadow: arguments
+  box-shadow: arguments
+
+column-count()
+  vendor('column-count', arguments)
+
+column-gap()
+  vendor('column-gap', arguments)
+
+perspective()
+  -moz-perspective: arguments
+  -webkit-perspective: arguments
+  perspective: arguments
+
+text-fill-color()
+  vendor('text-fill-color', arguments)
+
+transition()
+  vendor('transition', arguments)
+
+transform()
+  vendor('transform', arguments)
+
+transform-origin()
+  -webkit-transform-origin: arguments
+  transform-origin: arguments
+
+user-select()
+  vendor('user-select', arguments)
+
+
+// Flex vendors
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+// https://autoprefixer.github.io/
+
+flex()
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+
+inline-flex()
+  display: -webkit-inline-box
+  display: -ms-inline-flexbox
+  display: -webkit-inline-flex
+  display: inline-flex
+
+flex-direction()
+  -webkit-box-direction: normal
+  -webkit-flex-direction: arguments
+  -ms-flex-direction: arguments
+  flex-direction: arguments
+
+flex-wrap()
+  -ms-flex-wrap: arguments
+  -webkit-flex-wrap: arguments
+  flex-wrap: arguments
+
+flex-flow()
+  -ms-flex-flow: arguments
+  -webkit-flex-flow: arguments
+  flex-flow: arguments
+
+justify-content(arg)
+  alias= arg
+  if arg == 'flex-start'
+    alias= start
+  else if arg == 'flex-end'
+    alias= end
+  else if arg == 'space-between'
+    alias= justify
+  else if arg == 'space-around'
+    alias= distribute
+
+  -webkit-box-pack: alias
+  -ms-flex-pack: alias
+  justify-content: arg
+
+align-items(arg)
+  alias= arg
+  if arg == 'flex-start'
+    alias= start
+  else if arg == 'flex-end'
+    alias= end
+
+  -webkit-box-align: alias
+  -ms-flex-align: alias
+  align-items: arg

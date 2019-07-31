@@ -1,0 +1,46 @@
+doctype html
+.menu-type.menu-type--pushable([ngClass]="{'menu-type--right' : !menuPositionLeft, 'menu-type--is-open': isMenuVisible}")
+  nav.navbar-container.menu-pushable
+    .navbar.navbar--xs
+      a.navbar-icon((click)="toggleMenu()", [ngClass]=" menuPositionLeft ? 'navbar-icon--left' : 'navbar-icon--right' ")
+        span.fa.fa-bars
+      a([routerLink]="[ 'color' ]")
+        img.navbar-logo(src="/assets/img/img-logo.png", alt="template logo")
+
+    .navbar.navbar--md
+      a([routerLink]="[ 'color' ]")
+        img.navbar-logo(src="/assets/img/img-logo.png", alt="template logo")
+
+      ul.navbar-list.pull-right
+
+        li.navbar-item
+          a.navbar-item-action(href="/", (click)="onItemClick()") App home
+        li.navbar-item
+          a.navbar-item-action([routerLink]="[ 'typography' ]", (click)="onItemClick()") Typography
+        li.navbar-item
+          a.navbar-item-action([routerLink]="[ 'grid' ]", (click)="onItemClick()") Grid
+        li.navbar-item
+          a.navbar-item-action([routerLink]="[ 'links' ]", (click)="onItemClick()") Important links
+        li.navbar-item
+          a.navbar-item-action((click)="toggleMenu()")
+            span.fa.fa-bars
+  .menu-container
+    aside.menu(#menu, menu-gestures, (swipeLeftGesture)="doSwipe($event)", (swipeRightGesture)="doSwipe($event)")
+      ng-template(ngFor, let-item, [ngForOf]="menuArray", [ngForTrackBy]="i", let-i="index")
+        h3.h__menu {{ item.name }}
+        ul.menu-list
+          li.menu-item(*ngIf="item.name === 'Samples'")
+            a.menu-item-action(href="/", (click)="onItemClick()")
+              span.menu-item-icon.fa.fa-home
+              span Home
+          li.menu-item(*ngFor="let subitem of item.items")
+            a.menu-item-action([routerLink]="[ subitem.routerLink ]", (click)="onItemClick()")
+              span.menu-item-icon.fa(class="{{ subitem.iconName }}")
+              span {{ subitem.name }}
+
+    .content.menu-pushable
+
+      router-outlet
+      footer.footer
+
+  .content-overlay((click)="toggleMenu()")

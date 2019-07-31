@@ -1,0 +1,65 @@
+main.container
+  header.g-header
+    h1.text-center Tabs Directive
+
+  .row
+    .col-xs-12
+      p The Tabs directive contain 2 directives: a&nbsp;
+        code.code tq-tabs
+        | &nbsp;for the parent and
+        code.code tq-tab-item
+        | &nbsp;for the items inside it.
+      p The &nbsp;
+        code.code tq-tab-item
+        | &nbsp;accepts a
+        code.code title
+        | &nbsp;attribute or for the tab header or a custom template by implementing the&nbsp;
+        code.code tq-tab-item-heading
+        | &nbsp;directive, it also accepts&nbsp;
+        code.code classes
+        | &nbsp;attribute to determine the heading class.
+
+  .row
+    .col-xs-12
+      h2 Simple text heading
+    .col-xs-12
+      tq-tabs
+        tq-tab-item([title]="'Simple heading 1'")
+          .tq-tab-item-content
+            .container-margin
+              h3 1) First content
+        tq-tab-item([title]="'Simple heading 2'")
+          .tq-tab-item-content
+            .container-margin
+              h3 2) Second content
+        tq-tab-item([title]="'Simple heading 3'")
+          .tq-tab-item-content
+            .container-margin
+              h3 3) Yet another content
+
+  .row
+    .col-xs-12
+      h2 Heading as template
+    .col-xs-12
+      tq-tabs
+        tq-tab-item
+          ng-template(tq-tab-item-heading)
+            strong Cr
+            i az
+            sup y
+            | Heading
+          .tq-tab-item-content
+            .container-margin
+              h3 1) First content
+        tq-tab-item
+          ng-template(tq-tab-item-heading)
+            u Second heading
+          .tq-tab-item-content
+            .container-margin
+              h3 2) Second content
+        tq-tab-item
+          ng-template(tq-tab-item-heading)
+            i Third content
+          .tq-tab-item-content
+            .container-margin
+              h3 3) Yet another content

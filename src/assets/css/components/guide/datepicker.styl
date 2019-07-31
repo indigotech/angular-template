@@ -1,0 +1,110 @@
+.datepicker
+  position: relative
+  font-family: $font-family-primary
+  color: $color-black
+
+
+.datepicker-calendar
+  position: absolute
+  top: 0.75em
+  left: 0
+  z-index: 1000
+  width: 20.5em
+  height: 24.25em
+  font-family: $font-family-primary
+  font-size: $font-size-small
+  font-weight: $font-size-medium
+  background-color: $color-white
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+  color: $color-black
+  cursor: default
+  overflow: hidden
+  user-select(none)
+  -webkit-touch-callout: none
+
+  &.is-left
+    left: -10.5em
+
+.datepicker-calendar-btn
+  position: absolute
+  bottom: 1em
+  font-weight: $font-weight-regular
+  color: $color-primary
+  cursor: pointer
+  transition($animation-duration)
+
+
+  &.is-left
+    left: 1.8em
+
+  &.is-right
+    right: 1.8em
+
+.datepicker-calendar-btn:hover
+  font-weight: $font-weight-medium
+
+
+.datepicker-calendar-content
+  margin-top: 0.4em
+
+
+.datepicker-calendar-labels
+  flex()
+  justify-content(center)
+  width: 100%
+
+
+.datepicker-calendar-label
+  display: inline-block
+  width: 2.2em
+  height: 2.2em
+  margin: 0 0.2em
+  line-height: 2.2em
+  text-align: center
+  color: $color-black
+
+
+.datepicker-calendar-month
+  flex()
+  flex-flow(wrap)
+  justify-content(center)
+
+
+.datepicker-calendar-month-cell
+  display: inline-block
+  width: 2.2em
+  height: 2.2em
+  margin: 0 0.2em 0.4em
+  line-height: 2.2em
+  text-align: center
+  color: $color-black
+  transition($animation-duration)
+
+.datepicker-calendar-month-day:hover
+  background: $color-primary
+  border-radius: 2.2em
+  color: $color-white
+  cursor: pointer
+
+.datepicker-calendar-month-day-label
+  color: $color-gray-light
+
+.datepicker-calendar-nav
+  flex()
+  align-items(center)
+  justify-content(center)
+  height: 3em
+  background-color: $color-primary
+  border-bottom: $default-border
+  color: $color-white
+
+
+.datepicker-calendar-nav-arrow
+  cursor: pointer
+  transition($animation-duration)
+
+
+.datepicker-calendar-nav-header
+  width: 11em
+  margin: 0 1em
+  text-align: center

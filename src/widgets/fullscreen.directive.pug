@@ -1,0 +1,7 @@
+.fullscreen(*ngIf="showFullscreen", [ngClass]="{'container-gray': color=='gray', 'is-open' : shouldTransition }")
+  a.modal-close((click)="close()")
+    span.mi.mi-clear
+  ng-content(select=".fullscreen-body")
+
+.fullscreen-toggle(*ngIf="showToggle")
+  ng-content(select=".fullscreen-toggle-body")

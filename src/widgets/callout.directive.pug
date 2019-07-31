@@ -1,0 +1,4 @@
+.callout([ngClass]="'callout--'+type", *ngIf="!isClosed")
+  h3.callout-title {{title}}
+  p(*ngIf="description") {{description}}
+  ng-content

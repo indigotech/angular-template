@@ -1,0 +1,46 @@
+main.container
+  header.g-header
+    h1.text-center Pagination
+
+    .row
+      .col-xs-12
+        p Use &nbsp;
+          code.code tq-pagination
+          |  and set the
+          code.code [currentPage]
+          |  and&nbsp;
+          code.code [totalPages]
+          | it also supports a custom number of displayed numbers with the
+          code.code [range]
+          |  option.
+          code.code (pageTap(index))
+          |  is the page tap callback.
+
+    .row
+      .col-xs-12
+        h2 Pagination standard
+
+        .g-example.text-center
+          tq-pagination([totalPages]="150", [range]="2", (pageTap)="onPageTap($event)")
+
+    .row
+      .col-xs-12
+        h2 Pagination with custom labels
+        p Next, previous and of connector (mobile) labels.
+
+        .g-example.text-center
+          tq-pagination([totalPages]="42", [range]="2", [previousLabel]="'Anterior'", [nextLabel]="'Próxima'", [ofConnector]="'de'", (pageTap)="onPageTap($event)")
+
+    .row
+      .col-xs-12
+        h2 Pagination with one page
+
+        .g-example.text-center
+          tq-pagination([totalPages]="1", [range]="2", (pageTap)="onPageTap($event)")
+
+    .row
+      .col-xs-12
+        h2 Pagination with few pages
+
+        .g-example.text-center
+          tq-pagination([totalPages]="5", [range]="2", (pageTap)="onPageTap($event)")

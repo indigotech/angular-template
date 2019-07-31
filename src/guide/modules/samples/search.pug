@@ -1,0 +1,37 @@
+include ../components/guide-mixins
+
+main.container
+  header
+    h1.text-center Search sample
+  form.row([formGroup]="searchForm", (ngSubmit)="onSubmit(searchForm.value)")
+    .col-xs-12
+      .form-control
+        .form-inline
+          .form-inline-input
+            tq-input-erasable.relative(type="text",
+              id="searchInput",
+              placeholder="Search",
+              formControlName="searchField",
+              [disableAutocomplete]="true",
+              (inputBlur)="onBlur($event)",
+              (inputFocus)="onFocus($event)",
+              (inputKeyUp)="onKeyUp($event)")
+          .form-inline-button
+            button.btn.btn--primary
+              span.fa.fa-search
+
+      .row.no-gutter
+        .col-xs-12
+          ul.lst.lst--bordered.lst-no-top-border(*ngIf="shouldShowAutocomplete()")
+            li.lst-item(*ngFor="let item of recommendationList; let i=index; trackBy: i;")
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst {{ item }}
+                .lst-item-cell.text-neutral.mi.mi-keyboard-arrow-right
+
+  .row
+    .col-xs-6.col-sm-4(*ngFor="let item of [1,2,3,4,5,6]; let i=index; trackBy: i;")
+      div(style="margin-top: 20px;")
+        +placeholder-tile()
+        h4 Product name
+        p Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel.

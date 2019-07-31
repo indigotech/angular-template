@@ -1,0 +1,187 @@
+main.container
+  header
+    h1.text-center Accordion
+
+  .row
+    .col-xs-12
+      h2 Directives
+      ul.u-lst
+        li.u-lst-item
+          code.code tq-accordion
+        li.u-lst-item
+          code.code tq-accordion-item
+
+      h2 Functionality
+      ul.ul-lst
+        li.u-lst-item Both the heading and the footer toggle the accordion;
+        li.u-lst-item It uses transclusion for the heading, body and footer using &nbsp;
+          code.code .accordion-item-heading
+          | , &nbsp;
+          code.code .accordion-item-body
+          | &nbsp; and &nbsp;
+          code.code .accordion-item-footer
+          | .
+
+      h2 Most important Inputs/Outputs
+      h3 Accordion
+      ul.ul-lst
+        li.u-lst-item
+          code.code [oneItemAtATime]
+          | : Sets if accordion should open only one item at a time or not.
+
+      h3 AccordionItem
+      ul.ul-lst
+        li.u-lst-item
+          code.code [minHeight]
+          | : Sets the minimal height for the closed state.
+        li.u-lst-item
+          code.code [(isOpen)]
+          | : Shows if accordion-item is open or not.
+        li.u-lst-item
+          code.code [scrollTopOnFooterTap]
+          | : Sets if the accordion should scroll to top when the footer is tapped.
+
+    .col-xs-12
+      .divisor.container-margin
+      h2 Examples
+
+    .col-xs-12
+      h3 All items can be open simultaneously
+      p This is the default mode. No need to set any attributes.
+      .g-example
+        tq-accordion
+          tq-accordion-item([minHeight]="'70px'")
+            .accordion-item-heading
+              ul.lst.lst--bordered.lst-no-bottom-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold Accordion item with [minHeight]="'70px'"
+                    .lst-item-cell.lst-item-cell--icon
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body
+              ul.lst.lst--bordered
+                li.lst-item(*ngFor="let item of [1,2,3,4,5]; let j=index; trackBy: j;")
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst List item {{j}}
+
+          tq-accordion-item(*ngFor="let item of [1,2,3]; let i=index; trackBy: i;")
+            .accordion-item-heading
+              ul.lst.lst--bordered.lst-no-bottom-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold Accordion item {{i}} (body: list)
+                    .lst-item-cell.lst-item-cell--icon
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body
+              ul.lst.lst--bordered
+                li.lst-item(*ngFor="let item of [1,2,3,4,5]; let j=index; trackBy: j;")
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst List item {{i}} {{j}}
+
+          tq-accordion-item
+            .accordion-item-heading
+              ul.lst.lst--bordered.lst-no-bottom-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold Accordion item (body: checkbox list)
+                    .lst-item-cell.lst-item-cell--icon
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body
+              ul.lst.lst--bordered
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product1", value="1")
+                    label.input-value(for="product1") Accordion checkbox item
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product2", value="2")
+                    label.input-value(for="product2") Accordion checkbox item
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product3", value="3")
+                    label.input-value(for="product3") Accordion checkbox item
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product4", value="4")
+                    label.input-value(for="product4") Accordion checkbox item
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product5", value="5")
+                    label.input-value(for="product5") Accordion checkbox item
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product6", value="6")
+                    label.input-value(for="product6") Accordion checkbox item
+                li.lst-item
+                  .lst-item-table
+                    input(type="checkbox", id="product7", value="7")
+                    label.input-value(for="product7") Accordion checkbox item
+
+          tq-accordion-item
+            .accordion-item-heading
+              ul.lst.lst--bordered.lst-no-bottom-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold Accordion Item title (body: p)
+                    .lst-item-cell.lst-item-cell--icon
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body
+              .container-padding
+                p Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel.
+        .divisor
+
+    .col-xs-12
+      h3 Only one item open at a time
+      p Use&nbsp;
+        code.code [oneItemAtATime]
+        | &nbsp;to set the accordion to set this mode.
+      .g-example
+        tq-accordion([oneItemAtATime] = "oneItemAtATime")
+          tq-accordion-item(*ngFor="let item of [1,2,3,4,5]; let i=index; trackBy: i;")
+            .accordion-item-heading
+              ul.lst.lst--bordered.lst-no-bottom-border
+                li.lst-item
+                  .lst-item-table
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst.bold Accordion item {{i}} (body: list)
+                    .lst-item-cell.lst-item-cell--icon
+                      span.accordion-item-icon.mi.mi-keyboard-arrow-down
+
+            .accordion-item-body
+              ul.lst.lst--bordered
+                li.lst-item(*ngFor="let item of [1,2,3,4,5]; let j=index; trackBy: j;")
+                  .lst-item-table
+                    .lst-item-cell
+                      span.fa.fa-picture-o
+                    .lst-item-cell.lst-item-cell--expanded
+                      h3.h__lst List item {{i}} {{j}} with icon
+        .divisor
+
+    .col-xs-12
+      h3 Accordion with footer toggle
+      p For an accordion toggle below the body, use&nbsp;
+        code.code accordion-item-footer
+        | &nbsp; (instead of&nbsp;
+        code.code accordion-item-header
+        | ).
+      .g-example
+        tq-accordion
+          tq-accordion-item([minHeight]="'100px'")
+            .accordion-item-body
+              .container-margin
+                h2 Title
+                p Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel.
+            .accordion-item-footer.text-right
+              .container-margin
+                a.btn-link.btn-link--ver-mais__accordion-footer
+                  span.mi.mi-keyboard-arrow-down.accordion-item-icon

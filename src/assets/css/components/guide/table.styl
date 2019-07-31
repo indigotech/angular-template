@@ -1,0 +1,92 @@
+.tbl-container
+  overflow-x: scroll
+  make-components-margin(bottom, $space-large)
+
+.tbl
+  width: 99.99%
+
+  font-size: $font-size-medium
+  border-collapse: separate
+
+  tr:nth-child(even)
+    background-color: $color-gray-xlight
+
+  th
+    padding: 0 $spacement-small $spacement-xsmall
+    font-family: $font-family-primary
+    font-size: $font-size-small
+    font-weight: $font-weight-regular
+    text-align: left
+    color: $color-black
+    transition(all $animation-duration ease-in-out)
+
+  td
+    padding: 12px $spacement-small
+    font-family: $font-family-primary
+    font-size: $font-size-medium
+    font-weight: $font-weight-regular
+
+  // Fix for buttons margin!
+  .td__tbl-btn
+    padding: ($spacement-xsmall / 2) $spacement-xsmall
+    white-space: nowrap
+
+    .btn
+      margin: ($spacement-xsmall / 2) $spacement-xsmall
+
+  .td-no-wrap
+    white-space: nowrap
+
+  // Rounded corner
+
+  td
+    border-right: $default-border
+    border-bottom: $default-border
+
+  tr:first-child td
+    border-top: $default-border
+
+  td:first-child
+    border-left: $default-border
+
+  tr:first-child td:first-child
+    border-top-left-radius: $default-border-radius
+
+  tr:first-child td:last-child
+    border-top-right-radius: $default-border-radius
+
+  tr:last-child td:first-child
+    border-bottom-left-radius: $default-border-radius
+
+  tr:last-child td:last-child
+    border-bottom-right-radius: $default-border-radius
+
+.tbl-order-by
+  white-space: nowrap
+  cursor: pointer
+
+  &:after
+    display: inline-block
+    margin-left: $spacement-xsmall
+    font-family: $icon-fontawesome
+    content: $fa-long-arrow-up $fa-long-arrow-down
+    color: $color-gray-dark
+
+  &.is-selected:after
+    content: $fa-sort-alpha-desc
+    color: $color-black
+
+  &.is-selected.is-asc:after
+    content: $fa-sort-alpha-asc
+
+.tbl-icon
+  font-size: $font-size-xlarge
+
+.tbl-cell-min
+  width: 1px
+
+.tbl-cell-half
+  width: 50%
+
+.tbl-cell-expanded
+  width: 100%

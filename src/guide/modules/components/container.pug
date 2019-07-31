@@ -1,0 +1,104 @@
+main.container
+  header
+    h1.text-center Containers
+
+  .row
+    .col-xs-12
+      p Do not forget to add your containers here.
+
+  .row
+    //- TODO: uncomment if used.
+    //- .col-xs-12
+    //-   h2 Margins - responsive
+    //- .container-margin-bottom
+    //-   ul.u-lst
+    //-     li.u-lst-item
+    //-       code.code make-components-margin([direction], $space-X)
+    //-     li.u-lst-item
+    //-       span.bold Margins-base
+    //-       | : Each display with their respective base. Depending on the mixin.
+    //-
+    //- .col-xs-2
+    //-   label xlarge
+    //-   .g-padding.g-padding-xlarge
+    //- .col-xs-2
+    //-   label large
+    //-   .g-padding.g-padding-large
+    //- .col-xs-2
+    //-   label medium
+    //-   .g-padding.g-padding-medium
+    //- .col-xs-2
+    //-   label small
+    //-   .g-padding.g-padding-small
+    //- .col-xs-2
+    //-   label xsmall
+    //-   .g-padding.g-padding-xsmall
+
+    .col-xs-12
+      h2 Spacement - fixed
+      .container-margin-bottom
+        ul.u-lst
+          li.u-lst-item
+            code.code $spacement-X
+          li.u-lst-item
+            span.bold Margins-base
+            | : 8px
+          li.u-lst-item
+            span.bold Container-base
+            | : Small
+
+    .col-xs-2
+      label xlarge - 6x
+      .g-padding.g-padding-fixed-xlarge
+    .col-xs-2
+      label large - 4x
+      .g-padding.g-padding-fixed-large
+    .col-xs-2
+      label medium - 3x
+      .g-padding.g-padding-fixed-medium
+    .col-xs-2
+      label small - 2x
+      .g-padding.g-padding-fixed-small
+    .col-xs-2
+      label xsmall - 1x
+      .g-padding.g-padding-fixed-xsmall
+
+    .col-xs-12
+      .divisor.container-margin
+
+    .clearfix
+    .col-xs-12.col-md-6
+      h2 Spacement
+
+      h3 Margin vertical
+      ul.u-lst
+        li.u-lst-item
+          code.code .container-margin
+        li.u-lst-item
+          code.code  .container-margin-top
+        li.u-lst-item
+          code.code .container-margin-bottom
+
+      h3 Margin horizontal
+      tq-callout([type]="'info'", [title]="'Observation'")
+        p Gutters already set the horizontal spacing between columns. Check them at
+          a([routerLink]="['/grid']")  grid
+          | .
+
+      ul.u-lst
+        li.u-lst-item
+          code.code .container-margin-left
+        li.u-lst-item
+          code.code  .container-margin-right
+
+      h3 Padding
+      ul.u-lst
+        li.u-lst-item
+          code.code .container-padding
+
+    .col-xs-12.col-md-6
+      h2 Colors
+      h3 Gray
+      ul.u-lst
+        li.u-lst-item
+          code.code .container-gray

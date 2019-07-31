@@ -1,0 +1,359 @@
+$assets-relative-path = '../../assets/css/'
+
+@import $assets-relative-path + 'core/grid'
+@import $assets-relative-path + 'core/responsive-utilities'
+@import $assets-relative-path + 'core/variables'
+@import $assets-relative-path + 'core/functions'
+@import $assets-relative-path + 'core/mixins/vendor-prefixes'
+@import $assets-relative-path + 'core/mixins/margin'
+
+$guide-space-small   = 10px
+$line-height         = 1.4
+
+$height-block-colors = 40px
+
+$menu-sm-width  = 50px
+$menu-width     = 260px
+
+//
+// Guide
+// -------------------------------------------
+
+// Core
+.main-view
+  height: 100%
+
+//
+// Example container
+// -------------------------------------------
+.g-example
+  position: relative
+  make-components-margin(top, $space-xsmall)
+  padding: $guide-space-small
+  background-color: $color-gray-xlight
+  border: $default-border
+  border-radius: $default-border-radius
+
+  &:before
+    make-components-margin(bottom, $space-xsmall)
+    display: block
+    font-size: $font-size-xsmall
+    text-align: right
+    color: $color-accessory
+    content: 'EXAMPLE'
+
+//
+// Widgets
+// -------------------------------------------
+.g-widget-color
+  height: $height-block-colors
+  text-align: center
+
+  &:last-child
+    make-components-margin(bottom, $space-xsmall)
+
+  label
+    line-height: $height-block-colors
+
+  //
+  // System Colors
+  // -------------------------------------------
+  &.highlighted-primary
+    background-color: highlightColorDark($color-primary)
+
+  &.disabled-primary
+    background-color: disabledColor($color-primary)
+
+  &.hover-primary
+    background-color: highlightColorHover($color-primary)
+
+  &.primary
+    background-color: $color-primary
+
+  &.highlighted-secondary
+    background-color: highlightColorDark($color-secondary)
+
+  &.disabled-secondary
+    background-color: disabledColor($color-secondary)
+
+  &.hover-secondary
+    background-color: highlightColorHover($color-secondary)
+
+  &.secondary
+    background-color: $color-secondary
+
+  &.highlighted-alert
+    background-color: highlightColorDark($color-alert)
+
+  &.disabled-alert
+    background-color: disabledColor($color-alert)
+
+  &.hover-alert
+    background-color: highlightColorHover($color-alert)
+
+  &.alert
+    background-color: $color-alert
+
+  &.highlighted-call-to-action
+    background-color: highlightColorDark($color-call-to-action)
+
+  &.disabled-call-to-action
+    background-color: disabledColor($color-call-to-action)
+
+  &.hover-call-to-action
+    background-color: highlightColorHover($color-call-to-action)
+
+  &.call-to-action
+    background-color: $color-call-to-action
+
+  &.highlighted-accessory
+    background-color: highlightColorDark($color-accessory)
+
+  &.disabled-accessory
+    background-color: disabledColor($color-accessory)
+
+  &.hover-accessory
+    background-color: highlightColorHover($color-accessory)
+
+  &.accessory
+    background-color: $color-accessory
+
+  &.highlighted-success
+    background-color: highlightColorDark($color-success)
+
+  &.disabled-success
+    background-color: disabledColor($color-success)
+
+  &.hover-success
+    background-color: highlightColorHover($color-success)
+
+  &.success
+    background-color: $color-success
+
+  &.highlighted-warning
+    background-color: highlightColorDark($color-warning)
+
+  &.disabled-warning
+    background-color: disabledColor($color-warning)
+
+  &.hover-warning
+    background-color: highlightColorHover($color-warning)
+
+  &.warning
+    background-color: $color-warning
+
+  &.highlighted-info
+    background-color: highlightColorDark($color-info)
+
+  &.disabled-info
+    background-color: disabledColor($color-info)
+
+  &.hover-info
+    background-color: highlightColorHover($color-info)
+
+  &.info
+    background-color: $color-info
+
+  // Brand Colors
+
+  &.brand-black
+    background-color: $color-black
+
+  &.brand-blue
+    background-color: $color-brand-blue
+
+  &.brand-pink
+    background-color: $color-brand-pink
+
+  // Shades of Gray
+
+  &.black
+    background-color: $color-black
+
+  &.gray-xdark
+    background-color: $color-gray-xdark
+
+  &.gray-dark
+    background-color: $color-gray-dark
+
+  &.gray
+    background-color: $color-gray
+
+  &.gray-light
+    background-color: $color-gray-light
+
+  &.gray-xlight
+    background-color: $color-gray-xlight
+
+  &.white
+    background-color: $color-white
+
+.g-widget-grid
+  padding: $guide-space-small
+  text-align: center
+  border: $default-border
+
+  &.g-widget-grid-nested
+    padding-top: 0
+    border: 0
+
+  &.gray-xlight
+    background-color: $color-gray-xlight
+
+  &.white
+    background-color: $color-white
+
+//
+// Buttons
+// -------------------------------------------
+.g-btn
+  margin-right: $guide-space-small
+
+  &:last-of-type
+    margin-right: 0
+
+//
+// Icons
+// -------------------------------------------
+.g-icon-hover
+  display: block
+  height: 40px
+  padding-left: $guide-space-small
+  font-size: $font-size-small
+  line-height: 40px
+  text-overflow: ellipsis
+  white-space: nowrap
+  border-radius: $default-border-radius
+  overflow: hidden
+
+  &:hover
+    background-color: $color-accessory
+    color: $color-white
+
+//
+// Action spacement
+// -------------------------------------------
+.g-action-spacement
+  make-components-margin(bottom, $space-xsmall)
+
+  + .g-action-spacement:not(.btn--block)
+    make-components-margin(left, $space-xsmall)
+
+//
+// Tables
+// -------------------------------------------
+.g-table
+  width: 100%
+  max-width: 100%
+  make-components-margin(bottom, $space-xsmall)
+  font-family: $font-family-primary
+  font-size: $font-size-small
+
+  > thead
+    > tr
+      th, td
+        padding: $guide-space-small
+        line-height: $line-height
+        vertical-align: top
+      .g-table-header
+        margin-bottom: 0
+
+  > tbody
+    > tr
+      th, td
+        padding: $guide-space-small
+        line-height: $line-height
+        text-align: center
+        vertical-align: middle
+
+      th
+        text-align: left
+
+  > tfoot
+    > tr
+      th, td
+        padding: $guide-space-small
+        line-height: $line-height
+        vertical-align: top
+
+  .g-table-invisible
+    background-color: $color-alert
+    color: $color-white
+
+.g-table--bordered
+  border: $default-border
+
+  > thead
+    > tr
+      th
+        font-weight: $font-weight-medium
+        border-bottom-width: 2px
+
+  > thead,
+  > tbody,
+  > tfoot
+    > tr
+      th, td
+        border: $default-border
+
+.g-table--striped
+  > tbody
+    > tr:nth-of-type(even)
+      background-color: $color-gray-xlight
+
+// Fonts
+.p__g-xlarge
+  font-size: $font-size-xlarge
+.p__g-large
+  font-size: $font-size-large
+.p__g-medium
+  font-size: $font-size-medium
+.p__g-small
+  font-size: $font-size-small
+.p__g-xsmall
+  font-size: $font-size-xsmall
+
+.p__g-bold
+  font-weight: $font-weight-bold
+.p__g-medium // @stylint ignore
+  font-weight: $font-weight-medium
+.p__g-regular
+  font-weight: $font-weight-regular
+.p__g-lighter
+  font-weight: $font-weight-lighter
+
+// Margins
+.g-padding
+  width: 100%
+  margin-top: $spacement-small
+  margin-bottom: $spacement-xsmall
+  background-color: $color-gray-xlight
+  box-shadow(0 0 0 1px $color-gray inset)
+
+.g-padding-xlarge
+  make-components-padding(top, $space-xlarge)
+.g-padding-large
+  make-components-padding(top, $space-large)
+.g-padding-medium
+  make-components-padding(top, $space-medium)
+.g-padding-small
+  make-components-padding(top, $space-small)
+.g-padding-xsmall
+  make-components-padding(top, $space-xsmall)
+
+.g-padding-fixed-xlarge
+  padding-top: $spacement-xlarge
+.g-padding-fixed-large
+  padding-top: $spacement-large
+.g-padding-fixed-medium
+  padding-top: $spacement-medium
+.g-padding-fixed-small
+  padding-top: $spacement-small
+.g-padding-fixed-xsmall
+  padding-top: $spacement-xsmall
+
+//
+// Footer
+// -------------------------------------------
+.g-footer
+  make-components-margin(bottom, $space-xlarge)

@@ -1,0 +1,20 @@
+.fullscreen
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1001
+  width: 100%
+  height: 100%
+  background-color: $color-white
+  opacity: 0
+  overflow: hidden
+  transition(all $animation-duration ease-in-out)
+
+  &.is-open
+    opacity: 1
+    overflow-y: scroll
+
+.fullscreen-close
+  display: inline-block
+  float: right
+  color: $color-gray-dark

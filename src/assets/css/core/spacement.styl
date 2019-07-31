@@ -1,0 +1,38 @@
+// Margins
+// Containers for margins
+// Only required when components do not have their own margins
+
+//
+// Simple: A margin is set to xsmall, small, medium, large or xlarge.
+// And media queries set a proportional value to each display.
+// Use .mt-{size} for margin-top and .mb-{size} for margin-bottom.
+// --------------------------------------------------
+//
+// make-simple-margin($space-base-xs)
+//
+// @media (min-width $screen-sm-min)
+//   make-simple-margin($space-base-sm)
+//
+// @media (min-width $screen-md-min)
+//   make-simple-margin($space-base-md)
+//
+// @media (min-width $screen-lg-min)
+//   make-simple-margin($space-base-lg)
+
+//
+// Custom: To use when it is required to set different margins depending on the display.
+// In other words, when spacements are larger or smaller than the media queries proportion.
+// Example: for mobile (xs) is smallest and for a wide desktop (lg) is medium. (Just like columns)
+// Use .{mt|mb}-{display}-{size}
+// --------------------------------------------------
+//
+// make-custom-margin(xs, $space-base-xs)
+//
+// @media (min-width $screen-sm-min)
+//   make-custom-margin(sm, $space-base-sm)
+//
+// @media (min-width $screen-md-min)
+//   make-custom-margin(md, $space-base-md)
+//
+// @media (min-width $screen-lg-min)
+//   make-custom-margin(lg, $space-base-lg)

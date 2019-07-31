@@ -1,0 +1,10 @@
+doctype html
+
+.dropdown([ngClass]="{'dropdown--autoexpand': autoExpand}")
+  div((click)="toggleOpen()")
+    ng-content(select=".dropdown-heading")
+  .dropdown-list-container(#dropdownListContainer, [ngClass]="{ 'is-right': alignRight }")
+    div(#dropdownList, (click)="onListTap()")
+      ng-content(select=".dropdown-body")
+
+.dropdown-overlay((click)="toggleOpen()", [ngClass]="{ 'is-shown': isOpen }")

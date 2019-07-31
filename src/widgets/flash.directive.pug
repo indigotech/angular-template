@@ -1,0 +1,11 @@
+doctype html
+
+.flsh-container(@scaleUp, *ngIf="description")
+  .flsh([ngClass]="'flsh--'+type")
+    .flsh-cell
+      span.mi([ngClass]="{'mi-check-circle': type=='success', 'mi-info': type=='info', 'mi-warning': type=='warning', 'mi-error': type=='error' }")
+    .flsh-cell.flsh-cell--expanded
+      p.flsh-description {{description}}
+      ng-content
+    .flsh-cell(*ngIf="isDimissible")
+      a.flsh-close.mi.mi-clear((click)="onClose()")

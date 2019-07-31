@@ -1,0 +1,9 @@
+div
+  canvas.chart(baseChart,
+    [datasets]="chartData.datasets",
+    [labels]="chartData.labels",
+    [options]="chartOptions",
+    [legend]="chartShowLegend",
+    [chartType]="chartType",
+    [colors]="isCustomColor?[true]:[]",
+    (chartClick)="chartClicked($event)")

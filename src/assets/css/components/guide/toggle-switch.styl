@@ -1,0 +1,58 @@
+$toggle-switch-height                 = $spacement-large
+$toggle-switch-width                  = 60px
+$toggle-switch-thumb-size             = $spacement-medium
+// Padding so the thumb is centralized
+$toggle-switch-thumb-padding          = ($toggle-switch-height - $toggle-switch-thumb-size)/2
+// The value to be translated is determined by the thumb-size, switch-width and the padding
+$toggle-switch-thumb-translate-x-value = $toggle-switch-width - 2 * $toggle-switch-thumb-padding - $toggle-switch-thumb-size
+
+// The switch - the box around the slider
+// --------------------------------------
+.toggle-switch
+  position: relative
+  display: inline-block
+  width: $toggle-switch-width
+  height: $toggle-switch-height
+
+.toggle-switch-checkbox
+  display: none
+
+  &:checked + .toggle-switch-slider
+    background-color: $color-success
+
+  &:focus + .toggle-switch-slider
+    box-shadow(0 0 1px $color-success)
+
+  &:checked + .toggle-switch-slider:before
+    transform(translateX($toggle-switch-thumb-translate-x-value))
+
+// The slider
+// --------------------------------------
+.toggle-switch-slider
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  background-color: $color-alert
+  cursor: pointer
+  transition(all, $animation-duration, ease-in-out)
+
+  &:before
+    position: absolute
+    bottom: $toggle-switch-thumb-padding
+    left: $toggle-switch-thumb-padding
+    width: $toggle-switch-thumb-size
+    height: $toggle-switch-thumb-size
+    background-color: $color-white
+    content: ""
+    transition(all, $animation-duration, ease-in-out)
+
+.toggle-switch--rounded
+  .toggle-switch-slider
+    border-radius: $toggle-switch-height
+
+    &:before
+      border-radius: 50%
+
+

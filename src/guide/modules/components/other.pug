@@ -1,0 +1,120 @@
+doctype html
+include guide-mixins
+
+tq-modal(#modal)
+  .container-fluid
+    form.row
+      .col-xs-12
+        .container-margin.container-margin-right
+          h3 Modal header
+        p This is a modal example with a button.
+        .container-margin
+          button.btn.btn--success.btn--block(type="submit") Submit
+
+tq-modal(#modalWithScroll)
+  .container-fluid
+    form.row
+      .col-xs-12
+        .container-margin.container-margin-right
+          h3 Modal header
+        p This is a modal example with a button and a big text.
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .container-margin
+          button.btn.btn--success.btn--block(type="submit") Submit
+
+tq-fullscreen(#fullscreen)
+  .fullscreen-body
+    main.container
+      .row
+        .col-xs-12
+          header
+            h1.text-center Fullscreen modal
+          p Example
+
+  .fullscreen-toggle-body
+    main.container
+      header
+        h1.text-center Other components
+
+      .row
+        .col-xs-12
+          h2 Modal and fullscreen
+          p The directives are: &nbsp;
+            code.code tq-modal(#modal)
+            |  and&nbsp;
+            code.code tq-fullscreen(#fullscreen)
+            | . The refs are used to access the directives in the class, e.g. in order to open the modal. The fullscreen content should be under &nbsp;
+            code.code .fullscreen-body
+            |  and the main view under &nbsp;
+            code.code .fullscreen-toggle-body
+            | . For more information, have a look at this view's pug/ts files.
+          .g-example
+            .g-action-spacement.text-center
+              button.btn.btn--secondary((click)="onModalOpen()") Open modal!
+            .g-action-spacement.text-center
+              button.btn.btn--secondary((click)="onOverscrollModalOpen()") Open scroll modal!
+            .g-action-spacement.text-center
+              button.btn.btn--secondary((click)="onFullscreenOpen()") Open fullscreen modal!
+
+      .row
+        .col-xs-12
+          h2 Image fallback
+        .col-xs-6.col-md-4
+          h3 Image working
+          img.expanded(src="{{ imgSrc }}", img-src-fallback="{{ placeholderSrc }}")
+        .col-xs-6.col-md-4
+          h3 Broken image - shows placeholder
+          img.expanded(src="{{ brokenImgSrc }}", img-src-fallback="{{ placeholderSrc }}")
+        .clearfix.visible-xs
+        .col-xs-6.col-md-4
+          h3 Both image and placeholder broken
+          img.expanded(src="{{ brokenImgSrc }}", img-src-fallback="{{ brokenImgSrc }}")
+        .col-xs-6.col-md-4
+          h3 Broken image and no placeholder - display none
+          img.expanded(src="{{ brokenImgSrc }}", img-src-fallback="")
+
+      .row
+        .col-xs-12
+          h2 Image bg loading fallback
+        .col-xs-6.col-md-4
+          h3 Image working - loading placeholder until loaded
+          .thumbnail
+            img.thumbnail-img(src="{{ imgSrc }}", img-bg-loading-fallback="{{ placeholderSrc }}")
+        .col-xs-6.col-md-4
+          h3 Broken image - loading stays as placeholder
+          .thumbnail
+            img.thumbnail-img(src="{{ brokenImgSrc }}", img-bg-loading-fallback="{{ placeholderSrc }}")
+
+        .col-xs-12
+          h2 Image zoom with gestures
+          p In order to add zoom gestures to the img, use the&nbsp;
+            code.code tq-img-zoom
+            | &nbsp;directive. Set the img source with&nbsp;
+            code.code imgSrc
+            | .
+          tq-img-zoom(imgSrc="{{ imgSrc }}")
+
+        .col-xs-12
+          h2 Checkout progress
+          .g-example
+            +checkout-progress(1)
+            +checkout-progress(2)
+            +checkout-progress(3)
+
+        .col-xs-12
+          h2 Stepper
+          p Use the directive
+            code.code tq-stepper
+            | . The parameters are
+            code.code label
+            | ,&nbsp;
+            code.code min
+            |  and&nbsp;
+            code.code max
+            | .
+
+          .g-example
+            tq-stepper([label]="'metro(s)'", [(count)]="number", [min]="1", [max]="10")

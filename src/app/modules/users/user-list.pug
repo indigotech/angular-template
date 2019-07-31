@@ -1,0 +1,72 @@
+doctype html
+
+tq-modal(#modal)
+  .container-fluid
+    .row
+      .col-xs-12
+        .container-margin.container-margin-right
+          h3 Remover usuário
+          p Tem certeza que deseja remover esse usuário?
+    .row
+      .col-xs-6
+        .container-margin-bottom
+          button.btn.btn--neutral.btn--outline.btn--block((click)="modal.close()") Cancelar
+      .col-xs-6
+        .container-margin-bottom
+          button.btn.btn--alert.btn--block Remover
+
+navigation-control([isShown]="true")
+
+main.container
+  tq-loading([isLoading]="isLoading")
+
+  .row
+    .col-xs-12
+      tq-notification([name]="notificationName")
+  .row
+    .col-xs-12
+      div
+        .pull-right
+          a.btn.btn--primary([routerLink]="[ '/user/new' ]")
+            span.mi.mi-add
+            span Novo usuário
+        h1 Usuários
+
+      form.form-group([formGroup]="searchForm", (ngSubmit)="onSubmit(searchForm)")
+        .form-inline
+          .form-inline-input.input-container
+            tq-input-erasable([type]="'text'", [inputId]="'searchInput'", [placeholder]="'Buscar usuários'", formControlName="searchField", (onInputErased)="onSearchErased();")
+          .form-inline-button
+            button.btn.btn--primary
+              span.ic.ic-search
+
+    .col-xs-12
+      a.btn.btn--primary((click)="onFirebaseListTap()") Listar pelo Firebase
+
+    .col-xs-12
+      h2(*ngIf="!noResults") Mostrando X usuários
+      h2(*ngIf="noResults") Não existem usuários para esses parâmetros
+
+    .col-xs-12(*ngIf="!noResults")
+      .tbl-container
+        table.tbl
+          thead
+            tr
+              th.tbl-order-by((click)="onSortBy('name')", [ngClass]="{ 'is-selected': (queryParams.sortBy === 'name'), 'is-asc': queryParams.order === 'ASC' } ")
+                | Nome
+              th.tbl-order-by((click)="onSortBy('email')", [ngClass]="{ 'is-selected': (queryParams.sortBy === 'email'), 'is-asc': queryParams.order === 'ASC' } ")
+                | E-mail
+              th.tbl-cell-min
+                | Ações
+          tbody
+            tr(*ngFor="let user of users; let i=index; trackBy: i")
+              td {{user.name}}
+              td {{user.email}}
+              td.td__tbl-btn
+                a.btn.btn--small.btn--outline.btn--primary([routerLink]=" ['/user', user.id] ", title="Editar")
+                  span.mi.mi-edit
+                a.btn.btn--small.btn--outline.btn--alert((click)="onDeleteTap(user.id)", title="Remover")
+                  span.mi.mi-delete
+
+      .container-margin-bottom.text-center
+        tq-pagination([totalPages]="totalPages", [previousLabel]="'Anterior'", [nextLabel]="'Próxima'", [currentPage]="queryParams.page", (pageTap)="onPageTap($event)")

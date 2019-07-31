@@ -1,0 +1,43 @@
+// This file contains some components filled with "Lorem Ipsum" which
+// can be reused to build the guide screens and static pages
+
+mixin checkout-progress(step)
+  .progress
+    each title, index in {1:'Entrega', 2:'Pagamento', 3:'Resumo'}
+      - active= 'active'
+      - var number = index
+      - checked= false
+      - icon= ''
+      - if (index < step)
+        - checked= true
+        - active= ''
+        - var number = ''
+      - else if (index > step)
+        - active= ''
+
+      - if (index == 1)
+        - icon= 'fa-truck'
+      - else if (index == 2)
+        - icon= 'fa-credit-card'
+      - else if (index == 3)
+        - icon= 'fa-file-text-o'
+
+      .progress-item(class=active)
+        .progress-item-bullet
+          span.fa.progress-item-bullet-icon(class=icon)
+          if (checked)
+            span.progress-item-success
+        h3.progress-title= title
+
+mixin placeholder-tile(large)
+  - var class_large = large ? 'placeholder-tile-large' : ''
+  .placeholder.placeholder-tile(class=class_large)
+    span.placeholder-tile-icon.fa.fa-camera-retro
+
+mixin review-cell(stars, title, description, author)
+  .review
+    h4.rating
+      .rating-star(class=`rating-star-${stars}`)
+      | #{title}
+    h4.sub Por #{author}
+    p.review-description-limited= description

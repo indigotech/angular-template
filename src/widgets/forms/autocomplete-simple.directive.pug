@@ -1,0 +1,26 @@
+doctype html
+form([formGroup]="searchForm", (ngSubmit)="onSubmit(searchForm)")
+
+  .form-group.autocomplete([class.has-error]="hasError")
+    input(type="hidden", formControlName="idField")
+    tq-input-erasable(#input,
+      type="text",
+      [inputId]="id",
+      [label]="label",
+      [placeholder]="placeholder",
+      [disableAutocomplete]="true",
+      formControlName="searchField",
+      (inputBlur)="onBlur($event)",
+      (inputFocus)="onFocus($event)",
+      (inputKeyUp)="onKeyUp($event)")
+
+    p.caption.input-caption(*ngIf="hasError") {{ caption }}
+
+    .autocomplete-list(*ngIf="autocompleteIsShown")
+      ul.lst.lst--bordered.lst--well.lst--well-white
+        li.lst-item(*ngFor="let item of filteredArray; let i=index; trackBy:i;", title="{{item.title}}")
+          a.lst-item-table.lst-item-table--action((click)="itemTap(item)")
+            .lst-item-cell.lst-item-cell-expanded
+              h4.h__lst {{item.title}}
+
+  button.hidden

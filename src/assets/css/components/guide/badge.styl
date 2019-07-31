@@ -1,0 +1,50 @@
+$badge-size-round   = 18px
+$badge-space-small  = 5px
+$badge-space-medium = 10px
+$badge-space-large  = 20px
+
+.badge
+  display: inline-block
+  font-family: $font-family-primary
+  font-weight: $font-weight-regular
+  text-align: center
+
+  // Default size: small
+  padding: $badge-space-small $badge-space-medium
+  font-size: $font-size-small
+
+  // Default color
+  color: $color-white
+
+  + span
+    make-components-margin(left, $space-xsmall)
+
+.badge--primary
+  background-color: $color-primary
+
+.badge--secondary
+  background-color: $color-secondary
+
+.badge--accessory
+  background-color: $color-accessory
+
+.badge--call-to-action
+  background-color: $color-call-to-action
+
+// Sizes
+.badge--small
+  padding: $badge-space-small
+  font-size: $font-size-xsmall
+
+.badge--large
+  padding: $badge-space-medium $badge-space-large
+  font-size: $font-size-medium
+
+// Round
+.badge--round
+  min-width: $badge-size-round
+  min-height: $badge-size-round
+  padding: 0 5px
+  font-size: 10px
+  line-height: $badge-size-round
+  border-radius: $badge-size-round

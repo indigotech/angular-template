@@ -1,0 +1,31 @@
+.carousel
+  width: 100%
+  make-components-margin(bottom, $space-xsmall)
+  padding: 0
+  white-space: nowrap
+  overflow-x: scroll
+  overflow-y: hidden
+  -webkit-overflow-scrolling: touch
+
+  .carousel-item
+    display: inline-block
+    width: 150px
+    min-height: 250px
+    make-components-margin(left, $space-xsmall)
+    padding: $spacement-small
+    vertical-align: middle
+    border: $default-border
+
+
+    &:first-child
+      margin-left: $half-gutter
+
+    &:last-child
+      margin-right: $half-gutter
+
+  .carousel-item-action
+    display: block
+
+  .carousel-text
+    white-space: normal
+    ellipsis($font-size-small, 1.3, 4)

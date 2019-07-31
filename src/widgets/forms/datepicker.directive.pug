@@ -1,0 +1,28 @@
+doctype html
+
+ng-template(#template)
+  .datepicker
+    .datepicker-calendar(*ngIf="showCalendar", [ngClass]="{ 'is-left' : isLeft }")
+      .datepicker-calendar-nav
+        .datepicker-calendar-nav-arrow((click)="onArrowClick('left')")
+          .input-ic-small.mi.mi-keyboard-arrow-left
+        .datepicker-calendar-nav-header
+          | {{ currentMonth }} {{ currentYear }}
+        .datepicker-calendar-nav-arrow((click)="onArrowClick('right')")
+          .input-ic-small.mi.mi-keyboard-arrow-right
+      .datepicker-calendar-content
+        .datepicker-calendar-labels
+          .datepicker-calendar-label(*ngFor="let day of dayNamesOrdered")
+            | {{ day }}
+        .datepicker-calendar-month([@calendarAnimation]="animate")
+          .datepicker-calendar-month-cell(*ngFor="let day of calendarDays")
+            .datepicker-calendar-month-day(*ngIf="day && day.isActive", (click)="onSelectDay(day.value)")
+              span
+                | {{ day.value.getDate() }}
+            .datepicker-calendar-month-day-label(*ngIf="day && !day.isActive")
+              span
+                | {{ day.value.getDate() }}
+        .datepicker-calendar-btn.is-left((click)="onClean()")
+          | Clean
+        .datepicker-calendar-btn.is-right((click)="onCancel()")
+          | Cancel

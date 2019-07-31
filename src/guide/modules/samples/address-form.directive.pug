@@ -1,0 +1,49 @@
+doctype html
+
+form([formGroup]="form", (ngSubmit)="onSubmit(form)", novalidate)
+  .well
+    .row
+      .col-xs-12
+        //- TODO This flash should be a notification! But the notification system is in the app/shared folder...
+        //- tq-notification([name]="notificationName")
+        tq-flash([type]="msgType", [description]="msg", (isClosedChange)="hideMsg()")
+
+        .form-control([class.has-error]="(submitted || postalCodeField.touched) && !postalCodeField.valid")
+          tq-input-erasable(mask="99999-999", type="tel", id="postalCodeInput", label="Postal code", placeholder="12345-123", formControlName="postalCodeField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || postalCodeField.touched) && postalCodeField.errors")
+            span(*ngIf="postalCodeField.hasError('required')") Postal code is required.
+            span(*ngIf="postalCodeField.hasError('postalcodePattern')") Postal code is invalid.
+
+        .form-control([class.has-error]="(submitted || addressField.touched) && !addressField.valid")
+          tq-input-erasable(type="text", id="addressInput", label="Address", placeholder="West Virginia Ave NE", formControlName="addressField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || addressField.touched) && addressField.errors")
+            span(*ngIf="addressField.hasError('required')") Address is required.
+
+        .form-control([class.has-error]="(submitted || numberField.touched) && !numberField.valid")
+          tq-input-erasable(type="tel", id="numberInput", label="Number", placeholder="1234", formControlName="numberField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || numberField.touched) && numberField.errors")
+            span(*ngIf="numberField.hasError('required')") Number is required.
+            span(*ngIf="numberField.hasError('alphanumeric')") Number is invalid.
+
+        .form-control([class.has-error]="(submitted || complementField.touched) && !complementField.valid")
+          tq-input-erasable(type="text", id="complementInput", label="Complement (optional)", placeholder="Apartment 14", formControlName="complementField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || complementField.touched) && complementField.errors")
+            span(*ngIf="(submitted || complementField.touched) && complementField.hasError('required')") Complement is required.
+
+        .form-control([class.has-error]="(submitted || cityField.touched) && !cityField.valid")
+          tq-input-erasable(type="text", id="cityInput", label="City", placeholder="Washington", formControlName="cityField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || cityField.touched) && cityField.errors")
+            span(*ngIf="(submitted || cityField.touched) && cityField.hasError('required')") City is required.
+
+        .form-control([class.has-error]="(submitted || stateField.touched) && !stateField.valid")
+          tq-input-erasable(type="text", id="stateInput", label="State", placeholder="DC", formControlName="stateField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || stateField.touched) && stateField.errors")
+            span(*ngIf="(submitted || stateField.touched) && stateField.hasError('required')") State is required.
+
+    .row
+      .col-xs-12
+        .text-right
+          a.btn.btn--neutral.btn--outline.container-margin-right Cancelar
+          tq-button-loading([classes]="'btn--primary'", [isLoading]="isBtnLoading")
+            span {{ submitBtnText }}
+          p.caption {{ form.value | json }}

@@ -1,0 +1,38 @@
+doctype html
+
+form([formGroup]="form", (ngSubmit)="onSubmit(userForm)", novalidate)
+  .well
+    .row
+      .col-xs-12
+        .form-control([class.has-error]="(submitted || nameField.touched) && !nameField.valid")
+          tq-input-erasable(type="text", id="nameInput", label="Name", placeholder="John Doe", formControlName="nameField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || nameField.touched) && nameField.errors")
+            span(*ngIf="nameField.hasError('required')") Name is required.
+
+        .form-control([class.has-error]="(submitted || emailField.touched) && !emailField.valid")
+          tq-input-erasable(type="text", id="emailInput", label="E-mail", placeholder="sample@domain.com", formControlName="emailField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || emailField.touched) && emailField.errors")
+            span(*ngIf="emailField.hasError('required')") E-mail is required.
+            span(*ngIf="emailField.hasError('emailPattern')") E-mail must be in the format xxx@xxx.xx.
+
+        .form-control(formGroupName="matchingTelephoneNumbersGroup", [class.has-error]="(submitted || telephoneField.touched) && !matchingTelephoneNumbersGroup.valid")
+          tq-input-erasable(mask="(99) 9999-9999", type="tel", id="telephoneInput", label="Telephone number", placeholder="(xx) xxxx-xxxx", formControlName="telephoneField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || telephoneField.touched) && !matchingTelephoneNumbersGroup.valid")
+            span(*ngIf="telephoneField.hasError('pattern')") Telephone number must be in the format (xx) xxxx-xxxx
+            span(*ngIf="telephoneField.hasError('maxlength')") Telephone number must contain no more than 10 digits.
+            span(*ngIf="!mobileField.hasError('maxlength') && !mobileField.hasError('pattern') && matchingTelephoneNumbersGroup.hasError('noFieldsFilled')") At least one of the phone fields must be filled.
+
+        .form-control(formGroupName="matchingTelephoneNumbersGroup", [class.has-error]="(submitted || mobileField.touched) && !matchingTelephoneNumbersGroup.valid")
+          tq-input-erasable(mask="(99) 99999-9999", type="tel", id="mobileInput", label="Mobile number", placeholder="(xx) xxxxx-xxxx", formControlName="mobileField")
+          p.caption.input-caption(@scaleUp, *ngIf="(submitted || mobileField.touched) && !matchingTelephoneNumbersGroup.valid")
+            span(*ngIf="mobileField.hasError('pattern')") Telephone number must be in the format (xx) xxxxx-xxxx
+            span(*ngIf="mobileField.hasError('maxlength')") Telephone number must contain no more than 11 digits.
+            span(*ngIf="!mobileField.hasError('maxlength') && !mobileField.hasError('pattern') && matchingTelephoneNumbersGroup.hasError('oneFieldRequired')") At least one of the phone fields must be filled.
+
+    .row
+      .col-xs-12
+        .text-right
+          a.btn.btn--neutral.btn--outline.container-margin-right Cancelar
+          tq-button-loading([classes]="'btn--primary'", [isLoading]="isBtnLoading")
+            span {{ submitBtnText }}
+          p.caption {{ form.value | json }}

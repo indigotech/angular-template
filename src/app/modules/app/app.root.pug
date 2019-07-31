@@ -1,0 +1,41 @@
+doctype html
+.menu-type.menu-type--fixed([ngClass]="{'menu-type--right' : !menuPositionLeft, 'menu-type--is-open': isMenuVisible}")
+  nav.navbar-container.menu-pushable
+    .navbar.navbar--xs
+      a.navbar-icon.navbar-icon--left(*ngIf="navCtrlSvc.isShown", (click)="toggleMenu()")
+        span.mi.mi-menu
+      a([routerLink]="[ '/home' ]")
+        img.navbar-logo(src="/assets/img/img-logo.png", alt="template logo")
+
+    .navbar.navbar--md
+      a([routerLink]="[ '/home' ]")
+        img.navbar-logo(src="/assets/img/img-logo.png", alt="template logo")
+
+      ul.navbar-list.pull-right(*ngIf="navCtrlSvc.isShown")
+        li.navbar-item
+          tq-dropdown(#menuDropdown)
+            .dropdown-heading
+              a.navbar-item-action Menu dropdown
+                span.dropdown-icon.mi.mi-keyboard-arrow-down
+
+            .dropdown-body
+              ul.lst
+                li.lst-item(*ngFor="let item of menuDropdownArray; let i=index; trackBy: i")
+                  a.lst-item-table.lst-item-table--action
+                    h4.h__lst([routerLink]="[ (item.routerLink? item.routerLink : '') ]") {{ item.name }}
+
+        li.navbar-item(*ngFor="let item of menuArray; let i=index; trackBy: i")
+          a.navbar-item-action([routerLink]="[ (item.routerLink? item.routerLink : '') ]") {{ item.name }}
+
+  .menu-container
+    aside.menu(#menu, menu-gestures, (swipeLeftGesture)="doSwipe($event)", (swipeRightGesture)="doSwipe($event)")
+      ul.menu-list
+        li.menu-item(*ngFor="let item of menuDropdownArray; let i=index; trackBy: i")
+          a.menu-item-action([routerLink]="[ (item.routerLink? item.routerLink : '') ]", (click)="onItemClick()") {{ item.name }}
+        li.menu-item(*ngFor="let item of menuArray; let i=index; trackBy: i")
+          a.menu-item-action([routerLink]="[ (item.routerLink? item.routerLink : '') ]", (click)="onItemClick()") {{ item.name }}
+
+    .content.menu-pushable
+      router-outlet
+
+  .content-overlay((click)="toggleMenu()")

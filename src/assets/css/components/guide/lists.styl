@@ -1,0 +1,110 @@
+// Variables
+$lst-item-min-height = 40px
+$lst-ul-left-space = 25px
+$lst-item-icon-min-width = 24px
+$lst-checkbox-indent = $lst-item-icon-min-width + 10
+$lst-checkbox-icon-indent = $lst-item-icon-min-width / 2
+$lst-radio-height = 25px
+
+/*
+ * list which can have 4 columns
+ * 1: image
+ * 2: text
+ * 3: badge
+ * 4: chevron
+ */
+// lst (List)
+.lst
+  padding: 0
+  list-style: none
+
+.lst--bordered
+  border-top: $default-border
+  border-bottom: $default-border
+  overflow: auto
+
+  > .lst-item:not(:last-child)
+    border-bottom: $default-border
+
+  &.lst-no-top-border
+    border-top: none
+  &.lst-no-bottom-border
+    border-bottom: none
+
+.lst--shadowed
+  background-color: $color-white
+  border-radius: $default-border-radius
+  box-shadow(0 3px 6px 0 rgba(0, 0, 0, 0.05))
+
+.lst--striped
+  background-color: $color-white
+  .lst-item
+    &:nth-child(odd)
+      background-color: $color-gray-xlight
+
+.lst--well
+  background-color: $color-gray-xlight
+  border: $default-border
+  border-radius: $default-border-radius
+
+.lst--well-white
+  background-color: $color-white
+  border: $default-border
+  border-radius: $default-border-radius
+
+.lst--centered
+  margin: 0 auto
+  text-align: center
+
+// List item
+.lst-item
+  position: relative
+
+// List item table
+.lst-item-table
+  display: table
+  width: 100%
+  min-height: $lst-item-min-height
+  padding: $half-gutter
+  white-space: normal
+
+  & + .lst-item-table
+    padding-top: 0
+
+.lst-item-table--action
+  transition(all $animation-duration ease-in-out)
+  user-select(none)
+
+  &:hover
+    background-color: $color-gray-xlight
+
+// List item table cell
+// Align default: middle
+.lst-item-cell
+  display: table-cell
+  width: 0
+  vertical-align: middle
+
+  & + .lst-item-cell
+    padding-left: $spacement-small
+
+.lst-item-cell--icon
+  min-width: $lst-item-icon-min-width
+  text-align: center
+  color: $color-gray-dark
+
+.lst-item-cell--expanded
+  width: 100%
+
+.lst-item-cell--align-top
+  vertical-align: top
+
+.lst-item-cell--align-bottom
+  vertical-align: bottom
+
+.lst-item-cell--align-right
+  text-align: right
+
+// Context
+.h__lst
+  margin: 0

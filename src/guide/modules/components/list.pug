@@ -1,0 +1,129 @@
+main.container
+  header
+    h1.text-center Lists
+  section
+    .row
+      .col-xs-12
+        p Use
+          code.code .lst
+          | &nbsp;for lists. You can style it with
+          code.code .lst--bordered
+          | ,&nbsp;
+          code.code .lst--striped
+          | ,&nbsp;
+          code.code .lst--shadowed
+          | &nbsp;or&nbsp;
+          code.code .lst--well
+          | &nbsp;and center it with&nbsp;
+          code.code .lst--centered
+          | .
+
+    .row
+      .col-xs-12
+        h2 Bordered list
+        p
+          code.code .lst.lst--bordered
+          | .
+        .g-example
+          ul.lst.lst--bordered
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst List item with chevron
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-keyboard-arrow-right
+
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst.bold Bold list item with chevron
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-keyboard-arrow-right
+
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst List item with multiple lines. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-keyboard-arrow-right
+
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst.bold Algum lugar
+                  p Rua endereco numbero bairro apartamento
+                  p Cep 008710-250
+                  p Tel (11)39402-4293
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-keyboard-arrow-right
+
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--icon
+                  span.fa.fa-envelope-o
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst List item with badge
+                .lst-item-cell
+                  span.badge.badge--round.badge--primary 2
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-keyboard-arrow-right
+
+      .col-xs-12
+        h2 Striped list
+        p
+          code.code .lst.lst--striped
+          | .
+
+        .g-example
+          ul.lst.lst--striped
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--icon
+                  span.fa.fa-check-square-o
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst.bold Radio and checkbox
+
+            li.lst-item
+              .lst-item-table
+                input(type="radio", id="radio", value="radio1")
+                label.input-value(for="radio") List item with radio. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel
+            li.lst-item
+              .lst-item-table
+                input(type="radio", id="radio1", value="radio2")
+                label.input-value(for="radio1") List item with radio
+
+            li.lst-item
+              .lst-item-table
+                input(type="checkbox", id="box-normal")
+                label.input-value(for="box-normal") List Item with checkbox. Pellentesque eu imperdiet lorem. Sed elit est, suscipit id dolor in, facilisis molestie erat. Nullam convallis lacus metus, sed hendrerit tellus laoreet vel.
+
+            li.lst-item
+              .lst-item-table
+                input(type="checkbox", id="box-normal2")
+                label.input-value(for="box-normal2") List Item with checkbox
+
+    .row
+      .col-xs-12
+        h2 Well list
+        p
+          code.code .lst.lst--well
+          | . Can also be white&nbsp;
+          code.code .lst--well-white
+          | .
+
+        .g-example
+          ul.lst.lst--well
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-star
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst List item with icon
+
+          ul.lst.lst--well.lst--well-white
+            li.lst-item
+              a.lst-item-table.lst-item-table--action
+                .lst-item-cell.lst-item-cell--icon
+                  span.mi.mi-star
+                .lst-item-cell.lst-item-cell--expanded
+                  h3.h__lst List item with icon

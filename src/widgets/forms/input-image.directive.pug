@@ -1,0 +1,23 @@
+doctype html
+
+.form-group([class.has-error]="!valid")
+  label.input-label([attr.for]="id") {{ label }}
+  .row
+
+    .col-xs-12.col-sm-3
+      .thumbnail.thumbnail__input-image
+        img.thumbnail-img(#image, [style.background-image]="'url(' + imageUrl + ')'", src="/assets/img/img-transparent.png")
+    .col-xs-12.col-sm-9.no-gutter-left
+      input(#field, [id]="id", type="file", (change)="onChangeListener($event)")
+      label.input-image(*ngIf="!alreadyUploaded", [attr.for]="id", [class.is-filled]="inputValue == fileName")
+        span.fa.fa-upload
+        span {{ inputValue }}
+      .input-image.is-download(*ngIf="alreadyUploaded", (click)="onDownloadTap($event)")
+        span.fa.fa-download
+        span {{ inputValue }}
+      a.btn-link.input-image-erase(*ngIf="inputValue != placeholder", (click)="onEraseTap($event)")
+        span.fa.fa-trash
+      p.caption
+        span.input-caption Apenas formatos: JPG ou PNG
+        <br />
+        | {{ comments }}

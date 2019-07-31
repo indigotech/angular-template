@@ -1,0 +1,40 @@
+.stepper
+  display: table
+  width: 100%
+  height: 44px
+  background-color: $color-white
+  border-collapse: collapse
+
+
+.stepper-action
+  display: table-cell
+  width: 44px
+  font-size: $font-size-large
+  font-weight: $font-weight-medium
+  text-align: center
+  vertical-align: middle
+  border: $default-border
+  color: $color-gray-xdark
+
+  &:hover
+    background-color: $color-gray-xlight
+    color: highlightColorHover($color-gray-xdark)
+
+  &:active
+    background-color: $color-gray-xlight
+    color: highlightColorDark($color-gray-xdark)
+
+  &.is-disabled
+    background-color: $color-white
+    color: disabledColor($color-gray-dark)
+    cursor: default
+
+.stepper-display
+  display: table-cell
+  font-size: $font-size-medium
+  text-align: center
+  vertical-align: middle
+  border: $default-border
+
+  .stepper-display-number
+    font-weight: $font-weight-medium

@@ -1,0 +1,422 @@
+mixin g-grid-col(color, total_col, display, col_size, display2, col_size2)
+  - var class_name = 'col-' + display + '-' + col_size
+  - var description = '.' + class_name
+  - if (display2) class_name = class_name + ' ' + 'col-' + display2 + '-' + col_size2
+  - if (display2) description = description + ' .col-' + display2 + '-' + col_size2
+  - for (var x = 0; x < total_col; x++)
+    div(class=class_name)
+      .g-widget-grid(class=color)
+        code.code= description
+
+main.container
+  header
+    h1.text-center Grid
+
+  .row
+    .col-xs-12
+      p We use the&nbsp;
+        a(href="https://getbootstrap.com/css/#grid", target="_blank") Bootstrap grid system.
+        |  Please, check it before using this template.
+
+      h2 Variables
+      table.g-table.g-table--bordered.g-table--striped
+        thead
+          tr
+            th
+            th
+              h3.g-table-header XS: Extra small devices
+              p.caption.g-table-header Phones (<768px)
+            th
+              h3.g-table-header SM: Small devices
+              p.caption.g-table-header Tablets (≥768px)
+            th
+              h3.g-table-header MD: Medium devices
+              p.caption.g-table-header Desktops (≥992px)
+            th
+              h3.g-table-header LG: Wide devices
+              p.caption.g-table-header Desktops (≥1200px)
+
+        tbody
+          tr
+            th
+              h3 Container-width
+            td none
+            td 720px + gutter
+            td 940px + gutter
+            td 1140px + gutter
+
+    .col-xs-12.col-md-6
+      h2 Some Bootstrap conventions
+      ul.u-lst
+        li.u-lst-item Always use
+          code.code .col-D-X
+          |  directly inside a&nbsp;
+          code.code .row
+          | .
+        li.u-lst-item
+          a(href="https://getbootstrap.com/css/#grid-nesting", target="_blank")  Nesting
+          | ,&nbsp;
+          a(href="https://getbootstrap.com/css/#grid-offsetting", target="_blank") offsetting
+          |  and&nbsp;
+          a(href="https://getbootstrap.com/css/#grid-column-ordering", target="_blank") ordering
+          |  is possible.
+        li.u-lst-item Each
+          span.bold  column
+          |  has a half-gutter-left and a half-gutter-right.
+        li.u-lst-item Each
+          span.bold  gutter
+          |  has
+          span.bold  32px.
+        li.u-lst-item The grid has
+          span.bold  12
+          |  columns.
+        li.u-lst-item Either use
+          code.code .container
+          |  or&nbsp;
+          code.code .container-fluid
+          | .
+
+    .col-xs-12.col-md-6
+      h2 Subclasses
+      h3 Row
+      ul.u-lst
+        li.u-lst-item
+          code.code .no-gutter
+          | : Removes all gutters from row.
+        li.u-lst-item
+          code.code .no-gutter-xs
+          | : Removes all gutters from row
+          span.bold  only at mobile.
+        li.u-lst-item
+          code.code .row__grid
+          | : Clears columns with the same col span.
+      h3 Column
+      ul.u-lst
+        li.u-lst-item
+          code.code .no-gutter-left | .no-gutter-right
+          | : Removes left/right gutter from column.
+        li.u-lst-item
+          code.code .quarter-gutter-xs-left | .quarter-gutter-xs-left
+          | : Changes left/right gutter to a quarter instead of half. E.g.: When using a grid of 2 columns at mobile.
+
+  .row
+    .col-xs-12
+      h2 Responsive utilities
+      p For faster mobile-friendly development, use these utility classes for showing and hiding content by device via media query. You can combine the&nbsp;
+        code.code .hidden-D
+        | &nbsp;classes to hide elements in 2 different displays (to hide in 3, please use the&nbsp;
+        code.code .visible-D
+        | &nbsp;classes).
+
+    .col-xs-12
+      .container-margin-top
+        table.g-table.g-table--bordered.g-table-striped
+          thead
+            tr
+              th
+              th
+                h3.g-table-header Extra small devices
+                p.g-table-header.caption Phones (<768px)
+              th
+                h3.g-table-header Small devices
+                p.g-table-header.caption Tablets (≥768px)
+              th
+                h3.g-table-header Medium devices
+                p.g-table-header.caption Desktops (≥992px)
+              th
+                h3.g-table-header Large devices
+                p.g-table-header.caption Desktops (≥1200px)
+          tbody
+            tr
+              th
+                code.code .visible-lg
+              td.g-table-invisible Hidden
+              td.g-table-invisible Hidden
+              td.g-table-invisible Hidden
+              td Visible
+            tr
+              th
+                code.code .visible-md
+              td.g-table-invisible Hidden
+              td.g-table-invisible Hidden
+              td Visible
+              td.g-table-invisible Hidden
+            tr
+              th
+                code.code .visible-sm
+              td.g-table-invisible Hidden
+              td Visible
+              td.g-table-invisible Hidden
+              td.g-table-invisible Hidden
+            tr
+              th
+                code.code .visible-xs
+              td Visible
+              td.g-table-invisible Hidden
+              td.g-table-invisible Hidden
+              td.g-table-invisible Hidden
+          tbody
+            tr
+              th
+                code.code .hidden-xs
+              td.g-table-invisible Hidden
+              td Visible
+              td Visible
+              td Visible
+            tr
+              th
+                code.code .hidden-sm
+              td Visible
+              td.g-table-invisible Hidden
+              td Visible
+              td Visible
+            tr
+              th
+                code.code .hidden-md
+              td Visible
+              td Visible
+              td.g-table-invisible Hidden
+              td Visible
+            tr
+              th
+                code.code .hidden-lg
+              td Visible
+              td Visible
+              td Visible
+              td.g-table-invisible Hidden
+
+    .col-xs-12
+      .divisor.container-margin
+      h2 Examples
+
+    .col-xs-12
+      h3 Maximum of 12 columns
+      p Tag
+        code.code .col-D-X
+        |, where D is display (xs, sm, md, lg) and X is the size each column represent. Each row supports a maximum of 12 points: e.g. if you have a&nbsp;
+        code.code .col-xs-9
+        | &nbsp;and add a&nbsp;
+        code.code .col-xs-6
+        | , it will break in a new row. Size xs works in all displays.
+
+  .row.no-gutter
+    .container-margin-top
+      +g-grid-col('gray-xlight', 12, 'xs', 1)
+      +g-grid-col('white',       6, 'xs', 2)
+      +g-grid-col('gray-xlight', 2, 'xs', 6)
+      +g-grid-col('white',       1, 'xs', 7)
+      +g-grid-col('white',       1, 'xs', 5)
+      +g-grid-col('gray-xlight', 1, 'xs', 8)
+      +g-grid-col('gray-xlight', 1, 'xs', 4)
+      +g-grid-col('white',       1, 'xs', 9)
+      +g-grid-col('white',       1, 'xs', 3)
+      +g-grid-col('gray-xlight', 1, 'xs', 12)
+      +g-grid-col('white',       1, 'xs', 9)
+      +g-grid-col('gray-xlight', 1, 'xs', 6)
+
+  .row
+    .col-xs-12
+      h3 Responsiveness
+      p You can change the size of the column depending on the display by combining&nbsp;
+        code.code .col-xs-X
+        | ,&nbsp;
+        code.code .col-sm-X
+        | ,&nbsp;
+        code.code .col-md-X
+        | &nbsp;or&nbsp;
+        code.code .col-lg-X
+        | .
+
+      h4
+        span.fa.fa-laptop
+        span  Desktop (
+        code.code .col-md-X
+        span ) &&nbsp;
+        span.fa.fa-mobile
+        span  Mobile (
+        code.code .col-xs-X
+        span )
+
+  .row.no-gutter
+    .container-margin-top
+      +g-grid-col('gray-xlight', 6, 'md', 2, 'xs', 4)
+      +g-grid-col('white',       1, 'md', 8, 'xs', 6)
+      +g-grid-col('white',       1, 'md', 4, 'xs', 6)
+      +g-grid-col('gray-xlight', 1, 'md', 7, 'xs', 6)
+      +g-grid-col('gray-xlight', 1, 'md', 5, 'xs', 6)
+      +g-grid-col('white',       2, 'md', 6, 'xs', 12)
+
+  .row
+    .col-xs-12
+      h4
+        span.fa.fa-desktop
+        span  Large desktop (
+        code.code .col-lg-X
+        span ) &&nbsp;
+        span.fa.fa-tablet
+        span &nbsp;Tablet (
+        code.code .col-sm-X
+        span ).
+
+  .row.no-gutter
+    .container-margin-top
+      +g-grid-col('gray-xlight',  6, 'lg', 4, 'sm', 2)
+      +g-grid-col('white',        1, 'lg', 8, 'sm', 3)
+      +g-grid-col('white',        1, 'lg', 4, 'sm', 3)
+      +g-grid-col('white',        1, 'lg', 8, 'sm', 3)
+      +g-grid-col('white',        1, 'lg', 4, 'sm', 3)
+      +g-grid-col('gray-xlight',  1, 'lg', 10, 'sm', 6)
+      +g-grid-col('gray-xlight',  1, 'lg', 2, 'sm', 6)
+      +g-grid-col('white',        2, 'lg', 6, 'sm', 12)
+
+  .row
+    .col-xs-12
+      h3 Responsive column resets
+      p With the four tiers of grids available you're bound to run into issues where, at certain breakpoints, your columns don't clear quite right as one is taller than the other. To fix that, use a combination of a
+        code.code .clearfix
+        | &nbsp;and our responsive utility classes.
+      p Another way to clear columns is by adding &nbsp;
+        code.code .row__grid
+        |  to the row. !Important: For same sized tiles only.
+
+  .row
+    .col-xs-12
+      h3 Nesting rows
+      .container-margin-bottom
+        p It is possible to use&nbsp;
+          code.code .row
+          | &nbsp;inside a &nbsp;
+          code.code .row
+          | &nbsp;to create a more flexible layout.
+
+  .row
+    .col-xs-12.col-md-6
+      .g-widget-grid.white
+        .row
+          .col-xs-12
+            .g-widget-grid.g-widget-grid-nested
+              code.code .col-xs-12.col-md-6
+        .row
+          +g-grid-col('gray-xlight', 4, 'xs', 6, 'md', 3)
+
+    .col-xs-12.col-md-6
+      .g-widget-grid.white
+        .row
+          .col-xs-12
+            .g-widget-grid.g-widget-grid-nested
+              code.code .col-xs-12.col-md-6
+        .row
+          +g-grid-col('gray-xlight', 3, 'xs', 6, 'md', 4)
+
+  .row
+    .col-xs-12
+      h3 Column offset
+      .container-margin-bottom
+        p Use&nbsp;
+          code.code .col-D-offset-X
+          | &nbsp;to set the offset size for each column.
+
+  .row
+    .col-xs-8.col-xs-offset-2
+      .g-widget-grid.gray-xlight
+        code.code .col-xs-8.col-xs-offset-2
+    +g-grid-col('gray-xlight', 1, 'xs', 2)
+
+  .row
+    .col-xs-6.col-xs-offset-3
+      .g-widget-grid.gray-xlight
+        code.code .col-xs-6.col-xs-offset-3
+    +g-grid-col('gray-xlight', 1, 'xs', 3)
+
+  .row
+    .col-xs-12
+      h3 Gutter
+      p Each column has a left and a right gutter.
+
+      h4 Row gutter
+      .container-margin-bottom
+        p Use&nbsp;
+          code.code .row.no-gutter
+          |  to remove the gutter from all columns. There is also
+          code.code .row.no-gutter-xs
+          |  which only removes the gutter at xs screens.
+
+  .row.no-gutter
+    .col-xs-3
+      .g-widget-grid.gray-xlight
+        code.code .row.no-gutter
+    .col-xs-3
+      .g-widget-grid.gray-xlight
+        code.code .row.no-gutter
+    .col-xs-3
+      .g-widget-grid.gray-xlight
+        code.code .row.no-gutter
+    .col-xs-3
+      .g-widget-grid.gray-xlight
+        code.code .row.no-gutter
+
+  .row
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+
+  .row
+    .col-xs-12
+      h4 Column gutter
+      .container-margin-bottom
+        p Use&nbsp;
+          code.code .col-D-X.no-gutter-left
+          | &nbsp;and&nbsp;
+          code.code .col-D-X.no-gutter-right
+          | &nbsp;to remove the gutter from each column.
+
+  .row
+    .col-xs-3.no-gutter-left
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-left
+    .col-xs-3.no-gutter-left
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-left
+    .col-xs-3.no-gutter-left
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-left
+    .col-xs-3.no-gutter-left
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-left
+
+  .row
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+    .col-xs-3
+      .g-widget-grid.white
+        code.code [none]
+
+  .row
+    .col-xs-3.no-gutter-right
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-right
+    .col-xs-3.no-gutter-right
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-right
+    .col-xs-3.no-gutter-right
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-right
+    .col-xs-3.no-gutter-right
+      .g-widget-grid.gray-xlight
+        code.code .no-gutter-right

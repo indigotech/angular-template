@@ -1,0 +1,41 @@
+.callout
+  make-components-margin(top, $space-xsmall)
+  make-components-margin(bottom, $space-xsmall)
+  width: 100%
+  height: auto
+  padding: $half-gutter
+  border: $default-border
+  border-left-width: 4px
+  border-radius: $default-border-radius
+
+  .callout-title
+    margin-top: 0
+    font-weight: bold
+
+  h3, p
+    &:last-child
+      margin-bottom: 0
+
+.callout--success
+  border-left-color: $color-success
+
+  .callout-title
+    color: $color-success
+
+.callout--info
+  border-left-color: $color-info
+
+  .callout-title
+    color: $color-info
+
+.callout--warning
+  border-left-color: $color-warning
+
+  .callout-title
+    color: $color-warning
+
+.callout--alert
+  border-left-color: $color-alert
+
+  .callout-title
+    color: $color-alert

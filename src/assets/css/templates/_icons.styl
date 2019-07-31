@@ -1,0 +1,35 @@
+//
+// Custom icons font
+// --------------------------------------------------
+.ic
+  font-family: $icon-font-family
+  vertical-align: middle
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  transition(font-size 0.2s ease-in-out)
+
+//
+// Variables
+// --------------------------------------------------
+<% _.each(glyphs, function(glyph) { %>$<%= cssClass %>-<%= glyph.fileName %> = "\<%= glyph.codePoint.toString(16).toUpperCase() %>"
+<% }); %>
+
+//
+// Icons
+// --------------------------------------------------
+<% _.each(glyphs, function(glyph) { %>.<%= cssClass %>-<%= glyph.fileName %>:before { content: $<%= cssClass %>-<%= glyph.fileName %> }
+<% }); %>
+
+//
+// To be copied to the guide/icons.jade and then erased from here
+.row
+  .col-xs-12.col-sm-12.col-md-12.col-lg-12
+    section
+      h1 Icons - Custom font
+
+.row
+<% _.each(glyphs, function(glyph) { %>  .col-xs-12.col-sm-6.col-md-4.col-lg-3
+    .g-icon-hover
+      span.ic.<%= cssClass %>-<%= glyph.fileName %>
+      span &nbsp;<%= cssClass %>-<%= glyph.fileName %>
+<% }); %>

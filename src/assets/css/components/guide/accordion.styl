@@ -1,0 +1,32 @@
+// Accordion component
+
+.accordion-item-icon
+  transform-origin(50%)
+  transition(transform 0.4s ease-in-out)
+
+.accordion-item-body-container
+  max-height: 0
+  vertical-align: bottom // fix white space bellow due to descenders
+  overflow: hidden
+  transition(max-height 0.4s ease-in-out)
+
+  .accordion-item-body
+    .lst
+      margin: 0
+
+.accordion-item-footer
+  .btn-link--ver-mais__accordion-footer
+    &:before
+      content: "ver mais "
+
+// Accordion state: open
+.accordion-item-is-open
+  .accordion-item-heading
+    background-color: highlightColorLight($color-gray-light)
+
+  .accordion-item-icon
+    transform(rotate(-180deg))
+
+  .btn-link--ver-mais__accordion-footer
+    &:before
+      content: "ver menos "

@@ -1,0 +1,107 @@
+include guide-mixins
+
+main.container
+  header
+    h1.text-center Rating and reviews
+
+  .row
+    .col-xs-12
+      h2 Reviews
+      .g-example
+        +review-cell("5", "Recomendo, amei!", "Estou encantada com minha geladeira. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat sapien sapien, at tempor libero ornare sed. Suspendisse sodales lacus vitae leo mollis, sit amet convallis risus laoreet. Ut tristique sem id nibh iaculis, maximus pharetra dolor consequat. Suspendisse et libero eget tortor finibus pellentesque. Mauris eu lacus metus. Ut et lacinia mi. Vestibulum dignissim, elit vitae pellentesque egestas, nisl mi convallis metus, nec tristique velit metus quis magna. Curabitur vulputate nunc lorem, eget efficitur metus volutpat vitae. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean at velit convallis, hendrerit turpis vel, viverra orci. Sed ut rhoncus elit. Praesent sollicitudin ornare eros quis lacinia. Mauris gravida magna ac mauris fermentum, vitae molestie nunc commodo. Proin in tempor ante.", "João Silva")
+        +review-cell("1", "Nunca mais!", "Estou encantada com minha geladeira. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat sapien sapien, at tempor libero ornare sed. Suspendisse sodales lacus vitae leo mollis, sit amet convallis risus laoreet. Ut tristique sem id nibh iaculis, maximus pharetra dolor consequat. Suspendisse et libero eget tortor finibus pellentesque. Mauris eu lacus metus. Ut et lacinia mi. Vestibulum dignissim, elit vitae pellentesque egestas, nisl mi convallis metus, nec tristique velit metus quis magna. Curabitur vulputate nunc lorem, eget efficitur metus volutpat vitae. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean at velit convallis, hendrerit turpis vel, viverra orci. Sed ut rhoncus elit. Praesent sollicitudin ornare eros quis lacinia. Mauris gravida magna ac mauris fermentum, vitae molestie nunc commodo. Proin in tempor ante.", "João Silva")
+        +review-cell("3", "Dentro das expectativas", "Estou encantada com minha geladeira. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat sapien sapien, at tempor libero ornare sed. Suspendisse sodales lacus vitae leo mollis, sit amet convallis risus laoreet. Ut tristique sem id nibh iaculis, maximus pharetra dolor consequat. Suspendisse et libero eget tortor finibus pellentesque. Mauris eu lacus metus. Ut et lacinia mi. Vestibulum dignissim, elit vitae pellentesque egestas, nisl mi convallis metus, nec tristique velit metus quis magna. Curabitur vulputate nunc lorem, eget efficitur metus volutpat vitae. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean at velit convallis, hendrerit turpis vel, viverra orci. Sed ut rhoncus elit. Praesent sollicitudin ornare eros quis lacinia. Mauris gravida magna ac mauris fermentum, vitae molestie nunc commodo. Proin in tempor ante.", "João Silva")
+
+  .row
+    .col-xs-12
+      h2 Rating stars
+      p For ratings, use &nbsp;
+        code.code .rating
+        | &nbsp;with&nbsp;
+        code.code .rating-star
+        | inside. It is also possible to add a count with&nbsp;
+        code.code .rating-count
+        | . The rating can also be large using&nbsp;
+        code.code rating.rating-large
+        | .
+      p To fill the stars use&nbsp;
+        code.code .rating-star.rating-star-X
+        | &nbsp;where X is a number from 0 to 5 (stars filled). You can also fill a half star by adding&nbsp;
+        code.code .rating-star-half
+        | .
+
+      h2 Full stars
+      .g-example
+        .rating
+          span.rating-star.rating-star-0
+          span.rating-count 100&nbsp;
+            code.code .rating-star-0
+        .rating
+          span.rating-star.rating-star-1
+          span.rating-count 200&nbsp;
+            code.code .rating-star-1
+        .rating
+          span.rating-star.rating-star-2
+          span.rating-count 300&nbsp;
+            code.code .rating-star-2
+        .rating
+          span.rating-star.rating-star-3
+          span.rating-count 100&nbsp;
+            code.code .rating-star-3
+        .rating
+          span.rating-star.rating-star-4
+          span.rating-count 200&nbsp;
+            code.code .rating-star-4
+        .rating
+          span.rating-star.rating-star-5
+          span.rating-count 300&nbsp;
+            code.code .rating-star-5
+
+      h2 With half stars
+      .g-example
+        .rating
+          span.rating-star.rating-star-0.rating-star-half
+          span.rating-count 100&nbsp;
+            code.code .rating-star-0.rating-star-half
+        .rating
+          span.rating-star.rating-star-1.rating-star-half
+          span.rating-count 100&nbsp;
+            code.code .rating-star-1.rating-star-half
+        .rating
+          span.rating-star.rating-star-2.rating-star-half
+          span.rating-count 100&nbsp;
+            code.code .rating-star-2.rating-star-half
+        .rating
+          span.rating-star.rating-star-3.rating-star-half
+          span.rating-count 100&nbsp;
+            code.code .rating-star-3.rating-star-half
+        .rating
+          span.rating-star.rating-star-4.rating-star-half
+          span.rating-count 100&nbsp;
+            code.code .rating-star-4.rating-star-half
+        .rating.rating-unavailable
+          span.rating-star
+          span.rating-count Rating unavailable&nbsp;
+            code.code [none]
+
+      h2 large rating
+      .g-example
+        .rating.rating-large
+          span.rating-star.rating-star-0.rating-star-half
+          span.rating-count 100&nbsp;
+            code.code .rating-large
+        .rating.rating-large
+          span.rating-star.rating-star-1.rating-star-half
+          span.rating-count 100
+        .rating.rating-large
+          span.rating-star.rating-star-2.rating-star-half
+          span.rating-count 100
+        .rating.rating-large
+          span.rating-star.rating-star-3.rating-star-half
+          span.rating-count 100
+        .rating.rating-large
+          span.rating-star.rating-star-4.rating-star-half
+          span.rating-count 100
+        .rating.rating-large
+          span.rating-star.rating-star-5
+          span.rating-count 100

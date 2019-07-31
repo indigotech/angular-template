@@ -1,0 +1,78 @@
+$pagination-triangle-width = 14px
+$pagination-triangle-height = 22px
+$pagination-height = 44px
+
+.pagination
+  position: relative
+  display: inline-block
+
+  .pagination-item
+    position: relative
+    display: inline-block
+    float: left
+    min-width: $pagination-height
+
+    margin-right: $spacement-xsmall
+    margin-left: $spacement-xsmall
+    padding: 0
+
+    font-family: $font-family-primary
+    font-size: $font-size-medium
+    font-weight: $font-weight-regular
+    line-height: $pagination-height
+    text-align: center
+
+    background-color: $color-gray-light
+    border: 0
+    border-radius: $default-border-radius
+    color: $color-black
+
+    -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+    cursor: pointer
+
+    &.is-readonly
+      padding-right: $spacement-small
+      padding-left: $spacement-small
+      cursor: default
+
+    &.is-active
+      background-color: $color-primary
+      color: $color-white
+
+    &.pagination-item-previous
+      position: absolute
+      left: 0
+      margin-left: (- $spacement-xsmall)
+      padding-right: $spacement-small
+      padding-left: $spacement-xsmall
+      white-space: nowrap
+      transform(translateX(-100%))
+
+    &.pagination-item-next
+      position: absolute
+      padding-right: $spacement-xsmall
+      padding-left: $spacement-small
+      white-space: nowrap
+
+    &.pagination-item-previous::before, &.pagination-item-next::after
+        content: ''
+        position: absolute
+        top: 0
+        width: 0
+        height: 0
+        border-top: $pagination-triangle-height solid $color-transparent
+        border-bottom: $pagination-triangle-height solid $color-transparent
+
+    &.pagination-item-previous::before
+      left: (- $pagination-triangle-width)
+      border-right: $pagination-triangle-width solid $color-gray-light
+
+    &.pagination-item-next::after
+      right: (- $pagination-triangle-width)
+      border-left: $pagination-triangle-width solid $color-gray-light
+
+    &.pagination-item-ellipsis
+      min-width: auto
+      background-color: $color-transparent
+      color: $color-black
+      cursor: default

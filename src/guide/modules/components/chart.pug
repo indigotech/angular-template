@@ -1,0 +1,63 @@
+main.container
+  header
+    h1.text-center Charts 
+
+  .row
+    .col-xs-12
+      h2 Chart types
+      p Use 
+        code.code [type]
+        | &nbsp;parameter to set the chart type. Accepted values are: 
+        code.code  bar
+        | , 
+        code.code  pie
+        | , 
+        code.code  line
+        | , 
+        code.code  doughnut
+        | . Default value: 
+        code.code  bar
+        
+  .g-example
+    .row
+      .col-xs-6
+        tq-chart([data]="chartData")
+
+      .col-xs-6
+        tq-chart([type]="'doughnut'", [data]="chartData")
+
+  .row
+    .col-xs-12
+      h2 Legends
+      p If you want to omit the chart's legend, use  
+        code.code [showLegend]="false"
+        | &nbsp; parameter.
+        
+  .g-example
+    .row
+      .col-xs-12
+        tq-chart([showLegend]="false", [data]="chartData")
+          
+  .row
+    .col-xs-12
+      h2 Events
+      p You can track 
+        code.code (click)
+        | &nbsp;event. 
+        
+  .g-example
+    .row
+      .col-xs-12
+        tq-chart((click)="chartClicked($event)", [data]="chartData")
+
+  .row
+    .col-xs-12
+      h2 Custom colors
+      p Add 
+        code.code [isCustomColor]="true"
+        | &nbsp;to it.
+        
+  .g-example
+    .row
+      .col-xs-12
+        tq-chart([isCustomColor]="true", [data]="chartData")

@@ -1,0 +1,16 @@
+.btn-loading
+  position: relative
+  display: inline-block
+  min-width: 0
+  min-height: 12px
+  margin: 0
+  opacity: 0
+  transition(all $animation-duration ease-in-out)
+  visibility: hidden
+
+  &.is-loading
+    min-width: 12px
+    opacity: 1
+    visibility: visible
+    make-components-margin(left, $space-small)
+    pointer-events: none

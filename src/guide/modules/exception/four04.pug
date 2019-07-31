@@ -1,0 +1,28 @@
+main.container
+  .row
+    .col-xs-12.col-sm-3.col-sm-push-8.col-md-4.col-md-push-7
+      .text-center
+        span.ic.ic-broken-mobile.exception-icon.visible-xs
+        span.ic.ic-broken-tablet.exception-icon.visible-sm
+        span.ic.ic-broken-desktop.exception-icon.visible-md
+        span.ic.ic-broken-wide-desktop.exception-icon.visible-lg
+
+    .col-xs-12.col-sm-7.col-sm-pull-2.col-md-6.col-md-pull-3
+      p.exception-title Oops!
+      p Essa página não está disponível. Aqui estão alguns links interessantes:
+
+      .row
+        .col-xs-12.col-sm-6
+          a.btn.btn--neutral.btn--block.g-action-spacement([routerLink]=" ['/typography'] ")
+            span.fa.fa-thumb-tack
+            span Typography
+          a.btn.btn--neutral.btn--block.g-action-spacement([routerLink]=" ['/grid'] ")
+            span.fa.fa-thumb-tack
+            span Grid
+        .col-xs-12.col-sm-6
+          a.btn.btn--neutral.btn--block.g-action-spacement([routerLink]=" ['/button'] ")
+            span.fa.fa-thumb-tack
+            span Buttons
+          a.btn.btn--neutral.btn--block.g-action-spacement([routerLink]=" ['/color'] ")
+            span.fa.fa-thumb-tack
+            span Colors

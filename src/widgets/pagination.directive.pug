@@ -1,0 +1,9 @@
+.pagination
+  .pagination-item.pagination-item-previous(*ngIf="showPrevious()", (click)="onPageButtonTap(currentPage - 1)") {{ previousLabel }}
+  .pagination-item.hidden-xs(*ngIf="showFirst()", (click)="onPageButtonTap(1)") {{ firstPageText }}
+  .pagination-item.hidden-xs.pagination-item-ellipsis(*ngIf="showFirstEllipsis()", disabled) {{ middleText }}
+  .pagination-item.hidden-xs(*ngFor="let page of pages; let i=index; trackBy: i;", [class.is-active]="currentPage == page", (click)="onPageButtonTap(page)") {{ page }}
+  .pagination-item.hidden-xs.pagination-item-ellipsis(*ngIf="showLastEllipsis()", disabled) {{ middleText }}
+  .pagination-item.hidden-xs(*ngIf="showLast()", (click)="onPageButtonTap(totalPages)") {{ totalPages }}
+  .pagination-item.visible-xs.is-readonly {{ currentPage }} {{ ofConnector }} {{ totalPages }}
+  .pagination-item.pagination-item-next(*ngIf="showNext()", (click)="onPageButtonTap(currentPage + 1)") {{ nextLabel }}
