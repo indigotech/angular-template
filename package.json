@@ -57,7 +57,7 @@
     "lodash.isempty": "4.4.0",
     "lodash.map": "4.6.0",
     "luhn": "2.1.0",
-    "moment-timezone": "0.5.13",
+    "moment-timezone": "0.5.35",
     "ng2-charts": "1.6.0",
     "normalize.css": "7.0.0",
     "pug-lint": "2.4.0",
